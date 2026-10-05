@@ -46,8 +46,9 @@ Points ouverts
 
 - Adresse e-mail de contact non fournie : le pied de page pointe provisoirement
   vers contact.html (page créée en J6). Aucune adresse inventée.
-- Pages parcours.html, contact.html, mentions-legales.html, 404.html pas encore
-  créées (J5 et J6). Les liens vers ces pages pointent vers des cibles inexistantes.
+- Pages parcours.html, contact.html et mentions-legales.html pas encore créées
+  (J5 et J6). Les liens vers ces pages pointent vers des cibles inexistantes.
+  La page 404.html est en place.
 - ANCHORARRAY est écrit tel quel (opérateur de plage déversée) ; aucune traduction
   française imposée.
 - Le document Eathic intitule « optimiste » la page de calcul du ROI du scénario
