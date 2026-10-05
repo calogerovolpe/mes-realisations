@@ -1,28 +1,37 @@
 # activeContext.md
 
-Jalon en cours : J3a — Business plan gabarit (J2b terminé).
+Jalon en cours : J3b — Business plan suite (J3a terminé).
 
-Dernière action : J2b terminé. Deux pages créées : modèle 02 « Casa Urpi —
-fiches techniques et coût matière » (RECHERCHEX, FILTRE, TRIER, UNIQUE,
-ANCHORARRAY, SIERREUR, LIEN_HYPERTEXTE, SOMME ; le classeur existe aussi en
-.xlsm avec une macro d'impression) et modèle 03 « L'Appartement — investissement,
-financement et BFR » (RECHERCHEX, SI, SOMME, ARRONDI, LIEN_HYPERTEXTE, 2 tableaux
-croisés dynamiques). Treize captures générées depuis les feuilles sûres via
-automatisation Excel. Feuilles exclues non publiées : Mercuriale (URLs
-fournisseurs, prénom interdit) pour le modèle 02 ; Articles, Commande et
-Actionnaires (URLs, prénoms interdits, apports/dividendes/prêts) pour le
-modèle 03. Les 2 TCD du modèle 03 sont décrits mais non capturés (hébergés sur
-les feuilles Articles et Commande). Toutes les ancres de l'index des fonctions
-d'excel.html sont désormais résolues.
+Dernière action : J3a terminé. Deux pages créées : business-plan.html (sommaire
+portant la phrase d'introduction imposée, trois cartes dont seule l'étude 01 est
+active) et bp-etude-01-restauration-saine.html (marque « Mensana » ; sections
+Contexte, Méthode, Résultat, Ce que cela démontre). Source : « Business plan
+court.docx » (version Word non chiffrée du document source, lisible). Quatre
+captures produites par capture d'écran de la fenêtre Word (API Win32 PrintWindow,
+l'export PDF de Word étant inopérant dans cet environnement) : sommaire, étude de
+marché, analyse des recherches Google, zone d'implantation. Exclus des textes et
+des images : la couverture (nom du propriétaire), la section « Mes conseillés
+directs » (noms de personnes réelles) et la phrase contenant l'adresse exacte du
+local. Trois tableaux de synthèse (marché, zone de chalandise,
+concurrence/employeurs) reprennent uniquement les valeurs explicites du document
+(Agence BIO, IFOP, ADEME/GreenFlex, Google Keyword Planner, SemRush). Le document
+ne contient aucun état financier : aucune projection n'a été inventée, le renvoi
+vers le modèle d'exploitation Excel est explicite. En ligne, vérifié (HTTP 200).
 
 Décision de confidentialité : le dossier .clinerules/ (qui contient des noms
 réels à interdire) et le dossier /docs/ sont exclus de la publication via
 .gitignore. Le dépôt public ne contient que .gitignore, README.md, index.html,
 les pages HTML, assets/ et memory-bank/.
 
-Prochaine action : J3a — business-plan.html (sommaire portant la phrase
-d'introduction imposée) et étude 01 (bp-etude-01-restauration-saine.html, marque
-« Mensana »), à partir de « Business plan court.pdf ».
+Décision technique : l'export PDF de Word (ExportAsFixedFormat et SaveAs2) est
+inopérant dans cet environnement (blocage) et le collage presse-papiers
+(CopyAsPicture) provoque une corruption du tas. Les captures sont donc produites
+par capture d'écran de la fenêtre Word via l'API Win32 PrintWindow, puis
+recadrées pour retirer barre de titre, ruban et volets.
+
+Prochaine action : J3b — études 02 (bp-etude-02-cafe-restaurant.html, marque
+« L'Appartement ») et 03 (bp-etude-03-restauration-artisanale.html, marque
+« Al Dante »), à partir de « Business plan.docx » et « Business plan.pdf ».
 
 Points ouverts
 

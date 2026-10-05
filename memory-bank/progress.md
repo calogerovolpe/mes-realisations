@@ -8,7 +8,7 @@
       modèle 01 « Mensana » avec onglets CSS
 - [x] J2b — Excel suite : modèle 02 « Casa Urpi » (coût matière) et modèle 03
       « L'Appartement » (investissement, financement, BFR)
-- [ ] J3a — Business plan gabarit : business-plan.html + étude 01
+- [x] J3a — Business plan gabarit : business-plan.html + étude 01
 - [ ] J3b — Business plan suite : études 02 et 03
 - [ ] J4 — Parcours + identité visuelle : parcours.html, version imprimable,
       design-charte.html
@@ -42,6 +42,21 @@
   du modèle 03 sont décrits mais non capturés (hébergés sur Articles et Commande).
   Lien externe du modèle 03 non publié (mention générique). Ancres de l'index des
   fonctions d'excel.html activées. En ligne, vérifié.
+
+- 2026-10-05 · J3a · Sommaire « Business plans » (business-plan.html) et étude 01
+  (bp-etude-01-restauration-saine.html, marque « Mensana ») créés à partir de
+  « Business plan court.docx » (version Word non chiffrée du document source).
+  Quatre captures produites par capture d'écran de la fenêtre Word (API Win32
+  PrintWindow, l'export PDF de Word étant inopérant dans cet environnement) :
+  sommaire, étude de marché, analyse des recherches Google, zone d'implantation.
+  Exclus des textes et des images : la couverture (nom du propriétaire), la
+  section « Mes conseillés directs » (noms de personnes réelles) et la phrase
+  contenant l'adresse exacte du local. Trois tableaux de synthèse (marché, zone
+  de chalandise, concurrence/employeurs) reprennent uniquement les valeurs
+  explicites du document (Agence BIO, IFOP, ADEME/GreenFlex, Google Keyword
+  Planner, SemRush). Le document ne contient aucun état financier : aucune
+  projection n'a été inventée, le renvoi vers le modèle d'exploitation Excel est
+  explicite. En ligne, vérifié (HTTP 200).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
