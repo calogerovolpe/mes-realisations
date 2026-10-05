@@ -9,7 +9,7 @@
 - [x] J2b — Excel suite : modèle 02 « Casa Urpi » (coût matière) et modèle 03
       « L'Appartement » (investissement, financement, BFR)
 - [x] J3a — Business plan gabarit : business-plan.html + étude 01
-- [ ] J3b — Business plan suite : études 02 et 03
+- [x] J3b — Business plan suite : études 02, 03 et 04
 - [ ] J4 — Parcours + identité visuelle : parcours.html, version imprimable,
       design-charte.html
 - [ ] J5 — Contact et finitions : contact.html, mentions-legales.html,
@@ -57,6 +57,20 @@
   Planner, SemRush). Le document ne contient aucun état financier : aucune
   projection n'a été inventée, le renvoi vers le modèle d'exploitation Excel est
   explicite. En ligne, vérifié (HTTP 200).
+- 2026-10-05 · J3b · Trois études créées selon le gabarit exact de l'étude 01 :
+  bp-etude-02-cafe-restaurant.html (« L'Appartement », source « Business plan.docx »),
+  bp-etude-03-restauration-artisanale.html (« Al Dante », source « Business plan.pdf »)
+  et bp-etude-04-restauration-emporter.html (« Eathic « To-Go » », source « Business
+  plan Eathic.pdf »). business-plan.html passe à quatre cartes. Sources lues sans
+  Word : DOCX via le XML interne (System.IO.Compression), PDF via la bibliothèque
+  Python pypdf. Captures générées en rendant les pages PDF en images (PyMuPDF) puis
+  recadrées (Pillow) pour retirer le bandeau « nom + adresse » d'Al Dante et le pied
+  de page « nom » d'Eathic ; images sous 300 Ko, apostrophes droites. Exclus des
+  textes et des images : couvertures (nom du propriétaire), sections « Qui suis-je »
+  et « conseillers » (noms de personnes réelles) et pages concurrentielles nommant
+  des enseignes réelles. Concurrents réels désignés génériquement, sans nom ni
+  jugement. Détails de charges (loyers, salaires, échéanciers) maintenus en images ;
+  chiffres limités aux valeurs explicites des documents. En ligne, vérifié (HTTP 200).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
