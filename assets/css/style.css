@@ -153,6 +153,102 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .site-footer p { margin: 0 0 0.5rem; }
 .site-footer a { color: var(--accent); }
 
+/* Fil d'Ariane */
+.fil-ariane {
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  margin: 0 0 0.75rem;
+}
+.fil-ariane a { color: var(--accent); }
+
+/* Tableaux de synthèse */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.75rem;
+  font-size: 0.95rem;
+}
+.table caption {
+  caption-side: top;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: var(--encre);
+  padding: 0 0 0.5rem;
+}
+.table th,
+.table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--filet);
+  text-align: right;
+}
+.table thead th {
+  border-bottom: 2px solid var(--encre-douce);
+  color: var(--encre);
+}
+.table th:first-child,
+.table td:first-child { text-align: left; }
+.table tbody tr:last-child td { font-weight: bold; }
+.table-wrap { overflow-x: auto; }
+
+/* Onglets en CSS pur (pages de modèles) */
+.tabs { margin: 2rem 0 0; }
+.tabs > .tab-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.tabs .tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--filet);
+}
+.tabs .tab-nav label {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--encre-douce);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.tabs .tab-nav label:hover { color: var(--encre); }
+.tabs .tab-panel { display: none; }
+.tabs #t1:checked ~ .tab-nav label[for="t1"],
+.tabs #t2:checked ~ .tab-nav label[for="t2"],
+.tabs #t3:checked ~ .tab-nav label[for="t3"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tabs #t1:focus-visible ~ .tab-nav label[for="t1"],
+.tabs #t2:focus-visible ~ .tab-nav label[for="t2"],
+.tabs #t3:focus-visible ~ .tab-nav label[for="t3"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.tabs #t1:checked ~ .tab-panels > .tab-1,
+.tabs #t2:checked ~ .tab-panels > .tab-2,
+.tabs #t3:checked ~ .tab-panels > .tab-3 { display: block; }
+
+/* Captures d'écran */
+figure { margin: 1.5rem 0; }
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--filet);
+  background: #fff;
+}
+figcaption {
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+  margin-top: 0.5rem;
+}
+
 /* Petits écrans */
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }

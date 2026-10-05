@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modèle de rentabilité — 100 couverts — Mes réalisations</title>
+<meta name="description" content="Exercice de modélisation financière : modèle de rentabilité prévisionnelle d'une salle de 100 couverts, en trois scénarios d'activité (22, 26 et 30 jours).">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">Mes réalisations</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="excel.html" aria-current="page">Excel</a></li>
+        <li><a href="business-plan.html">Business plans</a></li>
+        <li><a href="design-charte.html">Identité visuelle</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+  <p class="fil-ariane"><a href="excel.html">Excel</a> — Modèle 01</p>
+  <h1>Modèle de rentabilité — 100 couverts</h1>
+  <p>Exercice de modélisation financière : construire un modèle de rentabilité prévisionnelle pour une salle de 100 couverts, décliné en trois scénarios d'activité (22, 26 et 30 jours ouvrés par mois).</p>
+
+  <h2>Contexte</h2>
+  <p>L'objectif de l'exercice était de chiffrer une journée type d'activité (matin, midi, après-midi) et de mesurer la sensibilité du résultat au nombre de jours d'ouverture par mois. Le modèle relie les données de fréquentation, le coût matière des recettes, la grille de ventes et les charges d'exploitation.</p>
+
+  <h2>Méthode</h2>
+  <p>Le classeur regroupe plusieurs blocs liés par des formules :</p>
+  <ul>
+    <li>paramètres d'ouverture : horaires, couverts par tranche et ratios de fréquentation ;</li>
+    <li>catalogue de recettes et coût matière par plat, à partir de prix fournisseurs sourcés ;</li>
+    <li>grille de ventes par tranche horaire et par produit ;</li>
+    <li>masse salariale et planning de présence ;</li>
+    <li>charges fixes et service de financement ;</li>
+    <li>synthèse des résultats par période et par scénario.</li>
+  </ul>
+  <figure>
+    <img src="assets/img/excel-rentabilite-hypotheses.png" alt="Feuille de paramètres du modèle Excel : horaires, couverts et ratios de fréquentation.">
+    <figcaption>Feuille de paramètres : horaires, couverts et ratios de fréquentation.</figcaption>
+  </figure>
+
+  <h2>Résultat</h2>
+  <p>Les tableaux ci-dessous reprennent les totaux de synthèse du modèle.</p>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Journée type — totaux par période</caption>
+      <thead>
+        <tr><th scope="col">Période</th><th scope="col">Coûts totaux</th><th scope="col">Revenus HTVA</th><th scope="col">Différence HTVA</th><th scope="col">Total + TVA</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Matin</th><td>179,68 €</td><td>612,01 €</td><td>432,33 €</td><td>670,60 €</td></tr>
+        <tr><th scope="row">Midi</th><td>506,01 €</td><td>1 552,06 €</td><td>1 046,06 €</td><td>2 922,30 €</td></tr>
+        <tr><th scope="row">Après-midi</th><td>181,29 €</td><td>657,41 €</td><td>476,13 €</td><td>733,50 €</td></tr>
+        <tr><th scope="row">Total</th><td>866,97 €</td><td>2 821,49 €</td><td>1 954,51 €</td><td>4 326,40 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tabs">
+    <input type="radio" name="onglet-modele-01" id="t1" class="tab-radio" checked>
+    <input type="radio" name="onglet-modele-01" id="t2" class="tab-radio">
+    <input type="radio" name="onglet-modele-01" id="t3" class="tab-radio">
+    <div class="tab-nav">
+      <label for="t1">Scénarios</label>
+      <label for="t2">Charges et résultat</label>
+      <label for="t3">Formules</label>
+    </div>
+    <div class="tab-panels">
+      <section class="tab-panel tab-1">
+        <h3>Scénarios d'activité</h3>
+        <div class="table-wrap">
+          <table class="table">
+            <caption>Totaux mensuels selon le nombre de jours d'ouverture</caption>
+            <thead>
+              <tr><th scope="col">Scénario</th><th scope="col">Coûts totaux</th><th scope="col">Revenus HTVA</th><th scope="col">Différence HTVA</th><th scope="col">Total + TVA</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">22 jours</th><td>19 073,37 €</td><td>62 072,68 €</td><td>42 999,31 €</td><td>95 180,80 €</td></tr>
+              <tr><th scope="row">26 jours</th><td>22 541,26 €</td><td>73 358,62 €</td><td>50 817,36 €</td><td>112 486,40 €</td></tr>
+              <tr><th scope="row">30 jours</th><td>26 009,14 €</td><td>84 644,56 €</td><td>58 635,42 €</td><td>129 792,00 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure>
+          <img src="assets/img/excel-rentabilite-synthese.png" alt="Feuille de synthèse du modèle Excel : totaux par période et par scénario.">
+          <figcaption>Feuille de synthèse du classeur (totaux par période et par scénario).</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-2">
+        <h3>Charges et résultat</h3>
+        <p>La feuille de résultat détaille les charges d'exploitation et le service de financement retenus pour chaque scénario. Ces éléments restent en capture d'écran.</p>
+        <figure>
+          <img src="assets/img/excel-rentabilite-benefice.png" alt="Feuille de résultat du modèle Excel : revenus, charges d'exploitation et service de financement.">
+          <figcaption>Feuille de résultat : revenus, charges d'exploitation et financement.</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-3">
+        <h3>Formules</h3>
+        <p>Vue du modèle avec les formules affichées, pour montrer la construction des calculs et les liaisons entre les feuilles.</p>
+        <figure>
+          <img src="assets/img/excel-rentabilite-formules.png" alt="Feuille Excel avec les formules affichées.">
+          <figcaption>Affichage des formules d'une feuille de synthèse.</figcaption>
+        </figure>
+      </section>
+    </div>
+  </div>
+
+  <h2>Ce que cela démontre</h2>
+  <p>Maîtrise de la modélisation financière : construction d'un modèle complet, de la donnée fournisseur au résultat consolidé, et analyse de sensibilité par scénarios d'activité.</p>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>Portfolio personnel — © 2026. Exercices d'analyse et de modélisation financière réalisés à titre personnel. Noms commerciaux inventés ; études menées sur des marchés, emplacements et concurrents réels. Données issues de sources publiques et de catalogues fournisseurs. Automatisations VBA assistées par IA, relues et corrigées. Dossier complet présentable en entretien sur demande.</p>
+    <p><a href="mentions-legales.html">Mentions légales</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+</body>
+</html>
