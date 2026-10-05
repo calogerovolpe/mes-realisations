@@ -12,7 +12,7 @@
 - [x] J3b — Business plan suite : études 02, 03 et 04
 - [x] J4 — Liaisons et identité visuelle : navigation croisée business plans ↔
       modèles Excel ↔ charte, design-charte.html (Casa Urpi)
-- [ ] J5 — Parcours : parcours.html (présentation et version imprimable en CV)
+- [x] J5 — Parcours : parcours.html (présentation et version imprimable en CV)
 - [ ] J6 — Contact et finitions : contact.html, mentions-legales.html,
       404.html, test mobile, contrôle final des noms interdits
 
@@ -89,6 +89,15 @@
   (statut 404 avec contenu personnalisé). Reste pour J6 : contact.html (formulaire
   tiers + consentement), mentions-legales.html (en attente de l'e-mail et du
   service de formulaire) et finitions.
+- 2026-10-05 · J5 · Page parcours.html créée (CV) à partir de « Cv Volpe.pdf »
+  (texte extrait via pypdf) et des compétences démontrées par le portfolio :
+  compétences administratives et techniques, savoir-être, formation, expérience
+  professionnelle, langues, centres d'intérêt, travaux présentés et contact.
+  Retirés car interdits : numéros de téléphone et adresse postale. Nom
+  « Calogero Volpe » limité à parcours.html (vérifié : nulle part ailleurs).
+  E-mail de contact unique (celui du CV) publié sur la page. Mise en page
+  imprimable gérée par la règle @media print existante. Poussé ; propagation
+  du build GitHub Pages ralentie (file d'attente), vérification en ligne en cours.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

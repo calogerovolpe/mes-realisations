@@ -1,7 +1,8 @@
 # activeContext.md
 
-Jalon en cours : J4 terminé (liaisons entre réalisations + identité visuelle).
-Prochain jalon : J5 (parcours).
+Jalon en cours : J5 réalisé (page parcours créée et poussée ; build GitHub Pages
+ralenti, vérification en ligne en cours). Prochain jalon : J6 (contact, mentions
+légales, finitions).
 
 Dernière action : J4 terminé, en deux volets.
 
@@ -39,17 +40,24 @@ Rappel technique (exécutions antérieures) : documents sources lus sans Word (D
 via le XML interne, PDF via pypdf) ; captures J3a par la fenêtre Word (PrintWindow),
 captures J3b et J4 par rendu PDF (PyMuPDF) + Pillow.
 
-Prochaine action : J5 — parcours.html (présentation et version imprimable en CV).
-Contenu CV à fournir par le propriétaire (ou trame neutre à compléter).
+Dernière action : J5 — parcours.html créée (CV) à partir de « Cv Volpe.pdf »
+(texte extrait via pypdf) et des compétences démontrées par le portfolio.
+Numéros de téléphone et adresse postale retirés ; nom « Calogero Volpe » limité
+à cette page ; e-mail de contact unique publié sur la page.
+
+Prochaine action : J6 — contact.html (formulaire via service tiers + case de
+consentement obligatoire), mentions-legales.html (citant le service tiers et
+rappelant « assistées par IA, relues et corrigées ») et finitions.
 
 Points ouverts
 
 - Adresse e-mail de contact non fournie : le pied de page pointe provisoirement
   vers contact.html (page créée en J6). Aucune adresse inventée.
-- Pages parcours.html, contact.html et mentions-legales.html pas encore créées
-  (J5 et J6). Les liens vers ces pages pointent vers des cibles inexistantes.
-  La page 404.html est en place (statut 404 + contenu personnalisé, vérifié en
-  ligne) ; un marqueur .nojekyll a été ajouté à la racine du dépôt.
+- Pages contact.html et mentions-legales.html pas encore créées (J6) ; leurs
+  liens pointent encore vers des cibles inexistantes. La page 404.html est en
+  place (statut 404 + contenu personnalisé) ; un marqueur .nojekyll est présent.
+- Build GitHub Pages ralenti (file d'attente) : parcours.html est resté en 404
+  plusieurs minutes après le push.
 - ANCHORARRAY est écrit tel quel (opérateur de plage déversée) ; aucune traduction
   française imposée.
 - Le document Eathic intitule « optimiste » la page de calcul du ROI du scénario
