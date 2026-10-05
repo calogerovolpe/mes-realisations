@@ -89,6 +89,56 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   padding: 2.5rem 1.25rem 3rem;
 }
 
+/* Texte réservé aux lecteurs d'écran (structure accessible sans bruit visuel) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Cartes de sections (accueil) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+.card {
+  display: block;
+  padding: 1.25rem 1.25rem 1.35rem;
+  border: 1px solid var(--filet);
+  background: var(--papier-2);
+  color: var(--encre);
+  text-decoration: none;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.card-title {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+.card-text {
+  display: block;
+  color: var(--encre-douce);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* Pied de page */
 .site-footer {
   border-top: 1px solid var(--filet);
