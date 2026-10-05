@@ -10,9 +10,10 @@
       « L'Appartement » (investissement, financement, BFR)
 - [x] J3a — Business plan gabarit : business-plan.html + étude 01
 - [x] J3b — Business plan suite : études 02, 03 et 04
-- [ ] J4 — Parcours + identité visuelle : parcours.html, version imprimable,
-      design-charte.html
-- [ ] J5 — Contact et finitions : contact.html, mentions-legales.html,
+- [x] J4 — Liaisons et identité visuelle : navigation croisée business plans ↔
+      modèles Excel ↔ charte, design-charte.html (Casa Urpi)
+- [ ] J5 — Parcours : parcours.html (présentation et version imprimable en CV)
+- [ ] J6 — Contact et finitions : contact.html, mentions-legales.html,
       404.html, test mobile, contrôle final des noms interdits
 
 ## Journal
@@ -71,6 +72,16 @@
   des enseignes réelles. Concurrents réels désignés génériquement, sans nom ni
   jugement. Détails de charges (loyers, salaires, échéanciers) maintenus en images ;
   chiffres limités aux valeurs explicites des documents. En ligne, vérifié (HTTP 200).
+- 2026-10-05 · J4 · Deux volets. (1) Liaisons : composant « dossier lié » (CSS
+  .dossier, .card-meta) et navigation croisée — bp-etude-01 ↔ excel-modele-01,
+  bp-etude-02 ↔ excel-modele-03, excel-modele-02 ↔ design-charte.html ; mentions
+  « associé » sur les cartes des sommaires. (2) Identité visuelle : design-charte.html
+  (marque Casa Urpi) créée à partir de « Charte graphique.pdf » (15 pages) ; quatre
+  planches JPEG < 300 Ko (logo, palette, déclinaisons, typographies) recadrées pour
+  retirer l'en-tête (e-mail, URL casaurpi.fr, numéro de page) ; palette et
+  typographies en tableaux de synthèse. Nouveaux fichiers non publiés : « Charte
+  graphique lilot calin.pdf » (marque réelle apparente, hors liste autorisée) et
+  « Faisa 2 epinay… » (travail en cours, scanné). En ligne, vérifié (HTTP 200).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
