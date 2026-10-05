@@ -4,7 +4,7 @@
       dépôt GitHub public, GitHub Pages activé, index.html minimal en ligne
 - [x] J1 — Accueil : index.html complet (présentation, quatre cartes de
       section, pied de page imposé), responsive
-- [ ] J2a — Excel gabarit : excel.html + modèle 01 avec onglets CSS
+- [x] J2a — Excel gabarit : excel.html + modèle 01 avec onglets CSS
 - [ ] J2b — Excel suite : modèles 02 et 03 par duplication du gabarit
 - [ ] J3a — Business plan gabarit : business-plan.html + étude 01
 - [ ] J3b — Business plan suite : études 02 et 03
@@ -19,6 +19,10 @@
 - 2026-10-05 · J1 · Accueil enrichi : présentation, quatre cartes de section
   (Excel, business plans, identité visuelle, parcours), pied de page imposé
   conservé. Lien « Contact » conservé (adresse e-mail non fournie). En ligne.
+- 2026-10-05 · J2a · Sommaire Excel (excel.html) et page modèle 01
+  (excel-modele-01-rentabilite.html) créés, avec onglets en CSS pur et deux
+  tableaux de synthèse. Quatre captures générées depuis le classeur source via
+  automatisation Excel ; le détail charges/loyers/financement reste en images.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
