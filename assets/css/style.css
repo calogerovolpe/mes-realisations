@@ -340,6 +340,73 @@ figcaption {
   color: var(--encre-douce);
 }
 
+/* Formulaire de contact */
+.form {
+  margin: 1.5rem 0 0;
+  max-width: 34rem;
+}
+.form-champ { margin: 0 0 1.1rem; }
+.form-champ label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--encre);
+}
+.form-champ input[type="text"],
+.form-champ input[type="email"],
+.form-champ textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--encre);
+  font: inherit;
+  font-size: 1rem;
+}
+.form-champ input:focus-visible,
+.form-champ textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.form-champ textarea { resize: vertical; }
+.form-consentement {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.form-consentement input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+.form-consentement label {
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.form button {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--accent);
+  cursor: pointer;
+}
+.form button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.form button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* Petits écrans */
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }

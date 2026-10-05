@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Mes réalisations</title>
+<meta name="description" content="Formulaire de contact du portfolio : études de marché, business plans, modèles financiers Excel et identité visuelle. Écrire pour demander des précisions sur les travaux présentés.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">Mes réalisations</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="excel.html">Excel</a></li>
+        <li><a href="business-plan.html">Business plans</a></li>
+        <li><a href="design-charte.html">Identité visuelle</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+  <p class="fil-ariane"><a href="index.html">Accueil</a> — Contact</p>
+  <h1>Contact</h1>
+  <p>Pour toute question sur les travaux présentés — études de marché, business plans, modèles financiers ou identité visuelle — les échanges se font par e-mail ou par le formulaire ci-dessous.</p>
+
+  <h2>Écrire par e-mail</h2>
+  <p>Calogero Volpe — <a href="mailto:bx.volpe@gmail.com">bx.volpe@gmail.com</a></p>
+
+  <h2>Formulaire de contact</h2>
+  <p>Les champs « Nom », « E-mail » et « Message » sont obligatoires.</p>
+  <!-- Formulaire traité par le service tiers Formspree. Remplacer VOTRE_ID par l'identifiant du formulaire. -->
+  <form class="form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+    <input type="hidden" name="_subject" value="Contact — portfolio mes-realisations">
+    <div class="form-champ">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" autocomplete="name" required>
+    </div>
+    <div class="form-champ">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+    </div>
+    <div class="form-champ">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+    <div class="form-champ form-consentement">
+      <input type="checkbox" id="consentement" name="consentement" value="oui" required>
+      <label for="consentement">J'accepte que les informations saisies soient transmises à un service tiers (Formspree) dans le seul but de répondre à ma demande. Aucune donnée n'est conservée sur ce site ni revendue. Voir les <a href="mentions-legales.html">mentions légales</a>.</label>
+    </div>
+    <div class="form-champ">
+      <button type="submit">Envoyer</button>
+    </div>
+  </form>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>Portfolio personnel — © 2026. Exercices d'analyse et de modélisation financière réalisés à titre personnel. Noms commerciaux inventés ; études menées sur des marchés, emplacements et concurrents réels. Données issues de sources publiques et de catalogues fournisseurs. Automatisations VBA assistées par IA, relues et corrigées. Dossier complet présentable en entretien sur demande.</p>
+    <p><a href="mentions-legales.html">Mentions légales</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+</body>
+</html>
