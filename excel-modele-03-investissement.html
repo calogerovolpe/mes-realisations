@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'Appartement — investissement, financement et BFR — Mes réalisations</title>
+<meta name="description" content="Exercice de modélisation : plan d'investissement, plan de financement et besoin en fonds de roulement d'un café-restaurant multi-moments, avec prévisionnel d'exploitation et tableaux croisés dynamiques.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">Mes réalisations</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="excel.html" aria-current="page">Excel</a></li>
+        <li><a href="business-plan.html">Business plans</a></li>
+        <li><a href="design-charte.html">Identité visuelle</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+  <p class="fil-ariane"><a href="excel.html">Excel</a> — Modèle 03</p>
+  <h1>L'Appartement — investissement, financement et besoin en fonds de roulement</h1>
+  <p>Exercice de modélisation financière : bâtir le plan d'investissement et de financement d'un café-restaurant multi-moments, calculer le besoin en fonds de roulement et vérifier l'équilibre prévisionnel de l'exploitation. <em>L'Appartement est un nom de marque inventé.</em></p>
+
+  <h2>Contexte</h2>
+  <p>Un dossier d'ouverture se joue sur deux équations : ce qu'il faut investir au départ et ce que l'exploitation dégagera ensuite. L'objectif était de relier, dans un même classeur, les hypothèses d'exploitation, le coût matière des produits, le plan de financement et le bilan prévisionnel, afin de mesurer l'équilibre entre recettes, dépenses et besoin de trésorerie.</p>
+
+  <h2>Méthode</h2>
+  <p>Le classeur regroupe plusieurs blocs reliés entre eux :</p>
+  <ul>
+    <li>paramètres d'exploitation : jours d'ouverture par mois et couverts par jour, répartis entre les trois moments de la journée ;</li>
+    <li>menu et base d'articles : chaque produit de la carte est relié à ses ingrédients et à leurs prix d'achat, eux-mêmes issus de catalogues fournisseurs réels (Rungis Market, Aventure Bio, Mozzalat, Compos-table) ;</li>
+    <li>grille de ventes : quantités par jour, semaine et mois, coefficient appliqué, prix de vente HT et TTC, et marge par produit ;</li>
+    <li>bilan prévisionnel : recettes, frais fixes, frais variables, impôt et résultat net ;</li>
+    <li>plan de financement : investissement matériel, immobilisations incorporelles et corporelles, besoin en fonds de roulement et ressources ;</li>
+    <li>personnel : masse salariale selon le statut de la société ;</li>
+    <li>analyse des données par deux tableaux croisés dynamiques.</li>
+  </ul>
+  <p>Le modèle est relié à un classeur externe de données, afin d'éviter de ressaisir les prix des articles.</p>
+  <figure>
+    <img src="assets/img/excel-03-synthese.png" alt="Feuille de synthèse : chiffre d'affaires, sorties et bénéfice net, mensuels et annuels.">
+    <figcaption>Feuille de synthèse : chiffre d'affaires, sorties et bénéfice net, en mensuel et en annuel.</figcaption>
+  </figure>
+
+  <h2>Résultat</h2>
+  <p>Les tableaux ci-dessous reprennent la synthèse prévisionnelle et les hypothèses de fréquentation issues du modèle (26 jours d'ouverture par mois).</p>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Synthèse prévisionnelle de l'exploitation</caption>
+      <thead>
+        <tr><th scope="col">Indicateur</th><th scope="col">Mensuel</th><th scope="col">Annuel</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Chiffre d'affaires</th><td>25 001,64 €</td><td>300 019,65 €</td></tr>
+        <tr><th scope="row">Sorties (dépenses totales)</th><td>19 243,19 €</td><td>230 918,31 €</td></tr>
+        <tr><th scope="row">Bénéfice net après impôt</th><td>4 318,83 €</td><td>51 826,01 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Répartition des couverts par moment</caption>
+      <thead>
+        <tr><th scope="col">Moment</th><th scope="col">Couverts par jour</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Matin</th><td>40</td></tr>
+        <tr><th scope="row">Midi</th><td>40</td></tr>
+        <tr><th scope="row">Soir</th><td>30</td></tr>
+        <tr><th scope="row">Total</th><td>110</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Captures du modèle</h2>
+  <div class="tabs">
+    <input type="radio" name="onglet-modele-03" id="t1" class="tab-radio" checked>
+    <input type="radio" name="onglet-modele-03" id="t2" class="tab-radio">
+    <input type="radio" name="onglet-modele-03" id="t3" class="tab-radio">
+    <input type="radio" name="onglet-modele-03" id="t4" class="tab-radio">
+    <div class="tab-nav">
+      <label for="t1">Paramètres</label>
+      <label for="t2">Menu et ventes</label>
+      <label for="t3">Bilan, financement, personnel</label>
+      <label for="t4">Formules</label>
+    </div>
+    <div class="tab-panels">
+      <section class="tab-panel tab-1">
+        <figure>
+          <img src="assets/img/excel-03-parametres.png" alt="Paramètres de fréquentation : couverts par moment de la journée (matin, midi, soir).">
+          <figcaption>Paramètres de fréquentation : couverts par moment de la journée.</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-2">
+        <figure>
+          <img src="assets/img/excel-03-menu.png" alt="Feuille de menu : produits, ingrédients, unités, quantités et prix d'achat.">
+          <figcaption>Menu : produits, ingrédients et coûts d'achat.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-03-ventes.png" alt="Grille de ventes : quantités, coût matière, prix de vente et marge par produit.">
+          <figcaption>Grille de ventes : quantités, coût matière, prix de vente et marge.</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-3">
+        <figure>
+          <img src="assets/img/excel-03-bilan.png" alt="Bilan prévisionnel : recettes, frais fixes, frais variables, impôt et résultat.">
+          <figcaption>Bilan prévisionnel : recettes, dépenses et résultat.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-03-financement.png" alt="Plan de financement : investissement matériel et immobilisations incorporelles et corporelles.">
+          <figcaption>Plan de financement : investissement et immobilisations.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-03-personnels.png" alt="Masse salariale selon le statut de la société.">
+          <figcaption>Personnel : masse salariale selon le statut de la société.</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-4">
+        <figure>
+          <img src="assets/img/excel-03-formules.png" alt="Feuille de menu avec les formules affichées : recherche et renvois vers la base d'articles.">
+          <figcaption>Menu avec les formules affichées.</figcaption>
+        </figure>
+      </section>
+    </div>
+  </div>
+
+  <h2 id="formules">Fonctions et formules utilisées</h2>
+  <p>Le classeur combine recherche, conditions, agrégation et lecture de données :</p>
+  <ul class="formules-liste">
+    <li id="f-recherchex"><code>RECHERCHEX</code> — récupération, pour chaque ingrédient, du marché d'achat, de l'unité et du prix dans la base d'articles.</li>
+    <li id="f-si"><code>SI</code> — application de conditions dans le calcul des ventes et des coefficients.</li>
+    <li id="f-somme"><code>SOMME</code> — agrégation des coûts matière, des quantités et des totaux d'exploitation.</li>
+    <li id="f-arrondi"><code>ARRONDI</code> — arrondi des prix et des coefficients d'exploitation.</li>
+    <li id="f-lien"><code>LIEN_HYPERTEXTE</code> — création de liens cliquables dans le classeur.</li>
+    <li id="tcd">Tableaux croisés dynamiques — 2 analyses croisées issues du modèle : nombre d'articles par catégorie, puis quantités et coûts par semaine et par mois. Ces vues s'appuient sur la base d'articles et de commandes, non publiée en capture afin de ne pas exposer les données fournisseurs.</li>
+  </ul>
+
+  <h2>Ce que cela démontre</h2>
+  <p>Construction d'un dossier d'investissement complet : plan d'investissement, besoin en fonds de roulement, financement et prévisionnel d'exploitation reliés entre eux. Lecture d'un dossier financier de bout en bout, du chiffre d'affaires prévisionnel au résultat net, et analyse des données par tableaux croisés dynamiques.</p>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>Portfolio personnel — © 2026. Exercices d'analyse et de modélisation financière réalisés à titre personnel. Noms commerciaux inventés ; études menées sur des marchés, emplacements et concurrents réels. Données issues de sources publiques et de catalogues fournisseurs. Automatisations VBA assistées par IA, relues et corrigées. Dossier complet présentable en entretien sur demande.</p>
+    <p><a href="mentions-legales.html">Mentions légales</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+</body>
+</html>
