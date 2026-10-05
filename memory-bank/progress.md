@@ -116,6 +116,7 @@
   style unique. Correction de confidentialité : le nom du propriétaire ne figure
   plus dans le memory-bank ; recherche des noms interdits hors /docs et
   .clinerules : aucune occurrence en dehors de parcours.html et contact.html.
+  Vérifié en ligne (HTTP 200 : accueil, parcours, contact, mentions).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

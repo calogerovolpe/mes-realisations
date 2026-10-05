@@ -1,8 +1,9 @@
 # activeContext.md
 
 Jalon en cours : J6 réalisé (contact.html et mentions-legales.html créés,
-finitions effectuées, mémoire corrigée). Prochain jalon : aucun — le portfolio
-est complet et à valider par le propriétaire.
+finitions effectuées, mémoire corrigée) et vérifié en ligne (HTTP 200).
+Prochain jalon : aucun — le portfolio est complet et à valider par le
+propriétaire.
 
 Dernière action : J4 terminé, en deux volets.
 
