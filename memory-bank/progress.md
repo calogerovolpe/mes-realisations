@@ -13,8 +13,8 @@
 - [x] J4 — Liaisons et identité visuelle : navigation croisée business plans ↔
       modèles Excel ↔ charte, design-charte.html (Casa Urpi)
 - [x] J5 — Parcours : parcours.html (présentation et version imprimable en CV)
-- [ ] J6 — Contact et finitions : contact.html, mentions-legales.html,
-      404.html, test mobile, contrôle final des noms interdits
+- [x] J6 — Contact et finitions : contact.html, mentions-legales.html,
+      test mobile, contrôle final des noms interdits
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -89,15 +89,15 @@
   (statut 404 avec contenu personnalisé). Reste pour J6 : contact.html (formulaire
   tiers + consentement), mentions-legales.html (en attente de l'e-mail et du
   service de formulaire) et finitions.
-- 2026-10-05 · J5 · Page parcours.html créée (CV) à partir de « Cv Volpe.pdf »
+- 2026-10-05 · J5 · Page parcours.html créée (CV) à partir du document de CV
   (texte extrait via pypdf) et des compétences démontrées par le portfolio :
   compétences administratives et techniques, savoir-être, formation, expérience
   professionnelle, langues, centres d'intérêt, travaux présentés et contact.
-  Retirés car interdits : numéros de téléphone et adresse postale. Nom
-  « Calogero Volpe » limité à parcours.html (vérifié : nulle part ailleurs).
-  E-mail de contact unique (celui du CV) publié sur la page. Mise en page
-  imprimable gérée par la règle @media print existante. Poussé ; propagation
-  du build GitHub Pages ralentie (file d'attente), vérification en ligne en cours.
+  Retirés car interdits : numéros de téléphone et adresse postale. Le nom du
+  propriétaire est limité à parcours.html et contact.html ; le memory-bank n'en
+  comporte plus aucune mention (correction apportée en J6). E-mail de contact
+  unique (celui du CV) publié sur la page. Mise en page imprimable gérée par la
+  règle @media print existante.
 - 2026-10-05 · Incident GitHub · Le déploiement (page parcours et mémoire) est
   bloqué par une panne GitHub Actions déclarée « critical » (incident ouvert à
   19:11 UTC : « job failures and delays affecting GitHub-hosted runner assignment
@@ -105,6 +105,17 @@
   file, plusieurs builds ayant été annulés ou laissés en attente. Ce n'est pas un
   défaut du dépôt : le fichier est bien présent (raw 200) et se déploiera à la
   reprise du service.
+- 2026-10-06 · Incident GitHub résolu · GitHub Actions repassé en état
+  « operational » ; le build du commit J6 publie l'ensemble des pages, y compris
+  parcours.html resté en file d'attente.
+- 2026-10-06 · J6 · contact.html (formulaire via service tiers Formspree + case de
+  consentement obligatoire, e-mail de contact unique) et mentions-legales.html
+  (éditeur, hébergeur GitHub Pages, propriété intellectuelle, données personnelles
+  et confidentialité, assistance IA « assistées par IA, relues et corrigées »,
+  absence de téléchargement) créés. Styles de formulaire ajoutés à la feuille de
+  style unique. Correction de confidentialité : le nom du propriétaire ne figure
+  plus dans le memory-bank ; recherche des noms interdits hors /docs et
+  .clinerules : aucune occurrence en dehors de parcours.html et contact.html.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
