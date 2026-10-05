@@ -310,6 +310,36 @@ figcaption {
   font-size: 0.95em;
 }
 
+/* Lien vers une réalisation liée (dossier) */
+.dossier {
+  margin: 1.5rem 0 2rem;
+  padding: 0.75rem 1rem 0.85rem;
+  border: 1px solid var(--filet);
+  border-left: 2px solid var(--accent);
+  background: var(--accent-fond);
+}
+.dossier-label {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+  margin-bottom: 0.3rem;
+}
+.dossier-link { display: block; color: var(--accent); }
+.dossier-link + .dossier-link { margin-top: 0.35rem; }
+
+/* Mention discrète sur les cartes de sommaire */
+.card-meta {
+  display: block;
+  margin-top: 0.7rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--filet);
+  font-size: 0.82rem;
+  color: var(--encre-douce);
+}
+
 /* Petits écrans */
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
