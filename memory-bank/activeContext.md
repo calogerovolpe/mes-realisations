@@ -56,8 +56,10 @@ Points ouverts
 - Pages contact.html et mentions-legales.html pas encore créées (J6) ; leurs
   liens pointent encore vers des cibles inexistantes. La page 404.html est en
   place (statut 404 + contenu personnalisé) ; un marqueur .nojekyll est présent.
-- Build GitHub Pages ralenti (file d'attente) : parcours.html est resté en 404
-  plusieurs minutes après le push.
+- Déploiement bloqué par une panne GitHub Actions (incident « critical » ouvert
+  le 05/10 à 19:11 UTC : assignation des runners et démarrage des workflows
+  retardés). Ce n'est pas un défaut du dépôt : parcours.html est bien présent
+  dans le dépôt (raw 200) et se déploiera à la reprise du service.
 - ANCHORARRAY est écrit tel quel (opérateur de plage déversée) ; aucune traduction
   française imposée.
 - Le document Eathic intitule « optimiste » la page de calcul du ROI du scénario

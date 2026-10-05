@@ -98,6 +98,13 @@
   E-mail de contact unique (celui du CV) publié sur la page. Mise en page
   imprimable gérée par la règle @media print existante. Poussé ; propagation
   du build GitHub Pages ralentie (file d'attente), vérification en ligne en cours.
+- 2026-10-05 · Incident GitHub · Le déploiement (page parcours et mémoire) est
+  bloqué par une panne GitHub Actions déclarée « critical » (incident ouvert à
+  19:11 UTC : « job failures and delays affecting GitHub-hosted runner assignment
+  and workflow start times »). Les jobs « pages build and deployment » restent en
+  file, plusieurs builds ayant été annulés ou laissés en attente. Ce n'est pas un
+  défaut du dépôt : le fichier est bien présent (raw 200) et se déploiera à la
+  reprise du service.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
