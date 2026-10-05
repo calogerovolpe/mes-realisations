@@ -6,7 +6,8 @@
       section, pied de page imposé), responsive
 - [x] J2a — Excel gabarit : excel.html (sommaire + index des fonctions) et
       modèle 01 « Mensana » avec onglets CSS
-- [ ] J2b — Excel suite : modèles 02 et 03 par duplication du gabarit
+- [x] J2b — Excel suite : modèle 02 « Casa Urpi » (coût matière) et modèle 03
+      « L'Appartement » (investissement, financement, BFR)
 - [ ] J3a — Business plan gabarit : business-plan.html + étude 01
 - [ ] J3b — Business plan suite : études 02 et 03
 - [ ] J4 — Parcours + identité visuelle : parcours.html, version imprimable,
@@ -31,6 +32,16 @@
   coloré léger sur l'onglet actif) ; captures régénérées. Feuilles sensibles
   (Actionnaires, Financement de départ, Personnel, Planning, Liste d'ingredients)
   exclues des textes et des captures publiées.
+- 2026-10-05 · J2b · Pages excel-modele-02-cout-matiere.html (marque « Casa Urpi »)
+  et excel-modele-03-investissement.html (marque « L'Appartement ») créées à
+  partir des classeurs « Fiche technique » (.xlsx et .xlsm) et « Epinay
+  L'appartement.xlsx ». Treize captures générées depuis les feuilles sûres via
+  automatisation Excel. Feuilles exclues non publiées : Mercuriale (URLs
+  fournisseurs, prénom interdit) ; Articles, Commande et Actionnaires (URLs,
+  prénoms interdits, apports/dividendes/prêts). Les 2 tableaux croisés dynamiques
+  du modèle 03 sont décrits mais non capturés (hébergés sur Articles et Commande).
+  Lien externe du modèle 03 non publié (mention générique). Ancres de l'index des
+  fonctions d'excel.html activées. En ligne, vérifié.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

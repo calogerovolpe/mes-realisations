@@ -1,37 +1,38 @@
 # activeContext.md
 
-Jalon en cours : J2b — Excel suite (J2a terminé).
+Jalon en cours : J3a — Business plan gabarit (J2b terminé).
 
-Dernière action : J2a révisé. Le modèle 01 est refondu sur « Mensana -
-SMALL.xlsx » (remplace « Calcul (100 couverts) »). excel-modele-01-rentabilite.html
-reconstruite : deux tableaux de synthèse (fréquentation ; projection sur cinq
-ans), quatre onglets en CSS pur, liste des fonctions et des tableaux croisés
-dynamiques. excel.html enrichi d'un index des fonctions cliquable. Onglets
-retravaillés : l'onglet actif a un fond de couleur léger. Six captures
-régénérées depuis Mensana. Feuilles sensibles non publiées : Actionnaires,
-Financement de départ, Personnel, Planning, Liste d'ingredients (noms interdits,
-URLs fournisseurs, montants et planning nominatif).
+Dernière action : J2b terminé. Deux pages créées : modèle 02 « Casa Urpi —
+fiches techniques et coût matière » (RECHERCHEX, FILTRE, TRIER, UNIQUE,
+ANCHORARRAY, SIERREUR, LIEN_HYPERTEXTE, SOMME ; le classeur existe aussi en
+.xlsm avec une macro d'impression) et modèle 03 « L'Appartement — investissement,
+financement et BFR » (RECHERCHEX, SI, SOMME, ARRONDI, LIEN_HYPERTEXTE, 2 tableaux
+croisés dynamiques). Treize captures générées depuis les feuilles sûres via
+automatisation Excel. Feuilles exclues non publiées : Mercuriale (URLs
+fournisseurs, prénom interdit) pour le modèle 02 ; Articles, Commande et
+Actionnaires (URLs, prénoms interdits, apports/dividendes/prêts) pour le
+modèle 03. Les 2 TCD du modèle 03 sont décrits mais non capturés (hébergés sur
+les feuilles Articles et Commande). Toutes les ancres de l'index des fonctions
+d'excel.html sont désormais résolues.
 
 Décision de confidentialité : le dossier .clinerules/ (qui contient des noms
 réels à interdire) et le dossier /docs/ sont exclus de la publication via
 .gitignore. Le dépôt public ne contient que .gitignore, README.md, index.html,
 les pages HTML, assets/ et memory-bank/.
 
-Prochaine action : modèles 02 (coût matière — Casa Urpi : RECHERCHEX, FILTRE,
-TRIER, UNIQUE, ANCHORARRAY, SIERREUR, LIEN_HYPERTEXTE) et 03 (investissement —
-L'Appartement : RECHERCHEX, SI, 2 tableaux croisés dynamiques, lien externe non
-publié), puis activation des ancres de l'index des fonctions.
+Prochaine action : J3a — business-plan.html (sommaire portant la phrase
+d'introduction imposée) et étude 01 (bp-etude-01-restauration-saine.html, marque
+« Mensana »), à partir de « Business plan court.pdf ».
 
 Points ouverts
 
 - Adresse e-mail de contact non fournie : le pied de page pointe provisoirement
   vers contact.html (page créée en J5). Aucune adresse inventée.
 - Pages business-plan.html, design-charte.html, parcours.html, contact.html,
-  mentions-legales.html, 404.html pas encore créées ; excel-modele-02 et
-  excel-modele-03 à créer en J2b. Les liens de l'index des fonctions vers ces
+  mentions-legales.html, 404.html pas encore créées (J3 à J5). Les liens vers ces
   pages pointent pour l'instant vers des cibles inexistantes.
-- Nom français exact de la fonction ANCHORARRAY à confirmer à la création du
-  modèle 02.
+- ANCHORARRAY est écrit tel quel (nom de l'opérateur de plage déversée) ;
+  aucune traduction française imposée.
 - Captures générées automatiquement : à vérifier visuellement par le propriétaire
   (cadrage serré, aucune donnée interdite lisible).
 
