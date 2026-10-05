@@ -83,9 +83,12 @@
   graphique lilot calin.pdf » (marque réelle apparente, hors liste autorisée) et
   « Faisa 2 epinay… » (travail en cours, scanné). En ligne, vérifié (HTTP 200).
 - 2026-10-05 · J6 (partiel) · Page 404.html créée (message « Page introuvable »
-  et quatre cartes de retour vers les sections du portfolio). Reste pour J6 :
-  contact.html (formulaire tiers + consentement), mentions-legales.html
-  (en attente de l'e-mail et du service de formulaire) et finitions.
+  et quatre cartes de retour vers les sections du portfolio) et marqueur .nojekyll
+  ajouté (site statique, sans traitement Jekyll). Deux builds GitHub Pages annulés
+  après des pushes rapprochés ; build final réussi. Page 404 vérifiée en ligne
+  (statut 404 avec contenu personnalisé). Reste pour J6 : contact.html (formulaire
+  tiers + consentement), mentions-legales.html (en attente de l'e-mail et du
+  service de formulaire) et finitions.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

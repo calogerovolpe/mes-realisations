@@ -48,7 +48,8 @@ Points ouverts
   vers contact.html (page créée en J6). Aucune adresse inventée.
 - Pages parcours.html, contact.html et mentions-legales.html pas encore créées
   (J5 et J6). Les liens vers ces pages pointent vers des cibles inexistantes.
-  La page 404.html est en place.
+  La page 404.html est en place (statut 404 + contenu personnalisé, vérifié en
+  ligne) ; un marqueur .nojekyll a été ajouté à la racine du dépôt.
 - ANCHORARRAY est écrit tel quel (opérateur de plage déversée) ; aucune traduction
   française imposée.
 - Le document Eathic intitule « optimiste » la page de calcul du ROI du scénario
