@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modèle de rentabilité — 100 couverts — Mes réalisations</title>
-<meta name="description" content="Exercice de modélisation financière : modèle de rentabilité prévisionnelle d'une salle de 100 couverts, en trois scénarios d'activité (22, 26 et 30 jours).">
+<title>Mensana — modèle d'exploitation et de rentabilité — Mes réalisations</title>
+<meta name="description" content="Exercice de modélisation : modèle d'exploitation complet d'un restaurant de restauration saine (couverts, coût matière, ventes, bénéfice, prévisionnel sur cinq ans, tableaux croisés dynamiques).">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -25,95 +25,119 @@
 </header>
 <main class="site-main">
   <p class="fil-ariane"><a href="excel.html">Excel</a> — Modèle 01</p>
-  <h1>Modèle de rentabilité — 100 couverts</h1>
-  <p>Exercice de modélisation financière : construire un modèle de rentabilité prévisionnelle pour une salle de 100 couverts, décliné en trois scénarios d'activité (22, 26 et 30 jours ouvrés par mois).</p>
+  <h1>Mensana — modèle d'exploitation et de rentabilité</h1>
+  <p>Exercice de modélisation financière : reconstituer l'exploitation prévisionnelle complète d'un restaurant de restauration saine, du coût matière au prévisionnel sur cinq ans. <em>Mensana est un nom de marque inventé.</em></p>
 
   <h2>Contexte</h2>
-  <p>L'objectif de l'exercice était de chiffrer une journée type d'activité (matin, midi, après-midi) et de mesurer la sensibilité du résultat au nombre de jours d'ouverture par mois. Le modèle relie les données de fréquentation, le coût matière des recettes, la grille de ventes et les charges d'exploitation.</p>
+  <p>L'objectif était de bâtir un modèle unique reliant la fréquentation, le coût matière des recettes, la grille de ventes, les charges d'exploitation, le personnel et le financement, afin d'établir un compte de résultat prévisionnel et une projection sur cinq ans.</p>
 
   <h2>Méthode</h2>
-  <p>Le classeur regroupe plusieurs blocs liés par des formules :</p>
+  <p>Le classeur regroupe plusieurs blocs reliés entre eux :</p>
   <ul>
-    <li>paramètres d'ouverture : horaires, couverts par tranche et ratios de fréquentation ;</li>
-    <li>catalogue de recettes et coût matière par plat, à partir de prix fournisseurs sourcés ;</li>
-    <li>grille de ventes par tranche horaire et par produit ;</li>
-    <li>masse salariale et planning de présence ;</li>
-    <li>charges fixes et service de financement ;</li>
-    <li>synthèse des résultats par période et par scénario.</li>
+    <li>paramètres de fréquentation : couverts répartis entre emporté et livraison, et répartition du menu ;</li>
+    <li>catalogue d'ingrédients sourcés et fiches techniques : calcul du coût matière par recette ;</li>
+    <li>grille de ventes : quantités par plat, coefficient appliqué et marge brute ;</li>
+    <li>calcul des bénéfices : charges variables et invariables, seuil de rentabilité ;</li>
+    <li>bénéfice prévisionnel : projection mensuelle et annuelle sur cinq ans ;</li>
+    <li>personnel : masse salariale et planning de présence ;</li>
+    <li>financement de départ : besoin d'investissement et de fonds de roulement ;</li>
+    <li>analyse des données par tableaux croisés dynamiques.</li>
   </ul>
   <figure>
-    <img src="assets/img/excel-rentabilite-hypotheses.png" alt="Feuille de paramètres du modèle Excel : horaires, couverts et ratios de fréquentation.">
-    <figcaption>Feuille de paramètres : horaires, couverts et ratios de fréquentation.</figcaption>
+    <img src="assets/img/excel-01-parametres.png" alt="Feuille de paramètres du modèle : couverts et répartition du menu.">
+    <figcaption>Feuille de paramètres : couverts et répartition du menu.</figcaption>
   </figure>
 
   <h2>Résultat</h2>
-  <p>Les tableaux ci-dessous reprennent les totaux de synthèse du modèle.</p>
+  <p>Les tableaux ci-dessous reprennent les hypothèses de fréquentation et la projection prévisionnelle issues du modèle.</p>
   <div class="table-wrap">
     <table class="table">
-      <caption>Journée type — totaux par période</caption>
+      <caption>Fréquentation retenue</caption>
       <thead>
-        <tr><th scope="col">Période</th><th scope="col">Coûts totaux</th><th scope="col">Revenus HTVA</th><th scope="col">Différence HTVA</th><th scope="col">Total + TVA</th></tr>
+        <tr><th scope="col">Canal</th><th scope="col">Couverts</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Matin</th><td>179,68 €</td><td>612,01 €</td><td>432,33 €</td><td>670,60 €</td></tr>
-        <tr><th scope="row">Midi</th><td>506,01 €</td><td>1 552,06 €</td><td>1 046,06 €</td><td>2 922,30 €</td></tr>
-        <tr><th scope="row">Après-midi</th><td>181,29 €</td><td>657,41 €</td><td>476,13 €</td><td>733,50 €</td></tr>
-        <tr><th scope="row">Total</th><td>866,97 €</td><td>2 821,49 €</td><td>1 954,51 €</td><td>4 326,40 €</td></tr>
+        <tr><th scope="row">Emporté</th><td>70</td></tr>
+        <tr><th scope="row">Livraison</th><td>20</td></tr>
+        <tr><th scope="row">Total</th><td>90</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Projection prévisionnelle par année</caption>
+      <thead>
+        <tr><th scope="col">Année</th><th scope="col">Chiffre d'affaires</th><th scope="col">Bénéfice brut</th><th scope="col">Après impôts</th><th scope="col">Cumulé</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>352 683,76 €</td><td>106 141,94 €</td><td>79 606,46 €</td><td>79 606,46 €</td></tr>
+        <tr><th scope="row">2</th><td>370 317,95 €</td><td>111 449,04 €</td><td>83 586,78 €</td><td>163 193,23 €</td></tr>
+        <tr><th scope="row">3</th><td>388 833,84 €</td><td>117 021,49 €</td><td>87 766,12 €</td><td>250 959,35 €</td></tr>
+        <tr><th scope="row">4</th><td>408 275,54 €</td><td>122 872,56 €</td><td>92 154,42 €</td><td>343 113,77 €</td></tr>
+        <tr><th scope="row">5</th><td>428 689,31 €</td><td>129 016,19 €</td><td>96 762,14 €</td><td>439 875,92 €</td></tr>
       </tbody>
     </table>
   </div>
 
+  <h2>Captures du modèle</h2>
   <div class="tabs">
     <input type="radio" name="onglet-modele-01" id="t1" class="tab-radio" checked>
     <input type="radio" name="onglet-modele-01" id="t2" class="tab-radio">
     <input type="radio" name="onglet-modele-01" id="t3" class="tab-radio">
+    <input type="radio" name="onglet-modele-01" id="t4" class="tab-radio">
     <div class="tab-nav">
-      <label for="t1">Scénarios</label>
-      <label for="t2">Charges et résultat</label>
-      <label for="t3">Formules</label>
+      <label for="t1">Ventes et marges</label>
+      <label for="t2">Bénéfice et prévisionnel</label>
+      <label for="t3">Tableaux croisés dynamiques</label>
+      <label for="t4">Formules</label>
     </div>
     <div class="tab-panels">
       <section class="tab-panel tab-1">
-        <h3>Scénarios d'activité</h3>
-        <div class="table-wrap">
-          <table class="table">
-            <caption>Totaux mensuels selon le nombre de jours d'ouverture</caption>
-            <thead>
-              <tr><th scope="col">Scénario</th><th scope="col">Coûts totaux</th><th scope="col">Revenus HTVA</th><th scope="col">Différence HTVA</th><th scope="col">Total + TVA</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">22 jours</th><td>19 073,37 €</td><td>62 072,68 €</td><td>42 999,31 €</td><td>95 180,80 €</td></tr>
-              <tr><th scope="row">26 jours</th><td>22 541,26 €</td><td>73 358,62 €</td><td>50 817,36 €</td><td>112 486,40 €</td></tr>
-              <tr><th scope="row">30 jours</th><td>26 009,14 €</td><td>84 644,56 €</td><td>58 635,42 €</td><td>129 792,00 €</td></tr>
-            </tbody>
-          </table>
-        </div>
         <figure>
-          <img src="assets/img/excel-rentabilite-synthese.png" alt="Feuille de synthèse du modèle Excel : totaux par période et par scénario.">
-          <figcaption>Feuille de synthèse du classeur (totaux par période et par scénario).</figcaption>
+          <img src="assets/img/excel-01-ventes.png" alt="Feuille de ventes du modèle : quantités, coût matière, coefficient et marge brute par plat.">
+          <figcaption>Grille de ventes : quantités, coût matière, coefficient et marge brute par plat.</figcaption>
         </figure>
       </section>
       <section class="tab-panel tab-2">
-        <h3>Charges et résultat</h3>
-        <p>La feuille de résultat détaille les charges d'exploitation et le service de financement retenus pour chaque scénario. Ces éléments restent en capture d'écran.</p>
         <figure>
-          <img src="assets/img/excel-rentabilite-benefice.png" alt="Feuille de résultat du modèle Excel : revenus, charges d'exploitation et service de financement.">
-          <figcaption>Feuille de résultat : revenus, charges d'exploitation et financement.</figcaption>
+          <img src="assets/img/excel-01-benefice.png" alt="Feuille de calcul des bénéfices du modèle : revenus, charges et résultat.">
+          <figcaption>Calcul des bénéfices : revenus, charges et résultat.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-01-previsionnel.png" alt="Feuille de bénéfice prévisionnel : projection mensuelle.">
+          <figcaption>Bénéfice prévisionnel : projection mensuelle.</figcaption>
         </figure>
       </section>
       <section class="tab-panel tab-3">
-        <h3>Formules</h3>
-        <p>Vue du modèle avec les formules affichées, pour montrer la construction des calculs et les liaisons entre les feuilles.</p>
         <figure>
-          <img src="assets/img/excel-rentabilite-formules.png" alt="Feuille Excel avec les formules affichées.">
-          <figcaption>Affichage des formules d'une feuille de synthèse.</figcaption>
+          <img src="assets/img/excel-01-tcd.png" alt="Tableau croisé dynamique du modèle : analyse croisée des coûts.">
+          <figcaption>Tableau croisé dynamique : analyse croisée des coûts matière.</figcaption>
+        </figure>
+      </section>
+      <section class="tab-panel tab-4">
+        <figure>
+          <img src="assets/img/excel-01-formules.png" alt="Feuille du modèle avec les formules affichées.">
+          <figcaption>Affichage des formules d'une feuille de ventes.</figcaption>
         </figure>
       </section>
     </div>
   </div>
 
+  <h2 id="formules">Fonctions et formules utilisées</h2>
+  <p>Le classeur combine agrégations, arrondis, calculs horaires, lecture de tableaux croisés dynamiques et liaisons entre feuilles :</p>
+  <ul class="formules-liste">
+    <li id="f-somme"><code>SOMME</code> — agrégation des ventes, des coûts et des totaux par période ; utilisée aussi par les cœurs de tableaux croisés dynamiques.</li>
+    <li id="f-arrondi"><code>ARRONDI</code> — arrondi des prix et des coûts à l'unité commerciale.</li>
+    <li id="f-nbval"><code>NBVAL</code> — comptage des références actives d'une liste.</li>
+    <li id="f-temps"><code>TEMPS</code> — construction des plages horaires du planning.</li>
+    <li id="f-mod"><code>MOD</code> — découpage des horaires en tranches régulières.</li>
+    <li id="f-ligne"><code>LIGNE</code> — indexation des lignes pour lier les blocs entre eux.</li>
+    <li id="f-liredonnees"><code>LIREDONNEESTABCROISDYNAMIQUE</code> — lecture des résultats d'un tableau croisé dynamique.</li>
+    <li id="tcd">Tableaux croisés dynamiques — 9 analyses croisées du modèle (coûts matière, planning).</li>
+  </ul>
+
   <h2>Ce que cela démontre</h2>
-  <p>Maîtrise de la modélisation financière : construction d'un modèle complet, de la donnée fournisseur au résultat consolidé, et analyse de sensibilité par scénarios d'activité.</p>
+  <p>Construction d'un modèle d'exploitation complet et cohérent, du coût matière au prévisionnel pluriannuel. Maîtrise des tableaux croisés dynamiques et des fonctions d'agrégation et de calcul pour l'analyse de gestion.</p>
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">

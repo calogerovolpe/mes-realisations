@@ -8,6 +8,7 @@
   --encre: #26221d;
   --encre-douce: #5c554b;
   --accent: #8a4b2a;
+  --accent-fond: #f4e8de;
   --filet: #d8d0c2;
   --largeur: 60rem;
 }
@@ -206,34 +207,45 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tabs .tab-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
+  gap: 0.3rem;
   margin: 0 0 1.5rem;
   border-bottom: 1px solid var(--filet);
 }
 .tabs .tab-nav label {
   display: inline-block;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
   color: var(--encre-douce);
-  border-bottom: 2px solid transparent;
   cursor: pointer;
+  margin-bottom: -1px;
 }
-.tabs .tab-nav label:hover { color: var(--encre); }
+.tabs .tab-nav label:hover {
+  color: var(--encre);
+  background: var(--accent-fond);
+}
 .tabs .tab-panel { display: none; }
 .tabs #t1:checked ~ .tab-nav label[for="t1"],
 .tabs #t2:checked ~ .tab-nav label[for="t2"],
-.tabs #t3:checked ~ .tab-nav label[for="t3"] {
+.tabs #t3:checked ~ .tab-nav label[for="t3"],
+.tabs #t4:checked ~ .tab-nav label[for="t4"] {
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  background: var(--accent-fond);
+  border-color: var(--filet);
+  border-top: 2px solid var(--accent);
 }
 .tabs #t1:focus-visible ~ .tab-nav label[for="t1"],
 .tabs #t2:focus-visible ~ .tab-nav label[for="t2"],
-.tabs #t3:focus-visible ~ .tab-nav label[for="t3"] {
+.tabs #t3:focus-visible ~ .tab-nav label[for="t3"],
+.tabs #t4:focus-visible ~ .tab-nav label[for="t4"] {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .tabs #t1:checked ~ .tab-panels > .tab-1,
 .tabs #t2:checked ~ .tab-panels > .tab-2,
-.tabs #t3:checked ~ .tab-panels > .tab-3 { display: block; }
+.tabs #t3:checked ~ .tab-panels > .tab-3,
+.tabs #t4:checked ~ .tab-panels > .tab-4 { display: block; }
 
 /* Captures d'écran */
 figure { margin: 1.5rem 0; }
@@ -247,6 +259,55 @@ figcaption {
   font-size: 0.85rem;
   color: var(--encre-douce);
   margin-top: 0.5rem;
+}
+
+/* Listes de fonctions */
+.formules-liste {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.formules-liste li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--filet);
+}
+.formules-liste code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 0.95em;
+  color: var(--accent);
+}
+
+/* Index des fonctions (sommaire Excel) */
+.fonctions { margin: 1rem 0 0; }
+.fonctions-groupe { margin: 0 0 1.25rem; }
+.fonctions-groupe h3 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+.fonctions-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+}
+.fonctions-liste li { margin: 0; }
+.fonctions-liste a {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--encre);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.fonctions-liste a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-fond);
+}
+.fonctions-liste code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 0.95em;
 }
 
 /* Petits écrans */
