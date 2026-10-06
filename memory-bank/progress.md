@@ -28,7 +28,9 @@ de refonte à la fois.
       en-tête + title ; h1 de l'accueil ; nom « Volpe Calogero » ; README,
       style.css) ; parcours (formation complète, freelance + SuperProf,
       Montreuil AutoCAD/SketchUp, ordre chronologique) ; chiffres unifiés
-- [ ] R2 — Impression : boutons « Imprimer » / « PDF » et assets/css/print.css
+- [x] R2 — Impression : boutons « Imprimer » / « PDF » (injectés par JS) ;
+      assets/css/print.css (chargée en media="print") ; assets/js/main.js +
+      print.js
 - [ ] R3 — Navigation : navigation collante, section active, retour en haut,
       copie de l'e-mail
 - [ ] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
@@ -162,6 +164,18 @@ de refonte à la fois.
   SketchUp). Chiffres unifiés (10 collaborateurs, 600 couverts, 40 clients,
   20+ plans, 3 études, 9 tableaux croisés dynamiques). Fusionné dans `main`,
   publié. Recherche des noms interdits : rien hors .clinerules et /docs.
+- 2026-10-06 · R2 · Impression. Feuille d'impression assets/css/print.css (chargée
+  en media="print") : masque en-tête, navigation, pied de page et boutons ; noir
+  sur blanc ; break-inside: avoid sur les blocs ; URL des liens affichées (sauf
+  ancres internes et e-mail) ; fonds des tableaux et dossiers conservés. Le bloc
+  @media print de style.css est retiré (source unique). Boutons « Imprimer cette
+  page » et « Télécharger en PDF » (tous deux window.print()), injectés par
+  JavaScript : point d'entrée assets/js/main.js (defer, script unique) qui charge
+  assets/js/print.js (scripts classiques, compatibles file://). Les liens print.css
+  et main.js sont ajoutés aux 15 pages. Fusionné dans main, publié.
+  Incident résolu : le git checkout main a été bloqué par un verrou lors de la
+  suppression du dossier assets/js ; contourné par git branch -f main refonte
+  (mise à jour équivalente, sans changement de branche) + nettoyage de l'index.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

@@ -1,8 +1,9 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R1 — Contenu (terminé, fusionné dans `main` et publié).
-Prochain jalon : R2 — Impression (boutons « Imprimer » / « PDF », print.css).
+Jalon en cours : R2 — Impression (terminé, fusionné dans `main` et publié).
+Prochain jalon : R3 — Navigation (navigation collante, section active, retour en
+haut, copie de l'e-mail).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
