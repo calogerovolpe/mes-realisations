@@ -34,7 +34,7 @@ de refonte à la fois.
 - [x] R3 — Navigation : en-tête collant (CSS pur), retour en haut, copie de
       l'e-mail (boutons injectés par JavaScript)
 - [x] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
-- [ ] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
+- [x] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
 - [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
 - [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
       date de dernière mise à jour
@@ -201,6 +201,20 @@ de refonte à la fois.
   « RECHERCHEX » → 1 résultat, « Tableaux dynamiques » → 4, « Somme et
   agrégation » → 3, « zzz » → Aucun résultat. Fusionné dans main, publié
   (search.js HTTP 200). Poids JavaScript total : ~11,4 Ko (limite : 15 Ko).
+- 2026-10-07 · R5 · Accordéons. Les 8 pages de réalisation (3 modèles Excel,
+  4 business plans, 1 charte) ont leurs 4 sections « Contexte · Méthode ·
+  Résultat · Ce que cela démontre » transformées en accordéons natifs
+  <details class="volet">/<summary> (fermés par défaut). Contenu intégralement
+  conservé — vérifié par comparaison du texte pur avant/après transformation.
+  La section « Fonctions et formules utilisées » des pages Excel reste hors
+  accordéon (ancres #formules, #f-*, #tcd préservées). Boutons « Tout déplier /
+  Tout replier » injectés par JavaScript (assets/js/accordion.js, chargé après
+  search.js par main.js) ; ouverture automatique de tous les volets avant
+  impression (matchMedia('print')) puis restauration de l'état d'origine.
+  Styles .volet dans style.css ; boutons masqués et rendu « document » à
+  l'impression (print.css). Fonctionne sans JavaScript (balises natives).
+  Fusionné dans main, publié (accordion.js HTTP 200). Poids JavaScript total :
+  ~14,1 Ko (limite : 15 Ko — marge réduite pour R6).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
