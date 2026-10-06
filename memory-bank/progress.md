@@ -16,6 +16,27 @@
 - [x] J6 — Contact et finitions : contact.html, mentions-legales.html,
       test mobile, contrôle final des noms interdits
 
+## Refonte 2026 — « Volpe Calogero — Mes réalisations administratifs »
+Développement sur la branche `refonte` ; publication sur `main` après CHAQUE jalon.
+Un jalon de refonte = une conversation = un commit. Ne jamais traiter deux jalons
+de refonte à la fois.
+
+- [x] R0 — Cadrage et sécurité : branche `refonte` ; révision des .clinerules
+      (nom « Volpe Calogero » autorisé partout, JavaScript vanilla autorisé,
+      workflow de refonte, titre et jalons) ; réécriture de la memory-bank
+- [ ] R1 — Contenu (aucun JavaScript) : titre du site partout ; parcours
+      (formation complète, freelance + SuperProf, Montreuil AutoCAD/SketchUp,
+      ordre chronologique) ; chiffres unifiés
+- [ ] R2 — Impression : boutons « Imprimer » / « PDF » et assets/css/print.css
+- [ ] R3 — Navigation : navigation collante, section active, retour en haut,
+      copie de l'e-mail
+- [ ] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
+- [ ] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
+- [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
+- [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
+      date de dernière mise à jour
+- [ ] R8 — Bonus : recherche globale Ctrl+K
+
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
   dossier / root), page d'accueil en ligne vérifiée (build « built », HTTP 200).
@@ -117,6 +138,16 @@
   plus dans le memory-bank ; recherche des noms interdits hors /docs et
   .clinerules : aucune occurrence en dehors de parcours.html et contact.html.
   Vérifié en ligne (HTTP 200 : accueil, parcours, contact, mentions).
+- 2026-10-06 · R0 · Refonte engagée (« Volpe Calogero — Mes réalisations
+  administratifs »). Branche « refonte » créée. Révision des .clinerules : le nom
+  « Volpe Calogero » est autorisé partout (02) ; le JavaScript vanilla en
+  amélioration progressive est autorisé (04) ; workflow branche refonte et
+  publication par jalon ajouté (03) ; titre, arborescence et jalons de refonte
+  mis à jour (01). Réécriture de la memory-bank (projectbrief, productContext,
+  systemPatterns, techContext, activeContext, progress) avec les décisions de
+  refonte et la checklist R0–R8. Décisions verrouillées : titre exact, nom partout,
+  formation complète (CESS inclus), freelance + SuperProf 2023-2024, Montreuil
+  AutoCAD + SketchUp, publication après chaque jalon.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

@@ -1,9 +1,52 @@
 # activeContext.md
 
-Jalon en cours : J6 réalisé (contact.html et mentions-legales.html créés,
-finitions effectuées, mémoire corrigée) et vérifié en ligne (HTTP 200).
-Prochain jalon : aucun — le portfolio est complet et à valider par le
-propriétaire.
+Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
+Jalon en cours : R0 — Cadrage et sécurité (branche `refonte`, règles, memory-bank).
+Prochain jalon : R1 — Contenu (aucun JavaScript).
+Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
+traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
+
+Décisions verrouillées (brief de refonte)
+- Titre du site : « Volpe Calogero — Mes réalisations administratifs ».
+- Nom du propriétaire « Volpe Calogero » autorisé PARTOUT (marque personnelle).
+- Ordre fixé : « Volpe Calogero » (prénom puis nom).
+- JavaScript vanilla autorisé en amélioration progressive ; .clinerules/04 révisée.
+- Workflow : branche `refonte` → merge `main` → push, à la fin de CHAQUE jalon.
+
+Corrections de contenu à intégrer en R1
+- Titre remplacé partout (title, h1, fil d'Ariane, métadonnées).
+- Formation : afficher CESS + TOUS les diplômes (plus récent d'abord, CESS en fin
+  de bloc) : STUDI 2025-2026 ; Edith & Nous 2025 ; AFPA 12 2021-2022 ; Faculté de
+  philosophie Saint-Louis 2015-2016 ; Saint Luc 2001-2007 ; CESS Cardinal Mercier
+  2014. La Faculté de philosophie est conservée.
+- Freelance (2021-2025) réinséré entre Elior et Conforama, fond coloré léger,
+  texte au survol/focus : « Activité micro-entreprise exercée le week-end pendant
+  les contrats, avec l'autorisation de la hiérarchie. »
+- SuperProf (cours AutoCAD, 2023-2024, en freelance) intégré au bloc freelance.
+- Ville de Montreuil : formulation corrigée (archivage, référent « plans bâtiment »,
+  20+ plans mis à jour, 3 études de faisabilité) + « Outils : AutoCAD, SketchUp. »
+  (pas de Revit).
+- Chiffres identiques partout : 10 collaborateurs · 600 couverts/jour · 40 clients ·
+  20+ plans · 3 études de faisabilité · 9 tableaux croisés dynamiques (à recouper
+  avec /docs, règle de source unique).
+- Photo : docs/photo Volpe Calogero.jpg → assets/img/photo-profil.jpg,
+  alt neutre « Portrait ».
+
+Étapes du jalon R0 (faites)
+1. Branche `refonte` créée.
+2. .clinerules/02 (nom partout), 04 (JavaScript), 03 (workflow refonte),
+   01 (titre, arborescence, jalons) révisées.
+3. memory-bank réécrite (6 fichiers) + checklist R0–R8.
+
+Points ouverts
+- Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier
+  photo, recoupement des chiffres) traités ou à valider en R1.
+
+Rappel
+- /docs : lecture seule, jamais publié, dans le .gitignore.
+- Le portfolio publié reste « Mes réalisations » tant que R1 n'est pas fusionné.
+
+--- Historique (jalons J0–J6, avant refonte) ---
 
 Dernière action : J4 terminé, en deux volets.
 
