@@ -313,6 +313,58 @@ figcaption {
   font-size: 0.95em;
 }
 
+/* Recherche et filtres de l'index des fonctions (ajoutés par JavaScript — amélioration progressive) */
+.recherche {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--filet);
+  background: var(--papier-2);
+}
+.recherche-champ {
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--encre);
+  font: inherit;
+  font-size: 1rem;
+}
+.recherche-champ:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.recherche-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.filtre-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--accent);
+  cursor: pointer;
+}
+.filtre-btn:hover { background: var(--accent); color: #fff; }
+.filtre-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.filtre-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.recherche-compteur {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+}
+
+/* Masquage des éléments filtrés (recherche des fonctions) */
+.fonctions-liste li.est-masque,
+.fonctions-groupe.est-masque { display: none; }
+
 /* Lien vers une réalisation liée (dossier) */
 .dossier {
   margin: 1.5rem 0 2rem;
