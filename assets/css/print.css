@@ -1,0 +1,55 @@
+/* Volpe Calogero — Mes réalisations administratifs — feuille d'impression.
+   Chargée avec media="print" : ces règles ne s'appliquent qu'à l'impression.
+   Objectif : un document propre et archivable — sans navigation, sans pied de
+   page, sans boutons ; noir sur blanc ; aucune coupure au milieu d'un bloc ;
+   URL des liens affichées pour un lecteur hors ligne. */
+
+@page { margin: 1.5cm; }
+
+/* Éléments d'interface exclus du papier */
+.site-header,
+.site-nav,
+.site-footer,
+.print-toolbar,
+.form button { display: none !important; }
+
+/* Noir sur blanc */
+html,
+body { background: #ffffff; color: #000000; }
+.site-main { max-width: none; padding: 0; }
+
+/* Liens : noir, sans soulignement, URL affichée */
+a { color: #000000; text-decoration: none; }
+a[href]:after {
+  content: " (" attr(href) ")";
+  font-size: 0.85em;
+  color: #333333;
+  word-break: break-all;
+}
+/* URL masquée pour les ancres internes et l'e-mail (déjà lisible en clair) */
+a[href^="#"]:after,
+a[href^="mailto:"]:after { content: ""; }
+
+/* Pas de coupure au milieu d'un bloc */
+.card,
+figure,
+table,
+.dossier,
+li,
+.form-champ,
+.fonctions-groupe,
+.fil-ariane,
+blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+/* Titres non orphelins en bas de page */
+h1,
+h2,
+h3 { page-break-after: avoid; }
+
+/* Images */
+img { max-width: 100%; height: auto; page-break-inside: avoid; }
+
+/* Conserver les fonds des blocs clés (tableaux de synthèse, dossiers) */
+.card,
+.dossier,
+.table { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
