@@ -365,6 +365,52 @@ figcaption {
 .fonctions-liste li.est-masque,
 .fonctions-groupe.est-masque { display: none; }
 
+/* Accordéons des réalisations (<details>/<summary>, natif — pas de JS requis) */
+.volet {
+  margin: 0 0 0.75rem;
+  border: 1px solid var(--filet);
+  background: var(--papier);
+}
+.volet summary {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+.volet summary::-webkit-details-marker { display: none; }
+.volet summary::before {
+  content: "+";
+  margin-right: 0.6rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+.volet[open] summary::before { content: "−"; }
+.volet summary h2 { margin: 0; font-size: 1.3rem; }
+.volet summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.volet[open] summary { border-bottom: 1px solid var(--filet); }
+.volet-contenu { padding: 1rem 1rem 1.25rem; }
+
+/* Boutons « tout déplier / tout replier » (ajoutés par JavaScript) */
+.volets-outils {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+.volet-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--accent);
+  cursor: pointer;
+}
+.volet-btn:hover { background: var(--accent); color: #fff; }
+.volet-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 /* Lien vers une réalisation liée (dossier) */
 .dossier {
   margin: 1.5rem 0 2rem;
