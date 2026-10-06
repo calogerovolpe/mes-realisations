@@ -1,9 +1,9 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R2 — Impression (terminé, fusionné dans `main` et publié).
-Prochain jalon : R3 — Navigation (navigation collante, section active, retour en
-haut, copie de l'e-mail).
+Jalon en cours : R3 — Navigation (terminé, fusionné dans `main` et publié).
+Prochain jalon : R4 — Recherche des fonctions (filtres et recherche instantanée
+sur excel.html).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -38,6 +38,18 @@ Corrections de contenu appliquées en R1 (faites)
 2. .clinerules/02 (nom partout), 04 (JavaScript), 03 (workflow refonte),
    01 (titre, arborescence, jalons) révisées.
 3. memory-bank réécrite (6 fichiers) + checklist R0–R8.
+
+Étapes du jalon R3 (faites)
+- assets/css/style.css : en-tête collant (position: sticky, top: 0, z-index: 20)
+  + scroll-padding-top: 7rem (ancres internes non masquées) + styles .back-to-top
+  et .copy-email.
+- assets/css/print.css : .back-to-top et .copy-email masqués à l'impression.
+- assets/js/main.js : chargement de nav.js après print.js.
+- assets/js/nav.js (nouveau) : retour en haut (affiché après 400 px) et copie de
+  l'e-mail (navigator.clipboard + replis, retour « Copié ! » 2 s).
+- Page courante : surlignage statique conservé (aria-current). Scroll-spy reporté
+  à R6.
+- Fusionné dans `main`, publié (nav.js HTTP 200). Poids JavaScript total ~6,4 Ko.
 
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier

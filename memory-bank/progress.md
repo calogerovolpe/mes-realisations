@@ -31,8 +31,8 @@ de refonte à la fois.
 - [x] R2 — Impression : boutons « Imprimer » / « PDF » (injectés par JS) ;
       assets/css/print.css (chargée en media="print") ; assets/js/main.js +
       print.js
-- [ ] R3 — Navigation : navigation collante, section active, retour en haut,
-      copie de l'e-mail
+- [x] R3 — Navigation : en-tête collant (CSS pur), retour en haut, copie de
+      l'e-mail (boutons injectés par JavaScript)
 - [ ] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
 - [ ] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
 - [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
@@ -176,6 +176,18 @@ de refonte à la fois.
   Incident résolu : le git checkout main a été bloqué par un verrou lors de la
   suppression du dossier assets/js ; contourné par git branch -f main refonte
   (mise à jour équivalente, sans changement de branche) + nettoyage de l'index.
+- 2026-10-07 · R3 · Navigation. En-tête collant en CSS pur (position: sticky,
+  top: 0, z-index: 20 sur .site-header) et scroll-padding-top: 7rem pour que les
+  ancres internes des pages modèles (#formules, #f-somme, #tcd…) ne passent pas
+  sous l'en-tête. Bouton « retour en haut » (affiché après 400 px de défilement,
+  remontée douce — behavior: auto si prefers-reduced-motion) et bouton « Copier »
+  à côté de chaque adresse e-mail, tous deux injectés par JavaScript dans le
+  nouveau fichier assets/js/nav.js, chargé après print.js par main.js. Copie via
+  navigator.clipboard avec replis (textarea + execCommand, puis sélection du
+  texte) et retour visuel « Copié ! » pendant 2 s. Les deux boutons sont masqués
+  à l'impression (print.css). Le surlignage de la page courante reste statique
+  (aria-current) ; le scroll-spy est reporté à R6. Fusionné dans main, publié
+  (nav.js HTTP 200). Poids JavaScript total : ~6,4 Ko (limite : 15 Ko).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
