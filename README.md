@@ -1,4 +1,4 @@
-# Mes réalisations
+# Volpe Calogero — Mes réalisations administratifs
 
 Portfolio statique présentant des travaux personnels d'analyse et de
 modélisation : business plans, modèles financiers Excel, identité visuelle.
