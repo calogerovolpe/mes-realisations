@@ -11,6 +11,8 @@
 .site-nav,
 .site-footer,
 .print-toolbar,
+.back-to-top,
+.copy-email,
 .form button { display: none !important; }
 
 /* Noir sur blanc */

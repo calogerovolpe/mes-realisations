@@ -8,7 +8,8 @@
 
   // Scripts de fonctionnalité à charger (ordre d'exécution préservé).
   var modules = [
-    'assets/js/print.js'
+    'assets/js/print.js',
+    'assets/js/nav.js'
   ];
 
   modules.forEach(function (src) {

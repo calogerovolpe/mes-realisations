@@ -15,7 +15,7 @@
 
 * { box-sizing: border-box; }
 
-html { font-size: 100%; }
+html { font-size: 100%; scroll-padding-top: 7rem; }
 
 body {
   margin: 0;
@@ -47,6 +47,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .site-header {
   border-bottom: 1px solid var(--filet);
   background: var(--papier);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 .site-header-inner {
   max-width: var(--largeur);
@@ -428,6 +431,42 @@ figcaption {
 }
 .print-btn:hover { background: var(--accent); color: #fff; }
 .print-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Retour en haut (ajouté par JavaScript — amélioration progressive) */
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none; /* affiché via .is-visible (JavaScript) */
+  padding: 0.5rem 0.85rem;
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--accent);
+  cursor: pointer;
+  z-index: 30;
+}
+.back-to-top.is-visible { display: inline-block; }
+.back-to-top:hover { background: var(--accent); color: #fff; }
+.back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Copie de l'adresse e-mail (ajouté par JavaScript — amélioration progressive) */
+.copy-email {
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  font: inherit;
+  font-size: 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--accent);
+  cursor: pointer;
+  vertical-align: middle;
+}
+.copy-email:hover { background: var(--accent); color: #fff; }
+.copy-email:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Petits écrans */
 @media (max-width: 480px) {
