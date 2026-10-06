@@ -35,7 +35,7 @@ de refonte à la fois.
       l'e-mail (boutons injectés par JavaScript)
 - [x] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
 - [ ] R5 — Accordéons : ABANDONNÉ (accordéons <details>/<summary> retirés à la demande du propriétaire ; sections des pages de réalisation revenues en titres simples)
-- [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
+- [x] R6 — Dynamisme : sommaire automatique et scroll-spy (compteurs animés et apparition au défilement écartés, jugés superflus)
 - [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
       date de dernière mise à jour
 - [ ] R8 — Bonus : recherche globale Ctrl+K
@@ -222,6 +222,17 @@ de refonte à la fois.
   sa référence retirée de main.js. Les sections « Contexte · Méthode · Résultat ·
   Ce que cela démontre » redeviennent des <h2> simples. Fusionné dans main,
   publié. Poids JavaScript total ramené à ~11,4 Ko.
+- 2026-10-07 · R6 · Dynamisme (périmètre resserré). Sommaire automatique de page
+  ajouté par JavaScript (assets/js/sommaire.js, chargé après search.js par
+  main.js) — aucun fichier HTML modifié. Sur les pages à au moins 3 <h2> visibles
+  (parcours.html, les 8 pages de réalisation, mentions-legales.html), un sommaire
+  cliquable est inséré avant le premier titre : ancres créées à la volée (sans
+  écraser les ids existants #formules/#f-*/#tcd), défilement doux (saut direct si
+  prefers-reduced-motion) et surlignage de la section affichée (scroll-spy via
+  IntersectionObserver, aria-current). Styles .sommaire dans style.css ; sommaire
+  masqué à l'impression (print.css). Les compteurs animés et l'apparition au
+  défilement sont écartés (jugés superflus/« gadget »). Fusionné dans main,
+  publié (sommaire.js HTTP 200). Poids JavaScript total ~14,6 Ko (limite 15 Ko).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

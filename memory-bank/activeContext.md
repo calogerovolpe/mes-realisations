@@ -1,10 +1,9 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R5 — Accordéons (ABANDONNÉ : accordéons retirés à la demande du
-propriétaire, rendu jugé inadapté).
-Prochain jalon : R6 — Dynamisme (compteurs animés, apparition au défilement,
-sommaire automatique) — à planifier.
+Jalon en cours : R6 — Dynamisme (terminé, fusionné dans `main` et publié).
+Prochain jalon : R7 — Finitions (métadonnées, Open Graph, accessibilité, mode
+sombre, date de dernière mise à jour).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -71,6 +70,17 @@ Corrections de contenu appliquées en R1 (faites)
   pages, style.css, print.css et main.js restaurés à leur état d'avant R5
   (git checkout 370f372) ; assets/js/accordion.js supprimé. Sections revenues en
   <h2> simples. Poids JS total ~11,4 Ko.
+
+Étapes du jalon R6 (faites)
+- assets/js/sommaire.js (nouveau) : sommaire automatique des <h2> visibles (≥ 3),
+  ancres générées sans écraser les ids existants, défilement doux, surlignage de
+  la section affichée (IntersectionObserver, aria-current).
+- assets/js/main.js : chargement de sommaire.js après search.js.
+- assets/css/style.css : styles .sommaire / .sommaire-titre.
+- assets/css/print.css : .sommaire masqué à l'impression.
+- Périmètre resserré : compteurs animés et apparition au défilement écartés.
+- Aucun fichier HTML modifié. Fusionné dans `main`, publié (sommaire.js HTTP 200).
+  Poids JS total ~14,6 Ko.
 
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier
