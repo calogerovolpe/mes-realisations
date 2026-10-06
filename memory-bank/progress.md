@@ -33,7 +33,7 @@ de refonte à la fois.
       print.js
 - [x] R3 — Navigation : en-tête collant (CSS pur), retour en haut, copie de
       l'e-mail (boutons injectés par JavaScript)
-- [ ] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
+- [x] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
 - [ ] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
 - [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
 - [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
@@ -188,6 +188,19 @@ de refonte à la fois.
   à l'impression (print.css). Le surlignage de la page courante reste statique
   (aria-current) ; le scroll-spy est reporté à R6. Fusionné dans main, publié
   (nav.js HTTP 200). Poids JavaScript total : ~6,4 Ko (limite : 15 Ko).
+- 2026-10-07 · R4 · Recherche des fonctions. Barre de recherche et filtres
+  ajoutés par JavaScript (assets/js/search.js, chargé après nav.js par main.js)
+  au-dessus de l'index des fonctions d'excel.html — aucun fichier HTML modifié.
+  Champ de recherche (filtrage instantané, insensible à la casse et aux accents),
+  7 boutons de catégorie dérivés des titres <h3> des groupes + bouton « Tous »
+  (aria-pressed), compteur de résultats (role=status, aria-live) et message
+  « Aucun résultat ». Filtrage sur le texte complet de chaque entrée (nom de
+  fonction + références modèles) ; groupes devenus vides masqués. La barre est
+  masquée à l'impression. Sans JavaScript, l'index complet reste affiché.
+  Vérifié en local (simulation Node sur excel.html) : 7 groupes / 17 entrées,
+  « RECHERCHEX » → 1 résultat, « Tableaux dynamiques » → 4, « Somme et
+  agrégation » → 3, « zzz » → Aucun résultat. Fusionné dans main, publié
+  (search.js HTTP 200). Poids JavaScript total : ~11,4 Ko (limite : 15 Ko).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

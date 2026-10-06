@@ -1,9 +1,9 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R3 — Navigation (terminé, fusionné dans `main` et publié).
-Prochain jalon : R4 — Recherche des fonctions (filtres et recherche instantanée
-sur excel.html).
+Jalon en cours : R4 — Recherche des fonctions (terminé, fusionné dans `main` et publié).
+Prochain jalon : R5 — Accordéons (`<details>`/`<summary>` et « tout déplier / tout
+replier »).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -50,6 +50,18 @@ Corrections de contenu appliquées en R1 (faites)
 - Page courante : surlignage statique conservé (aria-current). Scroll-spy reporté
   à R6.
 - Fusionné dans `main`, publié (nav.js HTTP 200). Poids JavaScript total ~6,4 Ko.
+
+Étapes du jalon R4 (faites)
+- assets/js/search.js (nouveau) : barre de recherche + filtres par catégorie sur
+  excel.html (injectés par JavaScript), compteur de résultats (« X fonctions
+  affichées ») et message « Aucun résultat ».
+- assets/js/main.js : chargement de search.js après nav.js.
+- assets/css/style.css : styles .recherche, .recherche-champ, .recherche-filtres,
+  .filtre-btn, .recherche-compteur et masquage .est-masque.
+- assets/css/print.css : .recherche masqué à l'impression.
+- Boutons de catégorie dérivés des titres des groupes (7) + bouton « Tous ».
+- Filtrage insensible à la casse et aux accents ; groupes vides masqués.
+- Fusionné dans `main`, publié (search.js HTTP 200). Poids JavaScript total ~11,4 Ko.
 
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier
