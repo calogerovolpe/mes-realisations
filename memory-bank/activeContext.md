@@ -1,8 +1,8 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R0 — Cadrage et sécurité (branche `refonte`, règles, memory-bank).
-Prochain jalon : R1 — Contenu (aucun JavaScript).
+Jalon en cours : R1 — Contenu (terminé, fusionné dans `main` et publié).
+Prochain jalon : R2 — Impression (boutons « Imprimer » / « PDF », print.css).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -13,7 +13,7 @@ Décisions verrouillées (brief de refonte)
 - JavaScript vanilla autorisé en amélioration progressive ; .clinerules/04 révisée.
 - Workflow : branche `refonte` → merge `main` → push, à la fin de CHAQUE jalon.
 
-Corrections de contenu à intégrer en R1
+Corrections de contenu appliquées en R1 (faites)
 - Titre remplacé partout (title, h1, fil d'Ariane, métadonnées).
 - Formation : afficher CESS + TOUS les diplômes (plus récent d'abord, CESS en fin
   de bloc) : STUDI 2025-2026 ; Edith & Nous 2025 ; AFPA 12 2021-2022 ; Faculté de

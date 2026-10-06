@@ -24,9 +24,10 @@ de refonte à la fois.
 - [x] R0 — Cadrage et sécurité : branche `refonte` ; révision des .clinerules
       (nom « Volpe Calogero » autorisé partout, JavaScript vanilla autorisé,
       workflow de refonte, titre et jalons) ; réécriture de la memory-bank
-- [ ] R1 — Contenu (aucun JavaScript) : titre du site partout ; parcours
-      (formation complète, freelance + SuperProf, Montreuil AutoCAD/SketchUp,
-      ordre chronologique) ; chiffres unifiés
+- [x] R1 — Contenu (aucun JavaScript) : titre du site partout (15 pages :
+      en-tête + title ; h1 de l'accueil ; nom « Volpe Calogero » ; README,
+      style.css) ; parcours (formation complète, freelance + SuperProf,
+      Montreuil AutoCAD/SketchUp, ordre chronologique) ; chiffres unifiés
 - [ ] R2 — Impression : boutons « Imprimer » / « PDF » et assets/css/print.css
 - [ ] R3 — Navigation : navigation collante, section active, retour en haut,
       copie de l'e-mail
@@ -148,6 +149,19 @@ de refonte à la fois.
   refonte et la checklist R0–R8. Décisions verrouillées : titre exact, nom partout,
   formation complète (CESS inclus), freelance + SuperProf 2023-2024, Montreuil
   AutoCAD + SketchUp, publication après chaque jalon.
+- 2026-10-06 · R1 · Contenu (aucun JavaScript). Titre « Volpe Calogero — Mes
+  réalisations administratifs » appliqué partout : balise title des 15 pages,
+  en-tête (site-title), h1 de l'accueil, commentaire de style.css et README.
+  Nom harmonisé en « Volpe Calogero » (parcours h1, contact). parcours.html :
+  formation complète (STUDI 2025-2026, Edith & Nous 2025, AFPA 12 2021-2022,
+  Faculté de philosophie Saint-Louis 2015-2016, Saint Luc 2001-2007, CESS
+  Cardinal Mercier 2014 en fin de bloc) ; freelance (2021-2025) réinséré entre
+  Elior et Conforama avec cours AutoCAD via SuperProf (2023-2024) ; ligne
+  Montreuil corrigée (référent « plans bâtiment » d'un parc de plus de 400
+  bâtiments, 20+ plans mis à jour, 3 études de faisabilité ; outils AutoCAD,
+  SketchUp). Chiffres unifiés (10 collaborateurs, 600 couverts, 40 clients,
+  20+ plans, 3 études, 9 tableaux croisés dynamiques). Fusionné dans `main`,
+  publié. Recherche des noms interdits : rien hors .clinerules et /docs.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
