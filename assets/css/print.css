@@ -14,7 +14,6 @@
 .back-to-top,
 .copy-email,
 .recherche,
-.volets-outils,
 .form button { display: none !important; }
 
 /* Noir sur blanc */
@@ -43,7 +42,6 @@ li,
 .form-champ,
 .fonctions-groupe,
 .fil-ariane,
-.volet,
 blockquote { break-inside: avoid; page-break-inside: avoid; }
 
 /* Titres non orphelins en bas de page */
@@ -58,12 +56,3 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .card,
 .dossier,
 .table { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-/* Accordéons : rendu « document » à l'impression (tous les volets sont
-   ouverts par JavaScript avant impression, donc aucun contenu n'est masqué) */
-.volet { border: none; margin: 0; }
-.volet summary { padding: 0; cursor: auto; }
-.volet summary::before { content: ""; }
-.volet[open] summary { border-bottom: none; }
-.volet-contenu { padding: 0; }
-.volet summary h2 { margin: 2.5rem 0 0.75rem; }

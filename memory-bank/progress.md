@@ -34,7 +34,7 @@ de refonte à la fois.
 - [x] R3 — Navigation : en-tête collant (CSS pur), retour en haut, copie de
       l'e-mail (boutons injectés par JavaScript)
 - [x] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
-- [x] R5 — Accordéons : <details>/<summary> et « tout déplier / tout replier »
+- [ ] R5 — Accordéons : ABANDONNÉ (accordéons <details>/<summary> retirés à la demande du propriétaire ; sections des pages de réalisation revenues en titres simples)
 - [ ] R6 — Dynamisme : compteurs animés, apparition au défilement, sommaire auto
 - [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
       date de dernière mise à jour
@@ -215,6 +215,13 @@ de refonte à la fois.
   l'impression (print.css). Fonctionne sans JavaScript (balises natives).
   Fusionné dans main, publié (accordion.js HTTP 200). Poids JavaScript total :
   ~14,1 Ko (limite : 15 Ko — marge réduite pour R6).
+- 2026-10-07 · R5 (annulé) · Les accordéons ajoutés aux 8 pages de réalisation
+  ont été retirés à la demande du propriétaire (rendu jugé inadapté). Les 8 pages,
+  assets/css/style.css, assets/css/print.css et assets/js/main.js sont restaurés à
+  leur état d'avant R5 (git checkout 370f372) ; assets/js/accordion.js supprimé et
+  sa référence retirée de main.js. Les sections « Contexte · Méthode · Résultat ·
+  Ce que cela démontre » redeviennent des <h2> simples. Fusionné dans main,
+  publié. Poids JavaScript total ramené à ~11,4 Ko.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

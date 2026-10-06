@@ -1,9 +1,10 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R5 — Accordéons (terminé, fusionné dans `main` et publié).
+Jalon en cours : R5 — Accordéons (ABANDONNÉ : accordéons retirés à la demande du
+propriétaire, rendu jugé inadapté).
 Prochain jalon : R6 — Dynamisme (compteurs animés, apparition au défilement,
-sommaire automatique).
+sommaire automatique) — à planifier.
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -63,19 +64,13 @@ Corrections de contenu appliquées en R1 (faites)
 - Filtrage insensible à la casse et aux accents ; groupes vides masqués.
 - Fusionné dans `main`, publié (search.js HTTP 200). Poids JavaScript total ~11,4 Ko.
 
-Étapes du jalon R5 (faites)
-- 8 pages de réalisation : les 4 sections (Contexte, Méthode, Résultat, Ce que
-  cela démontre) en <details class="volet">/<summary> natifs, fermés par défaut.
-- Section « Fonctions et formules utilisées » (Excel) laissée hors accordéon
-  (ancres #formules, #f-*, #tcd préservées).
-- assets/js/accordion.js (nouveau) : boutons « Tout déplier / Tout replier » +
-  ouverture de tous les volets avant impression (matchMedia('print')).
-- assets/js/main.js : chargement de accordion.js après search.js.
-- assets/css/style.css : styles .volet, .volet-contenu, .volets-outils, .volet-btn.
-- assets/css/print.css : boutons masqués, .volet en break-inside: avoid, rendu
-  « document » à l'impression.
-- Contenu inchangé (vérifié : texte pur identique avant/après transformation).
-- Fusionné dans `main`, publié (accordion.js HTTP 200). Poids JS total ~14,1 Ko.
+Étapes du jalon R5 (faites puis annulées)
+- Les 8 pages de réalisation avaient été converties en accordéons <details>/<summary>
+  (Contexte, Méthode, Résultat, Ce que cela démontre).
+- DÉCISION : rendu jugé inadapté par le propriétaire — accordéons RETIRÉS. Les 8
+  pages, style.css, print.css et main.js restaurés à leur état d'avant R5
+  (git checkout 370f372) ; assets/js/accordion.js supprimé. Sections revenues en
+  <h2> simples. Poids JS total ~11,4 Ko.
 
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier

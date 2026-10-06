@@ -10,8 +10,7 @@
   var modules = [
     'assets/js/print.js',
     'assets/js/nav.js',
-    'assets/js/search.js',
-    'assets/js/accordion.js'
+    'assets/js/search.js'
   ];
 
   modules.forEach(function (src) {

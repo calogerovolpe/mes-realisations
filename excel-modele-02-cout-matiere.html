@@ -35,82 +35,70 @@
     <a class="dossier-link" href="design-charte.html">Identité visuelle — charte graphique Casa Urpi</a>
   </nav>
 
-  <details class="volet">
-    <summary><h2>Contexte</h2></summary>
-    <div class="volet-contenu">
-    <p>Le coût matière est la donnée qui conditionne la marge d'une carte. L'objectif était de réunir dans un seul classeur la base des recettes, les prix d'achat des ingrédients et le calcul du coût par portion, afin que toute mise à jour d'un prix se répercute automatiquement sur la fiche technique et sur le prix de revente.</p>
-    </div>
-  </details>
+  <h2>Contexte</h2>
+  <p>Le coût matière est la donnée qui conditionne la marge d'une carte. L'objectif était de réunir dans un seul classeur la base des recettes, les prix d'achat des ingrédients et le calcul du coût par portion, afin que toute mise à jour d'un prix se répercute automatiquement sur la fiche technique et sur le prix de revente.</p>
 
-  <details class="volet">
-    <summary><h2>Méthode</h2></summary>
-    <div class="volet-contenu">
-    <p>Le classeur s'organise autour de plusieurs blocs reliés entre eux :</p>
-    <ul>
-      <li>une base de données de recettes : chaque plat est relié à ses produits, unités et quantités par portion ;</li>
-      <li>un catalogue d'ingrédients, avec des prix d'achat relevés dans des catalogues fournisseurs réels (Rungis Market, Aventure Bio, Mozzalat, Compos-table) ;</li>
-      <li>la fiche technique d'un plat : coût par portion, coefficient de marge, frais fixes et TVA, jusqu'au prix de revente ;</li>
-      <li>des listes dynamiques de catégories et de recettes, sans doublon et triées automatiquement ;</li>
-      <li>l'édition d'une fiche par plat, sur la base d'un plateau de N pièces.</li>
-    </ul>
-    <p>Le classeur existe en deux versions : une version de calcul et une version de travail (.xlsm) qui ajoute une automatisation de tâches répétitives par macros VBA (ouverture de la fenêtre d'impression de la fiche technique).</p>
-    <figure>
-      <img src="assets/img/excel-02-fiche-bruschetta.png" alt="Fiche technique d'un plat : catégories, ingrédients, coût par portion et préparation.">
-      <figcaption>Fiche technique d'un plat : ingrédients, coût par portion et préparation.</figcaption>
-    </figure>
-    </div>
-  </details>
+  <h2>Méthode</h2>
+  <p>Le classeur s'organise autour de plusieurs blocs reliés entre eux :</p>
+  <ul>
+    <li>une base de données de recettes : chaque plat est relié à ses produits, unités et quantités par portion ;</li>
+    <li>un catalogue d'ingrédients, avec des prix d'achat relevés dans des catalogues fournisseurs réels (Rungis Market, Aventure Bio, Mozzalat, Compos-table) ;</li>
+    <li>la fiche technique d'un plat : coût par portion, coefficient de marge, frais fixes et TVA, jusqu'au prix de revente ;</li>
+    <li>des listes dynamiques de catégories et de recettes, sans doublon et triées automatiquement ;</li>
+    <li>l'édition d'une fiche par plat, sur la base d'un plateau de N pièces.</li>
+  </ul>
+  <p>Le classeur existe en deux versions : une version de calcul et une version de travail (.xlsm) qui ajoute une automatisation de tâches répétitives par macros VBA (ouverture de la fenêtre d'impression de la fiche technique).</p>
+  <figure>
+    <img src="assets/img/excel-02-fiche-bruschetta.png" alt="Fiche technique d'un plat : catégories, ingrédients, coût par portion et préparation.">
+    <figcaption>Fiche technique d'un plat : ingrédients, coût par portion et préparation.</figcaption>
+  </figure>
 
-  <details class="volet">
-    <summary><h2>Résultat</h2></summary>
-    <div class="volet-contenu">
-    <p>Les tableaux ci-dessous reprennent la décomposition du coût matière d'un plat et les paramètres de calcul du prix de revente issus du modèle.</p>
-    <div class="table-wrap">
-      <table class="table">
-        <caption>Composition et coût matière par portion — Bruschetta classique</caption>
-        <thead>
-          <tr><th scope="col">Ingrédient</th><th scope="col">Quantité par portion</th><th scope="col">Coût matière HT</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Tomate</th><td>0,05 kg</td><td>0,148 €</td></tr>
-          <tr><th scope="row">Ail</th><td>0,001 kg</td><td>0,005 €</td></tr>
-          <tr><th scope="row">Huile d'olive</th><td>0,01 kg</td><td>0,129 €</td></tr>
-          <tr><th scope="row">Pain</th><td>0,05 kg</td><td>0,270 €</td></tr>
-          <tr><th scope="row">Parmesan</th><td>0,01 kg</td><td>0,259 €</td></tr>
-          <tr><th scope="row">Total</th><td>0,121 kg</td><td>0,810 €</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="table-wrap">
-      <table class="table">
-        <caption>Paramètres de prix — Bruschetta classique</caption>
-        <thead>
-          <tr><th scope="col">Paramètre</th><th scope="col">Valeur</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Marge appliquée</th><td>30 %</td></tr>
-          <tr><th scope="row">Coefficient</th><td>1,4286</td></tr>
-          <tr><th scope="row">Frais fixes</th><td>8 %</td></tr>
-          <tr><th scope="row">TVA</th><td>20 %</td></tr>
-          <tr><th scope="row">Prix de revente TTC par pièce</th><td>1,48 €</td></tr>
-          <tr><th scope="row">Prix de revente TTC par plateau (20 pièces)</th><td>29,62 €</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="table-wrap">
-      <table class="table">
-        <caption>Deux fiches du catalogue</caption>
-        <thead>
-          <tr><th scope="col">Recette</th><th scope="col">Portions</th><th scope="col">Poids par portion</th><th scope="col">Coût matière HT par portion</th><th scope="col">Prix de revente TTC par portion</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Bruschetta classique</th><td>20</td><td>121 g</td><td>0,81 €</td><td>1,48 €</td></tr>
-          <tr><th scope="row">Caprese classique</th><td>3</td><td>260 g</td><td>2,47 €</td><td>4,23 €</td></tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-  </details>
+  <h2>Résultat</h2>
+  <p>Les tableaux ci-dessous reprennent la décomposition du coût matière d'un plat et les paramètres de calcul du prix de revente issus du modèle.</p>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Composition et coût matière par portion — Bruschetta classique</caption>
+      <thead>
+        <tr><th scope="col">Ingrédient</th><th scope="col">Quantité par portion</th><th scope="col">Coût matière HT</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Tomate</th><td>0,05 kg</td><td>0,148 €</td></tr>
+        <tr><th scope="row">Ail</th><td>0,001 kg</td><td>0,005 €</td></tr>
+        <tr><th scope="row">Huile d'olive</th><td>0,01 kg</td><td>0,129 €</td></tr>
+        <tr><th scope="row">Pain</th><td>0,05 kg</td><td>0,270 €</td></tr>
+        <tr><th scope="row">Parmesan</th><td>0,01 kg</td><td>0,259 €</td></tr>
+        <tr><th scope="row">Total</th><td>0,121 kg</td><td>0,810 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Paramètres de prix — Bruschetta classique</caption>
+      <thead>
+        <tr><th scope="col">Paramètre</th><th scope="col">Valeur</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Marge appliquée</th><td>30 %</td></tr>
+        <tr><th scope="row">Coefficient</th><td>1,4286</td></tr>
+        <tr><th scope="row">Frais fixes</th><td>8 %</td></tr>
+        <tr><th scope="row">TVA</th><td>20 %</td></tr>
+        <tr><th scope="row">Prix de revente TTC par pièce</th><td>1,48 €</td></tr>
+        <tr><th scope="row">Prix de revente TTC par plateau (20 pièces)</th><td>29,62 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>Deux fiches du catalogue</caption>
+      <thead>
+        <tr><th scope="col">Recette</th><th scope="col">Portions</th><th scope="col">Poids par portion</th><th scope="col">Coût matière HT par portion</th><th scope="col">Prix de revente TTC par portion</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Bruschetta classique</th><td>20</td><td>121 g</td><td>0,81 €</td><td>1,48 €</td></tr>
+        <tr><th scope="row">Caprese classique</th><td>3</td><td>260 g</td><td>2,47 €</td><td>4,23 €</td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <h2>Captures du modèle</h2>
   <div class="tabs">
@@ -165,12 +153,8 @@
     <li id="f-lien"><code>LIEN_HYPERTEXTE</code> — création de liens cliquables dans le classeur.</li>
   </ul>
 
-  <details class="volet">
-    <summary><h2>Ce que cela démontre</h2></summary>
-    <div class="volet-contenu">
-    <p>Construction d'un outil de calcul du coût matière relié à une base de données d'ingrédients sourcée, avec listes dynamiques et édition d'une fiche technique par plat. Maîtrise des fonctions de recherche, de filtrage dynamique et de gestion d'erreurs appliquées au calcul des marges.</p>
-    </div>
-  </details>
+  <h2>Ce que cela démontre</h2>
+  <p>Construction d'un outil de calcul du coût matière relié à une base de données d'ingrédients sourcée, avec listes dynamiques et édition d'une fiche technique par plat. Maîtrise des fonctions de recherche, de filtrage dynamique et de gestion d'erreurs appliquées au calcul des marges.</p>
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
