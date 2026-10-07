@@ -10,7 +10,9 @@
   --accent: #8a4b2a;
   --accent-fond: #f4e8de;
   --filet: #d8d0c2;
+  --fond-champ: #ffffff;
   --largeur: 60rem;
+  color-scheme: light dark;
 }
 
 * { box-sizing: border-box; }
@@ -86,6 +88,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   border-bottom-color: var(--accent);
 }
 
+/* Lien d'évitement « Aller au contenu » (accessibilité clavier) */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  z-index: 40;
+  padding: 0.55rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 3px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
 /* Contenu principal */
 .site-main {
   max-width: var(--largeur);
@@ -156,6 +174,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .site-footer p { margin: 0 0 0.5rem; }
 .site-footer a { color: var(--accent); }
+.site-footer .maj { font-size: 0.85rem; }
 
 /* Fil d'Ariane */
 .fil-ariane {
@@ -326,7 +345,7 @@ figcaption {
   padding: 0.5rem 0.65rem;
   border: 1px solid var(--filet);
   border-radius: 3px;
-  background: #fff;
+  background: var(--fond-champ);
   color: var(--encre);
   font: inherit;
   font-size: 1rem;
@@ -448,7 +467,7 @@ figcaption {
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--filet);
   border-radius: 3px;
-  background: #fff;
+  background: var(--fond-champ);
   color: var(--encre);
   font: inherit;
   font-size: 1rem;
@@ -558,4 +577,29 @@ figcaption {
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.3rem; }
+}
+
+/* Mode sombre — automatique selon la préférence système.
+   Aucun bouton, aucune mémorisation. Palette « papier sombre chaud »,
+   contraste AA conservé (texte, liens, filets). */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #1e1b16;
+    --papier-2: #27231d;
+    --encre: #ece6db;
+    --encre-douce: #b3aa9b;
+    --accent: #cf8a5e;
+    --accent-fond: #33291f;
+    --filet: #3b352c;
+    --fond-champ: #141210;
+  }
+}
+
+/* Mouvement réduit : aucune animation ni transition, défilement instantané. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
