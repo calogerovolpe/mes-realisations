@@ -55,8 +55,13 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
       remplacement des vues de résultat par des preuves de structure ; schéma de
       flux de données en HTML/CSS sur chaque page de modèle ; nettoyage des
       anciennes captures ; nouvelles statistiques (feuilles, formules, MFC).
-- [ ] Retour B — Design : modernisation audacieuse (palette multi-accents,
-      dégradés et ombres doux, animations subtiles, révision de .clinerules/04).
+- [x] Retour B — Design : modernisation audacieuse (2026-10-07) : design tokens
+      multi-accents (principal / « résultat » vert sauge / « méthode » bleu encre),
+      dégradés et ombres doux, composants modernisés (en-tête, navigation en
+      pastilles, cartes, tableaux, onglets, schéma de flux, sommaire, formulaire,
+      pied de page en bande sombre), micro-animations coupées si
+      prefers-reduced-motion ; impression laissée sobre ; .clinerules/04 révisée ;
+      aucun JavaScript modifié (poids ~20,75 Ko).
 - [ ] Retour C — Marketing / storytelling (accroche, chiffres clés, CTA).
 
 ## Journal

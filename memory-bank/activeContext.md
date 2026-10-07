@@ -3,12 +3,10 @@
 Refonte « Volpe Calogero — Mes réalisations administratifs » clôturée (R0 → R9).
 Nouvelle phase : retours du propriétaire (2026), traités un par un.
 - Retour A — Captures Excel « architecture interne » : TERMINÉ (captures de
-  formules, schémas de flux HTML/CSS, nettoyage des images). À fusionner et
-  publier.
-- Retour B — Design « modernisation audacieuse » : À VENIR. Décisions actées :
-  palette multi-accents, dégradés et ombres doux, animations subtiles
-  (prefers-reduced-motion respecté) ; révision de .clinerules/04 nécessaire ;
-  impression maintenue sobre (noir sur blanc).
+  formules, schémas de flux HTML/CSS, nettoyage des images). Fusionné et publié.
+- Retour B — Design « modernisation audacieuse » : TERMINÉ (design tokens,
+  palette multi-accents, dégradés/ombres doux, micro-animations, impression
+  sobre conservée). À fusionner et publier.
 - Retour C — Marketing / storytelling : À VENIR.
 - Captures Excel : méthode hybride actée — automatisation Excel pour les
   formules et vues de feuilles, captures manuelles du propriétaire pour les
@@ -215,6 +213,29 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   occurrence. Les fichiers locaux .gitignore.md et arboresence.md sont bien
   ignorés (non publiés).
 - Aucune correction nécessaire. Refonte R0 → R9 clôturée.
+
+Étapes du jalon Retour B (faites) — design « modernisation audacieuse »
+- .clinerules/04 : section Design révisée (palette multi-accents, dégradés et
+  ombres doux, micro-animations, toutes coupées si prefers-reduced-motion ;
+  impression sobre conservée). Règle locale (non publiée).
+- assets/css/style.css : design tokens enrichis dans :root (accent principal,
+  « résultat » vert sauge, « méthode » bleu encre, dégradés doux, ombres, rayons) ;
+  composants modernisés — en-tête en dégradé + ombre, navigation en pastilles
+  (état actif en dégradé), cartes à barre d'accent et survol, pied de page en
+  bande sombre, tableaux à en-tête coloré et ligne de total en vert sauge,
+  onglets CSS actifs en dégradé, schéma de flux, panneau « dossier lié » bleu,
+  sommaire en pastilles, formulaire, boutons pleins, portrait, recherche globale.
+  Apparition douce du contenu + défilement fluide, tous deux conditionnés à
+  prefers-reduced-motion ; jetons accent-2/3 déclinés en mode sombre.
+- assets/css/print.css : fonds, ombres et dégradés neutralisés (impression sobre
+  noir sur blanc) ; .card::before masqué ; bordures noires ; animation
+  d'apparition désactivée à l'impression.
+- JavaScript : AUCUN fichier modifié (poids inchangé ~20,75 Ko, sous la limite
+  de 21 Ko).
+- Vérification par rendu réel (Chrome headless, --virtual-time-budget) : accueil,
+  sommaire Excel, modèle 01, parcours et sommaire BP contrôlés en mode clair ET
+  sombre, après l'animation d'apparition ; aucun écart.
+- Recherche des noms interdits : aucune occurrence.
 
 Points ouverts
 

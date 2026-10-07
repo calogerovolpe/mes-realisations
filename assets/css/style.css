@@ -1,16 +1,38 @@
 /* Volpe Calogero — Mes réalisations administratifs — feuille de style unique.
-   Design « papier et archivage, aéré » : fond papier, encre foncée,
-   une seule couleur d'accent, filets fins, aucune animation ni dégradé. */
+   Design « papier moderne » : fond papier chaud, encre foncée, identité sobre
+   mais affirmée — plusieurs accents, dégradés et ombres doux, micro-animations
+   (toutes coupées si prefers-reduced-motion: reduce). Impressions soignées. */
 
 :root {
-  --papier: #f7f4ee;
-  --papier-2: #efeade;
-  --encre: #26221d;
-  --encre-douce: #5c554b;
-  --accent: #8a4b2a;
-  --accent-fond: #f4e8de;
-  --filet: #d8d0c2;
+  /* Fonds et encres — identité « papier » conservée */
+  --papier: #f6f1e7;
+  --papier-2: #efe7d7;
+  --encre: #221d16;
+  --encre-douce: #5a5044;
+  --filet: #d9cdbb;
   --fond-champ: #ffffff;
+
+  /* Accents : primaire (action), vert sauge (résultat), bleu encre (méthode) */
+  --accent: #a44a22;
+  --accent-fonce: #853a18;
+  --accent-fond: #f7e7dd;
+  --accent-2: #46735a;
+  --accent-2-fond: #e6efe9;
+  --accent-3: #3d5a80;
+  --accent-3-fond: #e5eaf2;
+
+  /* Dégradés doux */
+  --degrade-accent: linear-gradient(135deg, #bd5a2c, #a44a22);
+  --degrade-entete: linear-gradient(180deg, #faf6ee, #f1e9da);
+
+  /* Ombres douces */
+  --ombre-1: 0 1px 2px rgba(34, 29, 22, 0.06), 0 1px 3px rgba(34, 29, 22, 0.08);
+  --ombre-2: 0 8px 22px rgba(34, 29, 22, 0.16);
+
+  /* Rayons */
+  --rayon: 10px;
+  --rayon-petit: 6px;
+
   --largeur: 60rem;
   color-scheme: light dark;
 }
@@ -18,6 +40,9 @@
 * { box-sizing: border-box; }
 
 html { font-size: 100%; scroll-padding-top: 7rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   margin: 0;
@@ -35,23 +60,30 @@ h1, h2, h3 {
   color: var(--encre);
 }
 
-h1 { font-size: 2rem; margin: 0 0 1rem; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0 0 1rem; }
 h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
 h3 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
 
 p { margin: 0 0 1rem; }
 
-a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-a:hover { text-decoration: none; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--accent-fonce); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
 /* En-tête et navigation */
 .site-header {
   border-bottom: 1px solid var(--filet);
-  background: var(--papier);
+  background: var(--degrade-entete);
   position: sticky;
   top: 0;
   z-index: 20;
+  box-shadow: var(--ombre-1);
 }
 .site-header-inner {
   max-width: var(--largeur);
@@ -62,30 +94,34 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   display: inline-block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
+  letter-spacing: 0.01em;
   color: var(--encre);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
-.site-title:hover { text-decoration: none; }
-.site-nav { margin-top: 0.75rem; }
+.site-title:hover { color: var(--accent); }
+.site-nav { margin-top: 0.85rem; }
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
+  gap: 0.3rem 0.5rem;
 }
 .site-nav a {
   display: inline-block;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--rayon-petit);
   color: var(--encre-douce);
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
-.site-nav a:hover { color: var(--encre); }
+.site-nav a:hover { color: var(--encre); background: var(--papier-2); }
 .site-nav a[aria-current="page"] {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: #fff;
+  background: var(--degrade-accent);
+  box-shadow: var(--ombre-1);
 }
 
 /* Lien d'évitement « Aller au contenu » (accessibilité clavier) */
@@ -124,23 +160,37 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   border: 0;
 }
 
-/* Cartes de sections (accueil) */
+/* Cartes de sections (accueil + sommaires) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
   margin: 2rem 0 0;
 }
 .card {
+  position: relative;
+  overflow: hidden;
   display: block;
-  padding: 1.25rem 1.25rem 1.35rem;
+  padding: 1.35rem 1.35rem 1.45rem;
   border: 1px solid var(--filet);
-  background: var(--papier-2);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
   color: var(--encre);
   text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--degrade-accent);
 }
 .card:hover {
+  transform: translateY(-3px);
   border-color: var(--accent);
+  box-shadow: var(--ombre-2);
   text-decoration: none;
 }
 .card:focus-visible {
@@ -152,6 +202,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.15rem;
   line-height: 1.3;
+  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 .card-text {
@@ -161,20 +212,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   line-height: 1.5;
 }
 
-/* Pied de page */
+/* Pied de page — bande sombre pour marquer nettement la séparation */
 .site-footer {
-  border-top: 1px solid var(--filet);
-  color: var(--encre-douce);
+  border-top: 3px solid var(--accent);
+  background: #221d16;
+  color: #e7dfd0;
   font-size: 0.9rem;
 }
 .site-footer-inner {
   max-width: var(--largeur);
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 2.5rem;
+  padding: 1.75rem 1.25rem 2.5rem;
 }
 .site-footer p { margin: 0 0 0.5rem; }
-.site-footer a { color: var(--accent); }
-.site-footer .maj { font-size: 0.85rem; }
+.site-footer a { color: #f0b48f; }
+.site-footer a:hover { color: #ffffff; }
+.site-footer .maj { font-size: 0.85rem; color: #bdb3a1; }
 
 /* Fil d'Ariane */
 .fil-ariane {
@@ -185,10 +238,18 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .fil-ariane a { color: var(--accent); }
 
 /* Tableaux de synthèse */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.75rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+}
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0 1.75rem;
+  margin: 0;
   font-size: 0.95rem;
 }
 .table caption {
@@ -197,22 +258,27 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   color: var(--encre);
-  padding: 0 0 0.5rem;
+  padding: 0.85rem 0.75rem 0.5rem;
 }
 .table th,
 .table td {
-  padding: 0.5rem 0.6rem;
+  padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--filet);
   text-align: right;
 }
 .table thead th {
-  border-bottom: 2px solid var(--encre-douce);
-  color: var(--encre);
+  background: var(--accent-fond);
+  color: var(--accent-fonce);
+  border-bottom: 2px solid var(--accent);
 }
+.table tbody tr { transition: background-color 0.12s ease; }
+.table tbody tr:hover { background: var(--papier-2); }
 .table th:first-child,
 .table td:first-child { text-align: left; }
-.table tbody tr:last-child td { font-weight: bold; }
-.table-wrap { overflow-x: auto; }
+.table tbody tr:last-child {
+  font-weight: bold;
+  background: var(--accent-2-fond);
+}
 
 /* Onglets en CSS pur (pages de modèles) */
 .tabs { margin: 2rem 0 0; }
@@ -235,13 +301,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .tabs .tab-nav label {
   display: inline-block;
-  padding: 0.5rem 0.9rem;
+  padding: 0.5rem 0.95rem;
   border: 1px solid transparent;
   border-bottom: none;
-  border-radius: 4px 4px 0 0;
+  border-radius: var(--rayon-petit) var(--rayon-petit) 0 0;
   color: var(--encre-douce);
   cursor: pointer;
   margin-bottom: -1px;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 .tabs .tab-nav label:hover {
   color: var(--encre);
@@ -252,10 +319,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tabs #t2:checked ~ .tab-nav label[for="t2"],
 .tabs #t3:checked ~ .tab-nav label[for="t3"],
 .tabs #t4:checked ~ .tab-nav label[for="t4"] {
-  color: var(--accent);
-  background: var(--accent-fond);
-  border-color: var(--filet);
-  border-top: 2px solid var(--accent);
+  color: #fff;
+  background: var(--degrade-accent);
+  border-color: transparent;
+  box-shadow: var(--ombre-1);
 }
 .tabs #t1:focus-visible ~ .tab-nav label[for="t1"],
 .tabs #t2:focus-visible ~ .tab-nav label[for="t2"],
@@ -275,7 +342,9 @@ figure img {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
   background: #fff;
+  box-shadow: var(--ombre-1);
 }
 figcaption {
   font-size: 0.85rem;
@@ -286,14 +355,16 @@ figcaption {
 /* Schéma d'architecture du classeur (pages de modèles Excel) */
 .flux {
   margin: 1.5rem 0;
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 1.35rem;
   border: 1px solid var(--filet);
+  border-radius: var(--rayon);
   background: var(--papier-2);
+  box-shadow: var(--ombre-1);
 }
 .flux-stats {
   margin: 0 0 1.25rem;
   font-size: 0.9rem;
-  color: var(--encre-douce);
+  color: var(--accent-fonce);
 }
 .flux-chaine {
   display: flex;
@@ -317,17 +388,22 @@ figcaption {
 }
 .flux-feuille {
   display: inline-block;
-  padding: 0.35rem 0.7rem;
+  padding: 0.4rem 0.75rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-top: 3px solid var(--accent);
+  border-radius: var(--rayon-petit);
   background: var(--fond-champ);
   font-size: 0.9rem;
+  box-shadow: var(--ombre-1);
 }
 .flux-fleche {
   color: var(--accent);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
+/* Le niveau « résultat » (dernier) est mis en évidence en vert sauge */
+.flux-niveau:last-child .flux-role { color: var(--accent-2); }
+.flux-niveau:last-child .flux-feuille { border-top-color: var(--accent-2); }
 
 /* Listes de fonctions */
 .formules-liste {
@@ -362,11 +438,12 @@ figcaption {
   display: inline-block;
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--papier-2);
   color: var(--encre);
   text-decoration: none;
   font-size: 0.9rem;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
 .fonctions-liste a:hover {
   border-color: var(--accent);
@@ -381,16 +458,18 @@ figcaption {
 /* Recherche et filtres de l'index des fonctions (ajoutés par JavaScript — amélioration progressive) */
 .recherche {
   margin: 1rem 0 1.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem 1rem;
   border: 1px solid var(--filet);
+  border-radius: var(--rayon);
   background: var(--papier-2);
+  box-shadow: var(--ombre-1);
 }
 .recherche-champ {
   width: 100%;
   max-width: 22rem;
   padding: 0.5rem 0.65rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--fond-champ);
   color: var(--encre);
   font: inherit;
@@ -412,10 +491,11 @@ figcaption {
   font-size: 0.85rem;
   padding: 0.25rem 0.7rem;
   border: 1px solid var(--accent);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--papier-2);
   color: var(--accent);
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 .filtre-btn:hover { background: var(--accent); color: #fff; }
 .filtre-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
@@ -433,12 +513,14 @@ figcaption {
 /* Sommaire de page (ajouté par JavaScript — amélioration progressive) */
 .sommaire {
   margin: 0 0 1.75rem;
-  padding: 0.85rem 1rem 0.95rem;
+  padding: 0.95rem 1rem 1rem;
   border: 1px solid var(--filet);
+  border-radius: var(--rayon);
   background: var(--papier-2);
+  box-shadow: var(--ombre-1);
 }
 .sommaire-titre {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.6rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   color: var(--encre);
@@ -449,28 +531,32 @@ figcaption {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1rem;
+  gap: 0.4rem 0.5rem;
 }
 .sommaire a {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
-.sommaire a:hover { text-decoration: underline; }
+.sommaire a:hover { background: var(--accent-fond); }
 .sommaire a[aria-current] {
-  color: var(--encre);
-  border-bottom-color: var(--accent);
+  color: #fff;
+  background: var(--degrade-accent);
   font-weight: bold;
 }
 .sommaire a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Lien vers une réalisation liée (dossier) */
+/* Lien vers une réalisation liée (dossier) — panneau « info » */
 .dossier {
   margin: 1.5rem 0 2rem;
-  padding: 0.75rem 1rem 0.85rem;
+  padding: 0.85rem 1rem 0.95rem;
   border: 1px solid var(--filet);
-  border-left: 2px solid var(--accent);
-  background: var(--accent-fond);
+  border-left: 4px solid var(--accent-3);
+  border-radius: var(--rayon-petit);
+  background: var(--accent-3-fond);
 }
 .dossier-label {
   display: block;
@@ -478,10 +564,10 @@ figcaption {
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--encre-douce);
+  color: var(--accent-3);
   margin-bottom: 0.3rem;
 }
-.dossier-link { display: block; color: var(--accent); }
+.dossier-link { display: block; color: var(--accent-3); font-weight: 600; }
 .dossier-link + .dossier-link { margin-top: 0.35rem; }
 
 /* Mention discrète sur les cartes de sommaire */
@@ -512,7 +598,7 @@ figcaption {
   width: 100%;
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--fond-champ);
   color: var(--encre);
   font: inherit;
@@ -545,19 +631,19 @@ figcaption {
 .form button {
   font: inherit;
   font-size: 1rem;
-  padding: 0.6rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border: 1px solid var(--accent);
-  border-radius: 3px;
-  background: var(--papier-2);
-  color: var(--accent);
-  cursor: pointer;
-}
-.form button:hover {
-  background: var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
   color: #fff;
+  cursor: pointer;
+  box-shadow: var(--ombre-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
+.form button:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); }
+.form button:active { transform: translateY(1px); }
 .form button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-fonce);
   outline-offset: 2px;
 }
 
@@ -573,15 +659,17 @@ figcaption {
 .print-btn {
   font: inherit;
   font-size: 0.9rem;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.95rem;
   border: 1px solid var(--accent);
-  border-radius: 3px;
-  background: var(--papier-2);
-  color: var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
+  color: #fff;
   cursor: pointer;
+  box-shadow: var(--ombre-1);
+  transition: filter 0.15s ease, box-shadow 0.15s ease;
 }
-.print-btn:hover { background: var(--accent); color: #fff; }
-.print-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.print-btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); }
+.print-btn:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
 
 /* Retour en haut (ajouté par JavaScript — amélioration progressive) */
 .back-to-top {
@@ -589,19 +677,21 @@ figcaption {
   right: 1rem;
   bottom: 1rem;
   display: none; /* affiché via .is-visible (JavaScript) */
-  padding: 0.5rem 0.85rem;
+  padding: 0.55rem 0.9rem;
   font: inherit;
   font-size: 0.85rem;
   border: 1px solid var(--accent);
-  border-radius: 3px;
-  background: var(--papier-2);
-  color: var(--accent);
+  border-radius: 999px;
+  background: var(--degrade-accent);
+  color: #fff;
   cursor: pointer;
+  box-shadow: var(--ombre-2);
   z-index: 30;
+  transition: filter 0.15s ease;
 }
 .back-to-top.is-visible { display: inline-block; }
-.back-to-top:hover { background: var(--accent); color: #fff; }
-.back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.back-to-top:hover { filter: brightness(1.06); }
+.back-to-top:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
 
 /* Copie de l'adresse e-mail (ajouté par JavaScript — amélioration progressive) */
 .copy-email {
@@ -610,11 +700,12 @@ figcaption {
   font: inherit;
   font-size: 0.8rem;
   border: 1px solid var(--accent);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--papier-2);
   color: var(--accent);
   cursor: pointer;
   vertical-align: middle;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 .copy-email:hover { background: var(--accent); color: #fff; }
 .copy-email:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -630,7 +721,9 @@ figcaption {
   width: 100%;
   height: auto;
   border: 1px solid var(--filet);
+  border-radius: var(--rayon);
   background: #fff;
+  box-shadow: var(--ombre-2);
 }
 @media (min-width: 44rem) {
   .photo-profil {
@@ -642,8 +735,17 @@ figcaption {
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.6rem; }
   h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+}
+
+/* Apparition douce du contenu (désactivée si prefers-reduced-motion) */
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site-main { animation: apparition 0.45s ease-out both; }
 }
 
 /* Mode sombre — automatique selon la préférence système.
@@ -655,10 +757,22 @@ figcaption {
     --papier-2: #27231d;
     --encre: #ece6db;
     --encre-douce: #b3aa9b;
-    --accent: #cf8a5e;
-    --accent-fond: #33291f;
     --filet: #3b352c;
     --fond-champ: #141210;
+
+    --accent: #e0915f;
+    --accent-fonce: #f0a878;
+    --accent-fond: #3a2c20;
+    --accent-2: #8fbf9e;
+    --accent-2-fond: #223026;
+    --accent-3: #93b3dd;
+    --accent-3-fond: #223042;
+
+    --degrade-accent: linear-gradient(135deg, #d98a55, #b96a37);
+    --degrade-entete: linear-gradient(180deg, #26221c, #1e1b16);
+
+    --ombre-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --ombre-2: 0 8px 22px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -680,13 +794,14 @@ figcaption {
   gap: 0.35rem;
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--papier-2);
   color: var(--encre-douce);
   font: inherit;
   font-size: 0.9rem;
   line-height: 1.2;
   cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 .rg-btn:hover {
   color: var(--accent);
@@ -703,7 +818,7 @@ figcaption {
   font-size: 0.72rem;
   padding: 0.05rem 0.35rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
 }
 
 .rg-overlay {
@@ -724,8 +839,9 @@ figcaption {
   overflow: auto;
   padding: 1rem 1rem 1.15rem;
   border: 1px solid var(--filet);
-  border-radius: 4px;
+  border-radius: var(--rayon);
   background: var(--papier);
+  box-shadow: var(--ombre-2);
 }
 .rg-label {
   position: absolute;
@@ -736,7 +852,7 @@ figcaption {
   width: 100%;
   padding: 0.6rem 0.7rem;
   border: 1px solid var(--filet);
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
   background: var(--fond-champ);
   color: var(--encre);
   font: inherit;
@@ -755,7 +871,7 @@ figcaption {
   padding: 0.55rem 0.5rem;
   color: var(--encre);
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: var(--rayon-petit);
 }
 .rg-resultat:hover { background: var(--accent-fond); text-decoration: none; }
 .rg-resultat:focus-visible {

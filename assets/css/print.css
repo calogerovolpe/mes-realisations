@@ -55,7 +55,30 @@ h3 { page-break-after: avoid; }
 /* Images */
 img { max-width: 100%; height: auto; page-break-inside: avoid; }
 
-/* Conserver les fonds des blocs clés (tableaux de synthèse, dossiers) */
+/* Aucun fond, aucune ombre, aucun dégradé : impression sobre, noir sur blanc */
+.site-main { animation: none !important; }
 .card,
 .dossier,
-.table { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.flux,
+.recherche,
+.sommaire,
+.table-wrap,
+.table thead th,
+.tabs .tab-nav label,
+.print-btn,
+.back-to-top,
+.copy-email,
+.rg-btn {
+  background: none !important;
+  box-shadow: none !important;
+  color: #000000 !important;
+}
+.card::before { display: none !important; }
+.card,
+.dossier,
+.flux,
+.recherche,
+.sommaire,
+.table-wrap {
+  border: 1px solid #000000 !important;
+}
