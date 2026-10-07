@@ -43,6 +43,8 @@ de refonte à la fois.
       Câlins (design-charte-mascotte.html) ; photo de profil dans parcours.html
 - [x] R8 — Bonus : recherche globale Ctrl+K (global-search.js ; raccourci
       Ctrl+K/Cmd+K + bouton « Rechercher » ; limite JS portée à 21 Ko)
+- [x] R9 — Recette finale et clôture : audit automatisé des 17 pages (0 écart),
+      aucune ressource externe, encodage/CRLF et noms interdits conformes
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -276,6 +278,19 @@ de refonte à la fois.
   JavaScript portée de 15 à 21 Ko (.clinerules/04, techContext.md) ; poids total
   ~20,75 Ko. Recherche des noms interdits : aucune occurrence. Fusionné dans main,
   publié (global-search.js HTTP 200).
+
+- 2026-10-07 · R9 · Recette finale et clôture. Audit automatisé des 17 pages :
+  un seul <h1> par page, lang="fr", <title> et <meta description> uniques, Open
+  Graph complet, navigation identique + aria-current, lien d'évitement et
+  id="contenu", pied de page au texte exact + date, aucun lien mort, alt présent
+  et images < 300 Ko. Transversal : aucune ressource externe (hors Formspree et
+  og:url), encodage UTF-8 sans BOM et fins de ligne CRLF partout, recherche des
+  noms interdits sans occurrence. Poids JavaScript total 20,75 Ko (limite 21 Ko).
+  Aucun écart à corriger. La refonte R0 → R9 est clôturée. Points dépendant du
+  propriétaire laissés en l'état : identifiant Formspree « VOTRE_ID »
+  (contact.html), confirmation du budget JS, deux documents /docs non publiés
+  (PDF charte marque réelle ; « Faisa 2 epinay » différé), relecture visuelle des
+  captures.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

@@ -1,8 +1,9 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R8 — Bonus (recherche globale Ctrl+K) — terminé, fusionné dans
-`main` et publié. Dernier jalon de la refonte (R0 à R8).
+Jalon en cours : R9 — Recette finale et clôture — terminé, fusionné dans `main`
+et publié. La refonte R0 → R9 est clôturée. Points dépendant du propriétaire
+listés plus bas (formulaire Formspree, budget JS, deux /docs, captures).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -193,6 +194,17 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
 - Limite JavaScript portée de 15 à 21 Ko (.clinerules/04, techContext.md) ;
   poids total ~20,75 Ko. Fusionné dans main, publié.
 
+Étapes du jalon R9 (faites) — recette finale et clôture
+- Audit automatisé des 17 pages : lang="fr", un seul <h1>, <title> et
+  <meta description> uniques, Open Graph complet, navigation identique +
+  aria-current, lien d'évitement + id="contenu", pied de page au texte exact +
+  date, aucun lien mort, alt présent et images < 300 Ko. Aucun écart.
+- Transversal : aucune ressource externe (hors Formspree et og:url), encodage
+  UTF-8 sans BOM et fins de ligne CRLF partout, recherche des noms interdits sans
+  occurrence. Les fichiers locaux .gitignore.md et arboresence.md sont bien
+  ignorés (non publiés).
+- Aucune correction nécessaire. Refonte R0 → R9 clôturée.
+
 Points ouverts
 
 - E-mail de contact unique publié sur les pages Contact et Parcours (adresse
@@ -202,6 +214,9 @@ Points ouverts
   (statut 404 + contenu personnalisé) ; un marqueur .nojekyll est présent.
 - Endpoint du formulaire : l'attribut action pointe vers Formspree ; l'identifiant
   (f/…) reste à renseigner par le propriétaire (« VOTRE_ID » dans contact.html).
+- Budget JavaScript : limite portée à 21 Ko en R8 ; confirmation du propriétaire
+  en attente (21 Ko conservé, ou retour à 20 Ko en retirant la description des
+  résultats ou le piège de focus).
 - Incident GitHub Actions résolu : service repassé en « operational » ; le build
   du commit J6 publie l'ensemble des pages (dont parcours.html resté en file).
 - ANCHORARRAY est écrit tel quel (opérateur de plage déversée) ; aucune traduction
