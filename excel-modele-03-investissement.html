@@ -57,10 +57,22 @@
     <li>analyse des données par deux tableaux croisés dynamiques.</li>
   </ul>
   <p>Le modèle est relié à un classeur externe de données, afin d'éviter de ressaisir les prix des articles.</p>
-  <figure>
-    <img src="assets/img/excel-03-synthese.png" alt="Feuille de synthèse : chiffre d'affaires, sorties et bénéfice net, mensuels et annuels.">
-    <figcaption>Feuille de synthèse : chiffre d'affaires, sorties et bénéfice net, en mensuel et en annuel.</figcaption>
-  </figure>
+
+  <h2>Architecture du classeur</h2>
+  <p>Dix feuilles reliées entre elles descendent du chiffre d'affaires prévisionnel au résultat net, en passant par le plan de financement. Le schéma ci-dessous résume la circulation des données.</p>
+  <div class="flux" role="group" aria-label="Schéma du flux de données entre les feuilles du classeur">
+    <p class="flux-stats">10 feuilles · environ 3 800 formules · chaînage du chiffre d'affaires au résultat net</p>
+    <div class="flux-chaine">
+      <div class="flux-niveau"><span class="flux-role">Hypothèses</span><span class="flux-feuille">Paramètres</span><span class="flux-feuille">Articles</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Exploitation</span><span class="flux-feuille">Menu</span><span class="flux-feuille">Ventes</span><span class="flux-feuille">Personnels</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Prévisionnel</span><span class="flux-feuille">Bilan prévisionnel</span><span class="flux-feuille">Financement initial</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Résultat</span><span class="flux-feuille">Synthèse</span></div>
+    </div>
+  </div>
+  <p>La feuille de synthèse ne contient que des renvois vers les feuilles de calcul : le chiffre d'affaires vient des ventes, les sorties et le bénéfice net du bilan prévisionnel. Une seule hypothèse de fréquentation suffit à recalculer tout le dossier.</p>
 
   <h2>Résultat</h2>
   <p>Les tableaux ci-dessous reprennent la synthèse prévisionnelle et les hypothèses de fréquentation issues du modèle (26 jours d'ouverture par mois).</p>
@@ -96,49 +108,25 @@
   <div class="tabs">
     <input type="radio" name="onglet-modele-03" id="t1" class="tab-radio" checked>
     <input type="radio" name="onglet-modele-03" id="t2" class="tab-radio">
-    <input type="radio" name="onglet-modele-03" id="t3" class="tab-radio">
-    <input type="radio" name="onglet-modele-03" id="t4" class="tab-radio">
     <div class="tab-nav">
-      <label for="t1">Paramètres</label>
-      <label for="t2">Menu et ventes</label>
-      <label for="t3">Bilan, financement, personnel</label>
-      <label for="t4">Formules</label>
+      <label for="t1">Chaînage entre feuilles</label>
+      <label for="t2">Feuille de ventes</label>
     </div>
     <div class="tab-panels">
       <section class="tab-panel tab-1">
         <figure>
-          <img src="assets/img/excel-03-parametres.png" alt="Paramètres de fréquentation : couverts par moment de la journée (matin, midi, soir).">
-          <figcaption>Paramètres de fréquentation : couverts par moment de la journée.</figcaption>
+          <img src="assets/img/excel-03-archi-synthese.png" alt="Feuille de synthèse avec les formules affichées : renvois vers les feuilles de ventes et de bilan prévisionnel.">
+          <figcaption>Feuille de synthèse, formules affichées : le chiffre d'affaires vient des ventes, le résultat du bilan prévisionnel.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-03-archi-bilan.png" alt="Bilan prévisionnel avec les formules affichées : recettes et dépenses reliées aux feuilles de ventes et de personnel.">
+          <figcaption>Bilan prévisionnel, formules affichées : chaque ligne de recette ou de dépense renvoie à une autre feuille du classeur.</figcaption>
         </figure>
       </section>
       <section class="tab-panel tab-2">
         <figure>
-          <img src="assets/img/excel-03-menu.png" alt="Feuille de menu : produits, ingrédients, unités, quantités et prix d'achat.">
-          <figcaption>Menu : produits, ingrédients et coûts d'achat.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/excel-03-ventes.png" alt="Grille de ventes : quantités, coût matière, prix de vente et marge par produit.">
-          <figcaption>Grille de ventes : quantités, coût matière, prix de vente et marge.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-3">
-        <figure>
-          <img src="assets/img/excel-03-bilan.png" alt="Bilan prévisionnel : recettes, frais fixes, frais variables, impôt et résultat.">
-          <figcaption>Bilan prévisionnel : recettes, dépenses et résultat.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/excel-03-financement.png" alt="Plan de financement : investissement matériel et immobilisations incorporelles et corporelles.">
-          <figcaption>Plan de financement : investissement et immobilisations.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/excel-03-personnels.png" alt="Masse salariale selon le statut de la société.">
-          <figcaption>Personnel : masse salariale selon le statut de la société.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-4">
-        <figure>
-          <img src="assets/img/excel-03-formules.png" alt="Feuille de menu avec les formules affichées : recherche et renvois vers la base d'articles.">
-          <figcaption>Menu avec les formules affichées.</figcaption>
+          <img src="assets/img/excel-03-archi-ventes.png" alt="Feuille de ventes avec les formules affichées : répartition par jour, semaine et mois selon les paramètres et le menu.">
+          <figcaption>Feuille de ventes, formules affichées : les quantités découlent des paramètres d'exploitation et du menu.</figcaption>
         </figure>
       </section>
     </div>

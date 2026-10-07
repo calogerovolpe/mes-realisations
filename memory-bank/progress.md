@@ -46,6 +46,19 @@ de refonte à la fois.
 - [x] R9 — Recette finale et clôture : audit automatisé des 17 pages (0 écart),
       aucune ressource externe, encodage/CRLF et noms interdits conformes
 
+## Retours du propriétaire (après clôture de la refonte)
+Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un jalon
+= une conversation = un commit.
+
+- [x] Retour A — Captures Excel « architecture interne » (2026-10-07) :
+      captures de formules (Ctrl+`) des feuilles de chaînage des trois modèles ;
+      remplacement des vues de résultat par des preuves de structure ; schéma de
+      flux de données en HTML/CSS sur chaque page de modèle ; nettoyage des
+      anciennes captures ; nouvelles statistiques (feuilles, formules, MFC).
+- [ ] Retour B — Design : modernisation audacieuse (palette multi-accents,
+      dégradés et ombres doux, animations subtiles, révision de .clinerules/04).
+- [ ] Retour C — Marketing / storytelling (accroche, chiffres clés, CTA).
+
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
   dossier / root), page d'accueil en ligne vérifiée (build « built », HTTP 200).
@@ -291,6 +304,18 @@ de refonte à la fois.
   (contact.html), confirmation du budget JS, deux documents /docs non publiés
   (PDF charte marque réelle ; « Faisa 2 epinay » différé), relecture visuelle des
   captures.
+
+- 2026-10-07 · Retour A · Captures Excel « architecture interne ». Analyse des
+  classeurs de /docs (noms de feuilles, formules, liaisons croisées, validations,
+  mises en forme conditionnelles) sans les modifier. Nouvelles captures de
+  formules (affichage Ctrl+`) via automatisation Excel (copie d'image de plage),
+  puis recadrage : ventes et synthèse du modèle 01, fiche technique et base de
+  recettes du modèle 02, synthèse, bilan prévisionnel et ventes du modèle 03.
+  Suppression des anciennes vues de résultat (12 images). Ajout d'un schéma de
+  flux de données en HTML/CSS (composant .flux) sur chaque page de modèle, avec
+  statistiques (feuilles, formules, règles de mise en forme conditionnelle).
+  style.css : styles .flux. Aucun fichier JavaScript modifié. Recherche des noms
+  interdits : aucune occurrence hors fichiers de règles (ignorés).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

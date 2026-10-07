@@ -57,10 +57,22 @@
     <li>financement de départ : besoin d'investissement et de fonds de roulement ;</li>
     <li>analyse des données par tableaux croisés dynamiques.</li>
   </ul>
-  <figure>
-    <img src="assets/img/excel-01-parametres.png" alt="Feuille de paramètres du modèle : couverts et répartition du menu.">
-    <figcaption>Feuille de paramètres : couverts et répartition du menu.</figcaption>
-  </figure>
+
+  <h2>Architecture du classeur</h2>
+  <p>Le classeur repose sur neuf feuilles reliées entre elles : chaque hypothèse n'est saisie qu'une seule fois, puis se propage automatiquement jusqu'au résultat. Le schéma ci-dessous résume le sens de circulation des données.</p>
+  <div class="flux" role="group" aria-label="Schéma du flux de données entre les feuilles du classeur">
+    <p class="flux-stats">9 feuilles · environ 7 700 formules · 89 règles de mise en forme conditionnelle</p>
+    <div class="flux-chaine">
+      <div class="flux-niveau"><span class="flux-role">Entrées</span><span class="flux-feuille">Paramètres</span><span class="flux-feuille">Liste d'ingrédients</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Calculs</span><span class="flux-feuille">Menu</span><span class="flux-feuille">Ventes</span><span class="flux-feuille">Calcul ingrédient</span><span class="flux-feuille">Personnels</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Synthèse</span><span class="flux-feuille">Synthèse</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Résultat</span><span class="flux-feuille">Bénéfice</span></div>
+    </div>
+  </div>
+  <p>Les données ne sont jamais ressaisies : la feuille de ventes renvoie aux prix de la liste d'ingrédients, la synthèse agrège les ventes par période, et la feuille de bénéfice reprend la synthèse et le personnel. Modifier une seule hypothèse suffit à recalculer l'ensemble du classeur.</p>
 
   <h2>Résultat</h2>
   <p>Les tableaux ci-dessous reprennent les hypothèses de fréquentation et la projection prévisionnelle issues du modèle.</p>
@@ -97,41 +109,25 @@
   <div class="tabs">
     <input type="radio" name="onglet-modele-01" id="t1" class="tab-radio" checked>
     <input type="radio" name="onglet-modele-01" id="t2" class="tab-radio">
-    <input type="radio" name="onglet-modele-01" id="t3" class="tab-radio">
-    <input type="radio" name="onglet-modele-01" id="t4" class="tab-radio">
     <div class="tab-nav">
-      <label for="t1">Ventes et marges</label>
-      <label for="t2">Bénéfice et prévisionnel</label>
-      <label for="t3">Tableaux croisés dynamiques</label>
-      <label for="t4">Formules</label>
+      <label for="t1">Chaînage entre feuilles</label>
+      <label for="t2">Tableaux croisés dynamiques</label>
     </div>
     <div class="tab-panels">
       <section class="tab-panel tab-1">
         <figure>
-          <img src="assets/img/excel-01-ventes.png" alt="Feuille de ventes du modèle : quantités, coût matière, coefficient et marge brute par plat.">
-          <figcaption>Grille de ventes : quantités, coût matière, coefficient et marge brute par plat.</figcaption>
+          <img src="assets/img/excel-01-archi-ventes.png" alt="Feuille de ventes avec les formules affichées : renvoi vers la liste d'ingrédients et référence structurée du tableau.">
+          <figcaption>Feuille de ventes, formules affichées : chaque ligne renvoie au prix d'achat de la liste d'ingrédients, et la marge se calcule avec les noms de colonnes du tableau.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/excel-01-archi-synthese.png" alt="Feuille de synthèse avec les formules affichées : agrégation des ventes par période.">
+          <figcaption>Feuille de synthèse, formules affichées : chaque total est construit par renvois croisés vers la feuille de ventes, puis agrégé.</figcaption>
         </figure>
       </section>
       <section class="tab-panel tab-2">
         <figure>
-          <img src="assets/img/excel-01-benefice.png" alt="Feuille de calcul des bénéfices du modèle : revenus, charges et résultat.">
-          <figcaption>Calcul des bénéfices : revenus, charges et résultat.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/excel-01-previsionnel.png" alt="Feuille de bénéfice prévisionnel : projection mensuelle.">
-          <figcaption>Bénéfice prévisionnel : projection mensuelle.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-3">
-        <figure>
           <img src="assets/img/excel-01-tcd.png" alt="Tableau croisé dynamique du modèle : analyse croisée des coûts.">
           <figcaption>Tableau croisé dynamique : analyse croisée des coûts matière.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-4">
-        <figure>
-          <img src="assets/img/excel-01-formules.png" alt="Feuille du modèle avec les formules affichées.">
-          <figcaption>Affichage des formules d'une feuille de ventes.</figcaption>
         </figure>
       </section>
     </div>

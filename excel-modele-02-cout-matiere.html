@@ -60,6 +60,20 @@
     <figcaption>Fiche technique d'un plat : ingrédients, coût par portion et préparation.</figcaption>
   </figure>
 
+  <h2>Architecture du classeur</h2>
+  <p>Le classeur part d'une base de recettes et d'une mercuriale de prix fournisseurs. Les fiches techniques ne contiennent aucun prix en dur : elles lisent la base par recherche et par listes dynamiques, ce qui garantit qu'une seule source de prix alimente tout le classeur.</p>
+  <div class="flux" role="group" aria-label="Schéma du flux de données entre les feuilles du classeur">
+    <p class="flux-stats">5 feuilles reliées entre elles · listes dynamiques sans doublon · version de travail avec automatisation VBA</p>
+    <div class="flux-chaine">
+      <div class="flux-niveau"><span class="flux-role">Données</span><span class="flux-feuille">Mercuriale (prix fournisseurs)</span><span class="flux-feuille">Base de recettes</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Calcul</span><span class="flux-feuille">Fiche technique</span></div>
+      <div class="flux-fleche" aria-hidden="true">↓</div>
+      <div class="flux-niveau"><span class="flux-role">Résultat</span><span class="flux-feuille">Synthèse des prix</span></div>
+    </div>
+  </div>
+  <p>Chaque fiche technique recalcule son coût matière à partir des recettes et des prix d'achat, puis détermine le prix de revente selon le coefficient, les frais fixes et la TVA. Une mise à jour d'un prix se répercute automatiquement sur toutes les fiches et sur la synthèse.</p>
+
   <h2>Résultat</h2>
   <p>Les tableaux ci-dessous reprennent la décomposition du coût matière d'un plat et les paramètres de calcul du prix de revente issus du modèle.</p>
   <div class="table-wrap">
@@ -111,37 +125,21 @@
   <div class="tabs">
     <input type="radio" name="onglet-modele-02" id="t1" class="tab-radio" checked>
     <input type="radio" name="onglet-modele-02" id="t2" class="tab-radio">
-    <input type="radio" name="onglet-modele-02" id="t3" class="tab-radio">
-    <input type="radio" name="onglet-modele-02" id="t4" class="tab-radio">
     <div class="tab-nav">
-      <label for="t1">Fiches techniques</label>
-      <label for="t2">Base d'ingrédients</label>
-      <label for="t3">Synthèse des prix</label>
-      <label for="t4">Formules</label>
+      <label for="t1">Recherche et listes dynamiques</label>
+      <label for="t2">Base de recettes</label>
     </div>
     <div class="tab-panels">
       <section class="tab-panel tab-1">
         <figure>
-          <img src="assets/img/excel-02-fiche-caprese.png" alt="Fiche technique d'un second plat : ingrédients, quantités et coût total HT.">
-          <figcaption>Fiche technique d'un second plat, établie depuis la même base.</figcaption>
+          <img src="assets/img/excel-02-archi-fiche.png" alt="Fiche technique avec les formules affichées : recherche, filtrage dynamique, suppression des doublons et gestion des erreurs.">
+          <figcaption>Fiche technique, formules affichées : le coût matière est reconstruit par recherche dans la base, filtrage dynamique et suppression des doublons, avec gestion des fiches incomplètes.</figcaption>
         </figure>
       </section>
       <section class="tab-panel tab-2">
         <figure>
-          <img src="assets/img/excel-02-bdd.png" alt="Base de données des recettes : catégories, nom de la recette, produit, unité et quantité.">
-          <figcaption>Base de données : chaque recette reliée à ses produits et à ses quantités.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-3">
-        <figure>
-          <img src="assets/img/excel-02-synthese.png" alt="Synthèse des prix de revente et des marges par recette.">
-          <figcaption>Synthèse des prix de revente et des marges par recette.</figcaption>
-        </figure>
-      </section>
-      <section class="tab-panel tab-4">
-        <figure>
-          <img src="assets/img/excel-02-formules.png" alt="Fiche technique avec les formules affichées : recherche, filtrage et gestion des erreurs.">
-          <figcaption>Fiche technique avec les formules affichées.</figcaption>
+          <img src="assets/img/excel-02-bdd.png" alt="Base de recettes structurée en tableau : catégories, nom de la recette, produit, unité et quantité.">
+          <figcaption>Base de recettes structurée en tableau : chaque recette est reliée à ses produits, unités et quantités.</figcaption>
         </figure>
       </section>
     </div>

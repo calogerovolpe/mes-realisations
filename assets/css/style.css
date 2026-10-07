@@ -283,6 +283,52 @@ figcaption {
   margin-top: 0.5rem;
 }
 
+/* Schéma d'architecture du classeur (pages de modèles Excel) */
+.flux {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem 1.25rem;
+  border: 1px solid var(--filet);
+  background: var(--papier-2);
+}
+.flux-stats {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+}
+.flux-chaine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.flux-niveau {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.flux-role {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.flux-feuille {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: var(--fond-champ);
+  font-size: 0.9rem;
+}
+.flux-fleche {
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 /* Listes de fonctions */
 .formules-liste {
   list-style: none;

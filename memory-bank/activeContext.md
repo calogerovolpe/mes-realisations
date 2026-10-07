@@ -1,11 +1,22 @@
 # activeContext.md
 
-Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R9 — Recette finale et clôture — terminé, fusionné dans `main`
-et publié. La refonte R0 → R9 est clôturée. Points dépendant du propriétaire
-listés plus bas (formulaire Formspree, budget JS, deux /docs, captures).
-Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
-traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
+Refonte « Volpe Calogero — Mes réalisations administratifs » clôturée (R0 → R9).
+Nouvelle phase : retours du propriétaire (2026), traités un par un.
+- Retour A — Captures Excel « architecture interne » : TERMINÉ (captures de
+  formules, schémas de flux HTML/CSS, nettoyage des images). À fusionner et
+  publier.
+- Retour B — Design « modernisation audacieuse » : À VENIR. Décisions actées :
+  palette multi-accents, dégradés et ombres doux, animations subtiles
+  (prefers-reduced-motion respecté) ; révision de .clinerules/04 nécessaire ;
+  impression maintenue sobre (noir sur blanc).
+- Retour C — Marketing / storytelling : À VENIR.
+- Captures Excel : méthode hybride actée — automatisation Excel pour les
+  formules et vues de feuilles, captures manuelles du propriétaire pour les
+  fenêtres modales (gestionnaire de noms, validation, mise en forme
+  conditionnelle).
+Règle : un jalon = une seule conversation = un commit ; ne jamais traiter deux
+jalons à la fois. Développement sur `refonte`, publication sur `main` après
+chaque jalon.
 
 Décisions verrouillées (brief de refonte)
 - Titre du site : « Volpe Calogero — Mes réalisations administratifs ».
