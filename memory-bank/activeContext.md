@@ -1,7 +1,8 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R7 — Finitions (terminé, fusionné dans `main` et publié).
+Jalon en cours : R7b — Contenus complémentaires (sommaire « Identité visuelle »,
+charte L'îlot Câlins, photo de profil) — terminé, fusionné dans `main` et publié.
 Prochain jalon : R8 — Bonus (recherche globale Ctrl+K).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
@@ -94,6 +95,35 @@ Corrections de contenu appliquées en R1 (faites)
   sur <main> des 15 pages ; garde `@media (prefers-reduced-motion: reduce)`.
 - Aucun fichier JavaScript modifié : poids JS inchangé (~14,6 Ko). style.css et
   print.css sont les seuls fichiers d'assets modifiés.
+
+Étapes du jalon R7b (faites)
+- Nouveau sommaire « Identité visuelle » : identite-visuelle.html (phrase
+  d'introduction + deux cartes). La navigation « Identité visuelle » des 15 pages
+  pointe désormais vers ce sommaire ; les sous-pages du secteur (design-charte.html,
+  design-charte-mascotte.html) portent aria-current="page".
+- Nouvelle réalisation : design-charte-mascotte.html — charte graphique de
+  l'association RÉELLE L'îlot Câlins, présentée avec son autorisation (structure
+  imposée : Titre → Contexte → Méthode → Résultat → Ce que cela démontre ; fil
+  d'Ariane « Identité visuelle — L'îlot Câlins »). Deux tableaux de synthèse
+  (palette en hexadécimal ; typographies) + six planches JPEG (< 300 Ko) : logo,
+  couleurs, deux typographies, lignes courbées, mascottes.
+- Méthode capture : pages du PDF source rendues en images (PyMuPDF, 150 dpi) puis
+  recadrées (rectangle haut/bas) pour retirer le bandeau d'en-tête et le numéro de
+  page ; JPEG qualité 88 (Pillow). La page 10 du PDF (coordonnées et nom du studio)
+  est EXCLUE, comme tout nom de studio : seules les pages 3, 4, 5, 6, 7 et 9 sont
+  reprises. Contrairement aux autres marques, L'îlot Câlins n'est pas une marque
+  inventée — l'association est réelle, la charte est diffusée avec sa permission.
+- Fil d'Ariane de design-charte.html reciblé (« Identité visuelle — Casa Urpi »).
+  Le lien « dossier lié » de excel-modele-02 (coût matière Casa Urpi) reste pointé
+  vers design-charte.html (et non le sommaire).
+- parcours.html : photo de profil intégrée (assets/img/photo-profil.jpg, 478×480,
+  ~45 Ko, alt neutre « Portrait ») dans un <figure class="photo-profil"> — centrée
+  sur mobile, flottante à droite dès 44rem, incluse à l'impression (CV).
+- style.css : règle .photo-profil (+ @media min-width 44rem). Aucun fichier
+  JavaScript modifié (poids JS inchangé ~14,6 Ko).
+- mentions-legales.html : mention ajoutée — la charte L'îlot Câlins porte sur une
+  association réelle, diffusée avec son autorisation.
+- Recherche des noms interdits : aucune occurrence dans les fichiers publiés.
 
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier

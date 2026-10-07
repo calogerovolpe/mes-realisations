@@ -38,6 +38,9 @@ de refonte à la fois.
 - [x] R6 — Dynamisme : sommaire automatique et scroll-spy (compteurs animés et apparition au défilement écartés, jugés superflus)
 - [x] R7 — Finitions : Open Graph, accessibilité (lien d'évitement), mode sombre
       automatique, date de dernière mise à jour
+- [x] R7b — Contenus complémentaires : sommaire « Identité visuelle »
+      (identite-visuelle.html) ; charte graphique de l'association réelle L'îlot
+      Câlins (design-charte-mascotte.html) ; photo de profil dans parcours.html
 - [ ] R8 — Bonus : recherche globale Ctrl+K
 
 ## Journal
@@ -245,6 +248,21 @@ de refonte à la fois.
   garde `@media (prefers-reduced-motion: reduce)`. Aucun fichier JavaScript modifié
   (poids JS inchangé ~14,6 Ko) ; style.css (+48 lignes) et print.css (+1 ligne).
   Recherche des noms interdits : aucune occurrence.
+- 2026-10-07 · R7b · Contenus complémentaires. (1) Sommaire « Identité visuelle » :
+  identite-visuelle.html créé (phrase d'introduction + deux cartes) ; la navigation
+  « Identité visuelle » des 15 pages pointe vers ce sommaire ; les sous-pages du
+  secteur (design-charte.html, design-charte-mascotte.html) portent aria-current.
+  (2) design-charte-mascotte.html : charte graphique de l'association RÉELLE
+  L'îlot Câlins, présentée avec son autorisation (structure imposée ; deux tableaux
+  de synthèse — palette hexadécimale et typographies ; six planches JPEG < 300 Ko
+  recadrées depuis le PDF source via PyMuPDF 150 dpi + Pillow, bandeau d'en-tête et
+  numéro de page retirés). La page 10 du PDF (coordonnées et nom du studio) est
+  exclue ; aucun nom de studio recopié. mentions-legales.html complété d'une
+  mention sur l'association réelle et l'autorisation de diffusion. (3) parcours.html :
+  photo de profil intégrée (assets/img/photo-profil.jpg, 478×480, ~45 Ko, alt neutre
+  « Portrait ») — centrée sur mobile, flottante à droite dès 44rem, incluse à
+  l'impression. style.css : règle .photo-profil. Aucun fichier JavaScript modifié
+  (poids JS inchangé ~14,6 Ko). Recherche des noms interdits : aucune occurrence.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
