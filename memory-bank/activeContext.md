@@ -1,9 +1,8 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R7b — Contenus complémentaires (sommaire « Identité visuelle »,
-charte L'îlot Câlins, photo de profil) — terminé, fusionné dans `main` et publié.
-Prochain jalon : R8 — Bonus (recherche globale Ctrl+K).
+Jalon en cours : R8 — Bonus (recherche globale Ctrl+K) — terminé, fusionné dans
+`main` et publié. Dernier jalon de la refonte (R0 à R8).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -178,6 +177,21 @@ créée (éditeur, hébergeur GitHub Pages, propriété intellectuelle, données
 personnelles et confidentialité, assistance IA « assistées par IA, relues et
 corrigées », absence de téléchargement). Styles de formulaire ajoutés au CSS.
 Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
+
+Étapes du jalon R8 (faites)
+- assets/js/global-search.js (nouveau) : recherche globale. Raccourci Ctrl+K
+  (Cmd+K sur Mac), plus un bouton « Rechercher Ctrl K » injecté en fin de
+  navigation. Panneau role="dialog" aria-modal : champ, liste de résultats,
+  navigation clavier (↑/↓, Entrée, Échap), piège de focus, restauration du focus
+  et compteur aria-live. Correspondance insensible à la casse et aux accents ;
+  index de 17 pages (titre, url, section, résumé) embarqué dans le fichier ;
+  sans JavaScript, aucun effet (amélioration progressive).
+- assets/js/main.js : chargement de global-search.js (après sommaire.js).
+- assets/css/style.css : styles .rg-* (bouton, panneau, champ, résultats) —
+  variables existantes, donc mode sombre automatique ; aucune animation.
+- assets/css/print.css : .rg-overlay masqué à l'impression.
+- Limite JavaScript portée de 15 à 21 Ko (.clinerules/04, techContext.md) ;
+  poids total ~20,75 Ko. Fusionné dans main, publié.
 
 Points ouverts
 

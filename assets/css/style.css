@@ -624,3 +624,111 @@ figcaption {
     transition: none !important;
   }
 }
+
+/* Recherche globale (Ctrl+K) — interface créée par JavaScript.
+   Amélioration progressive : sans JavaScript, ces styles ne s'appliquent à rien.
+   Aucune animation (rien à désactiver pour prefers-reduced-motion). */
+.rg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: var(--papier-2);
+  color: var(--encre-douce);
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.rg-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.rg-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.rg-kbd {
+  font-family: ui-monospace, Consolas, "Courier New", monospace;
+  font-size: 0.72rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+}
+
+.rg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1rem 1rem;
+  background: rgba(30, 27, 22, 0.5);
+}
+.rg-overlay[hidden] { display: none; }
+.rg-panneau {
+  width: 100%;
+  max-width: 34rem;
+  max-height: 72vh;
+  overflow: auto;
+  padding: 1rem 1rem 1.15rem;
+  border: 1px solid var(--filet);
+  border-radius: 4px;
+  background: var(--papier);
+}
+.rg-label {
+  position: absolute;
+  width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.rg-champ {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  background: var(--fond-champ);
+  color: var(--encre);
+  font: inherit;
+  font-size: 1rem;
+}
+.rg-champ:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.rg-liste { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+.rg-liste li { border-bottom: 1px solid var(--filet); }
+.rg-liste li:last-child { border-bottom: none; }
+.rg-resultat {
+  display: block;
+  padding: 0.55rem 0.5rem;
+  color: var(--encre);
+  text-decoration: none;
+  border-radius: 3px;
+}
+.rg-resultat:hover { background: var(--accent-fond); text-decoration: none; }
+.rg-resultat:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  background: var(--accent-fond);
+}
+.rg-resultat-titre {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--accent);
+}
+.rg-resultat-meta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+}
+.rg-statut {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+}

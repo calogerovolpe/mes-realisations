@@ -41,7 +41,8 @@ de refonte à la fois.
 - [x] R7b — Contenus complémentaires : sommaire « Identité visuelle »
       (identite-visuelle.html) ; charte graphique de l'association réelle L'îlot
       Câlins (design-charte-mascotte.html) ; photo de profil dans parcours.html
-- [ ] R8 — Bonus : recherche globale Ctrl+K
+- [x] R8 — Bonus : recherche globale Ctrl+K (global-search.js ; raccourci
+      Ctrl+K/Cmd+K + bouton « Rechercher » ; limite JS portée à 21 Ko)
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -263,6 +264,18 @@ de refonte à la fois.
   « Portrait ») — centrée sur mobile, flottante à droite dès 44rem, incluse à
   l'impression. style.css : règle .photo-profil. Aucun fichier JavaScript modifié
   (poids JS inchangé ~14,6 Ko). Recherche des noms interdits : aucune occurrence.
+
+- 2026-10-07 · R8 · Bonus — recherche globale. assets/js/global-search.js créé :
+  index de 17 pages embarqué, raccourci Ctrl+K/Cmd+K et bouton « Rechercher »
+  injecté en fin de navigation ; panneau role="dialog" aria-modal avec champ,
+  liste de résultats, navigation clavier (↑/↓, Entrée, Échap), piège de focus,
+  restauration du focus et compteur aria-live ; correspondance insensible à la
+  casse et aux accents ; amélioration progressive (aucun effet sans JavaScript).
+  main.js charge global-search.js ; styles .rg-* dans style.css (mode sombre
+  hérité, sans animation) ; .rg-overlay masqué à l'impression (print.css). Limite
+  JavaScript portée de 15 à 21 Ko (.clinerules/04, techContext.md) ; poids total
+  ~20,75 Ko. Recherche des noms interdits : aucune occurrence. Fusionné dans main,
+  publié (global-search.js HTTP 200).
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

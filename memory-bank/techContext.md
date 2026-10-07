@@ -3,13 +3,14 @@
 Langages : HTML5, CSS3, JavaScript vanilla (accord explicite de la refonte).
 JavaScript autorisé UNIQUEMENT en amélioration progressive : le contenu reste
 lisible et navigable JavaScript désactivé.
-Contraintes JavaScript : point d'entrée unique en defer ; moins de 15 Ko non
+Contraintes JavaScript : point d'entrée unique en defer ; moins de 21 Ko non
 minifié ; aucun script bloquant le rendu ; tout désactiver si
 prefers-reduced-motion: reduce.
 Aucun : framework, build, npm, CDN, police externe, analytics, cookie, script tiers.
 
 Fichiers de style : assets/css/style.css (global), assets/css/print.css (impression).
-Fichiers de script : assets/js/main.js (entrée), nav.js, print.js, search.js, reveal.js.
+Fichiers de script : assets/js/main.js (entrée), nav.js, print.js, search.js,
+sommaire.js, global-search.js.
 
 Hébergement : GitHub Pages, dépôt public « mes-realisations ».
 Refonte : développement sur la branche « refonte » ; publication sur la branche

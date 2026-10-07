@@ -11,7 +11,8 @@
     'assets/js/print.js',
     'assets/js/nav.js',
     'assets/js/search.js',
-    'assets/js/sommaire.js'
+    'assets/js/sommaire.js',
+    'assets/js/global-search.js'
   ];
 
   modules.forEach(function (src) {
