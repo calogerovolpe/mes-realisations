@@ -36,8 +36,8 @@ de refonte à la fois.
 - [x] R4 — Recherche des fonctions : filtres et recherche instantanée (excel.html)
 - [ ] R5 — Accordéons : ABANDONNÉ (accordéons <details>/<summary> retirés à la demande du propriétaire ; sections des pages de réalisation revenues en titres simples)
 - [x] R6 — Dynamisme : sommaire automatique et scroll-spy (compteurs animés et apparition au défilement écartés, jugés superflus)
-- [ ] R7 — Finitions : métadonnées, Open Graph, accessibilité, mode sombre,
-      date de dernière mise à jour
+- [x] R7 — Finitions : Open Graph, accessibilité (lien d'évitement), mode sombre
+      automatique, date de dernière mise à jour
 - [ ] R8 — Bonus : recherche globale Ctrl+K
 
 ## Journal
@@ -103,9 +103,10 @@ de refonte à la fois.
   (marque Casa Urpi) créée à partir de « Charte graphique.pdf » (15 pages) ; quatre
   planches JPEG < 300 Ko (logo, palette, déclinaisons, typographies) recadrées pour
   retirer l'en-tête (e-mail, URL casaurpi.fr, numéro de page) ; palette et
-  typographies en tableaux de synthèse. Nouveaux fichiers non publiés : « Charte
-  graphique lilot calin.pdf » (marque réelle apparente, hors liste autorisée) et
-  « Faisa 2 epinay… » (travail en cours, scanné). En ligne, vérifié (HTTP 200).
+  typographies en tableaux de synthèse. Nouveaux fichiers non publiés : un PDF de
+  charte graphique dont le nom révélait une marque réelle (hors liste autorisée ;
+  nom non recopié, confidentialité) et « Faisa 2 epinay… » (travail en cours,
+  scanné). En ligne, vérifié (HTTP 200).
 - 2026-10-05 · J6 (partiel) · Page 404.html créée (message « Page introuvable »
   et quatre cartes de retour vers les sections du portfolio) et marqueur .nojekyll
   ajouté (site statique, sans traitement Jekyll). Deux builds GitHub Pages annulés
@@ -233,6 +234,17 @@ de refonte à la fois.
   masqué à l'impression (print.css). Les compteurs animés et l'apparition au
   défilement sont écartés (jugés superflus/« gadget »). Fusionné dans main,
   publié (sommaire.js HTTP 200). Poids JavaScript total ~14,6 Ko (limite 15 Ko).
+- 2026-10-07 · R7 · Finitions. Huit balises Open Graph (og:type, og:site_name,
+  og:locale, og:title, og:description, og:url) ajoutées dans le <head> des 15 pages
+  (og:url absolue) ; date « Dernière mise à jour : 7 octobre 2026 » ajoutée au pied
+  de page des 15 pages (`<p class="maj">`, masquée à l'impression). Mode sombre
+  automatique (`@media (prefers-color-scheme: dark)`, palette « papier sombre
+  chaud », contraste AA) ; `color-scheme: light dark` sur :root et variable
+  `--fond-champ` pour les champs de saisie. Accessibilité : lien d'évitement
+  « Aller au contenu » (`.skip-link`) + `id="contenu"` sur <main> des 15 pages ;
+  garde `@media (prefers-reduced-motion: reduce)`. Aucun fichier JavaScript modifié
+  (poids JS inchangé ~14,6 Ko) ; style.css (+48 lignes) et print.css (+1 ligne).
+  Recherche des noms interdits : aucune occurrence.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

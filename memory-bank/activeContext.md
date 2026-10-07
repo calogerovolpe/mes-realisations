@@ -1,9 +1,8 @@
 # activeContext.md
 
 Refonte « Volpe Calogero — Mes réalisations administratifs » engagée (2026).
-Jalon en cours : R6 — Dynamisme (terminé, fusionné dans `main` et publié).
-Prochain jalon : R7 — Finitions (métadonnées, Open Graph, accessibilité, mode
-sombre, date de dernière mise à jour).
+Jalon en cours : R7 — Finitions (terminé, fusionné dans `main` et publié).
+Prochain jalon : R8 — Bonus (recherche globale Ctrl+K).
 Règle : un jalon de refonte = une seule conversation = un commit ; ne jamais
 traiter deux jalons à la fois. Publication sur `main` après chaque jalon.
 
@@ -82,6 +81,20 @@ Corrections de contenu appliquées en R1 (faites)
 - Aucun fichier HTML modifié. Fusionné dans `main`, publié (sommaire.js HTTP 200).
   Poids JS total ~14,6 Ko.
 
+Étapes du jalon R7 (faites)
+- Métadonnées : huit balises Open Graph ajoutées dans le <head> des 15 pages
+  (og:type, og:site_name, og:locale, og:title, og:description, og:url) — og:url
+  absolue (racine du dépôt pour l'accueil).
+- Date de dernière mise à jour ajoutée dans le pied de page des 15 pages
+  (`<p class="maj">`, masquée à l'impression avec le reste du pied de page).
+- Mode sombre automatique via `@media (prefers-color-scheme: dark)` (palette
+  « papier sombre chaud », contraste AA) ; `color-scheme: light dark` sur :root ;
+  variable `--fond-champ` introduite pour les champs de saisie.
+- Accessibilité : lien d'évitement « Aller au contenu » (`.skip-link`) + `id="contenu"`
+  sur <main> des 15 pages ; garde `@media (prefers-reduced-motion: reduce)`.
+- Aucun fichier JavaScript modifié : poids JS inchangé (~14,6 Ko). style.css et
+  print.css sont les seuls fichiers d'assets modifiés.
+
 Points ouverts
 - Aucun bloquant. Micro-points (orthographe du texte de survol, nom du fichier
   photo, recoupement des chiffres) traités ou à valider en R1.
@@ -114,9 +127,9 @@ page) et barres latérales ; redimensionnées à 1500 px de large (Pillow), JPEG
 qualité 88.
 
 Nouveaux fichiers /docs non publiés :
-- « Charte graphique lilot calin.pdf » → marque réelle apparente (« L'îlot
-  Câlins »), hors liste des marques inventées autorisées : NON publiée, en attente
-  de décision du propriétaire.
+- Un PDF de charte graphique dont le nom de fichier révélait une marque réelle
+  (hors liste des marques inventées autorisées) : NON publié, en attente de
+  décision du propriétaire. Le nom réel n'est pas recopié ici (confidentialité).
 - « Faisa 2 epinay Travail en cours (1).pdf » → document de travail scanné (aucun
   texte extractible) : différé.
 
