@@ -226,6 +226,27 @@ body {
 }
 .site-sidebar .rg-kbd { border-color: var(--sidebar-filet); color: var(--sidebar-encre-douce); }
 
+/* Bascule de thème (injectée par JavaScript) : placée en bas du menu */
+.site-sidebar .theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--sidebar-filet);
+  border-radius: var(--rayon-petit);
+  background: transparent;
+  color: var(--sidebar-encre-douce);
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.site-sidebar .theme-toggle:hover { color: var(--sidebar-encre); border-color: var(--sidebar-encre-douce); }
+.site-sidebar .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 /* Réduction du menu en icônes seules (bureau uniquement) */
 @media (min-width: 60rem) {
   .nav-reduit:checked ~ .site-sidebar { width: 4.5rem; }
@@ -246,6 +267,7 @@ body {
   .nav-reduit:checked ~ .site-sidebar .sidebar-bascule { transform: rotate(180deg); }
   .nav-reduit:checked ~ .site-sidebar .rg-btn { justify-content: center; font-size: 0; }
   .nav-reduit:checked ~ .site-sidebar .rg-btn > * { display: none; }
+  .nav-reduit:checked ~ .site-sidebar .theme-toggle { justify-content: center; }
   .nav-reduit:checked ~ .site-sidebar .rg-btn::before {
     content: "";
     width: 1.15rem;
@@ -949,21 +971,36 @@ figcaption {
 .back-to-top:hover { filter: brightness(1.06); }
 .back-to-top:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
 
-/* Copie de l'adresse e-mail (ajouté par JavaScript — amélioration progressive) */
+/* Icônes SVG injectées par JavaScript (copie, thème) */
+.ico {
+  flex: 0 0 auto;
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Copie de l'adresse e-mail (bouton icône, injecté par JavaScript) */
 .copy-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
   margin-left: 0.5rem;
-  padding: 0.15rem 0.55rem;
-  font: inherit;
-  font-size: 0.8rem;
-  border: 1px solid var(--accent);
+  padding: 0;
+  border: 1px solid var(--filet);
   border-radius: var(--rayon-petit);
-  background: var(--papier-2);
-  color: var(--accent);
+  background: var(--fond-champ);
+  color: var(--encre-douce);
   cursor: pointer;
   vertical-align: middle;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.copy-email:hover { background: var(--accent); color: #fff; }
+.copy-email:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .copy-email:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Petits écrans */
@@ -1004,11 +1041,47 @@ figcaption {
   .site-main { animation: apparition 0.45s ease-out both; }
 }
 
-/* Mode sombre — automatique selon la préférence système.
-   Aucun bouton, aucune mémorisation. Palette « papier sombre chaud »,
-   contraste AA conservé (texte, liens, filets). */
+/* Thèmes clair / sombre.
+   Par défaut « automatique » : le thème suit la préférence système. Un bouton
+   (créé par JavaScript) pose data-theme sur <html> et mémorise le choix ;
+   « clair » force le thème clair même si le système est sombre. Palette
+   « papier sombre chaud », contraste AA conservé (texte, liens, filets). */
+[data-theme="clair"] { color-scheme: light; }
+[data-theme="sombre"] {
+  color-scheme: dark;
+
+  --papier: #1e1b16;
+  --papier-2: #27231d;
+  --encre: #ece6db;
+  --encre-douce: #b3aa9b;
+  --filet: #3b352c;
+  --fond-champ: #141210;
+
+  --bureau: #141210;
+  --sidebar-fond: #26221b;
+  --sidebar-encre: #ece6db;
+  --sidebar-encre-douce: #b3aa9b;
+  --sidebar-filet: #3b352c;
+  --sidebar-survol: rgba(255, 255, 255, 0.07);
+
+  --accent: #e0915f;
+  --accent-fonce: #f0a878;
+  --accent-fond: #3a2c20;
+  --accent-2: #8fbf9e;
+  --accent-2-fond: #223026;
+  --accent-3: #93b3dd;
+  --accent-3-fond: #223042;
+
+  --degrade-accent: linear-gradient(135deg, #d98a55, #b96a37);
+  --degrade-entete: linear-gradient(180deg, #26221c, #1e1b16);
+
+  --ombre-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ombre-2: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="clair"]) {
+    color-scheme: dark;
+
     --papier: #1e1b16;
     --papier-2: #27231d;
     --encre: #ece6db;

@@ -14,9 +14,12 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
 - Retour E — Refonte UI/UX (jalon B) : menu latéral + « feuille » : TERMINÉ
   (barre latérale à icônes sur les 17 pages, réductible en CSS pur ; contenu en
   « feuille » sur un plan de travail). Fusionné et publié.
-- Refonte UI/UX : découpage retenu en 3 jalons — A (vues des feuilles Excel,
-  terminé), B (menu latéral + effet « feuille », terminé), C (thème clair/sombre
-  + icône copier, à venir). Un jalon = une conversation = un commit.
+- Retour F — Refonte UI/UX (jalon C) : thème + icône copier : TERMINÉ (bascule
+  automatique/clair/sombre mémorisée ; icône copier avec coche). Fusionné et
+  publié.
+- Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
+  B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
+  terminé). Un jalon = une conversation = un commit.
 - Captures Excel : méthode hybride actée — automatisation Excel pour les
   formules et vues de feuilles, captures manuelles du propriétaire pour les
   fenêtres modales (gestionnaire de noms, validation, mise en forme
@@ -311,6 +314,27 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   page modèle 01 (onglet « Vues des feuilles » présent) — aucun écart. Encodage
   UTF-8 sans BOM et CRLF conservés. Recherche des noms interdits : aucune
   occurrence.
+
+Étapes du jalon Retour F (faites) — refonte UI/UX · C : thème + icône copier
+- assets/css/style.css : thèmes clair / sombre / automatique via data-theme sur
+  <html>. « automatique » suit la préférence système (@media prefers-color-scheme
+  avec :root:not([data-theme="clair"])) ; [data-theme="clair"] force le clair ;
+  [data-theme="sombre"] force le sombre. Icône partagée .ico ; bouton
+  .theme-toggle (bas du menu) ; .copy-email transformé en bouton icône carré.
+- assets/js/nav.js : construireTheme() — bouton créé par JavaScript (cycle
+  automatique → clair → sombre), pose/retire data-theme sur <html>, mémorise le
+  choix dans localStorage (clé « theme » ; préférence d'affichage non traçante).
+  construireCopieEmail() : icône copier + coche de confirmation (aria-label
+  conservé, retour à l'icône après 2 s).
+- Mini-script inline anti-flash dans le <head> des 17 pages (lit « theme » dans
+  localStorage et pose data-theme avant le premier rendu) — exception
+  documentée à « aucun script bloquant le rendu » ; tout le reste est en defer.
+- Budget JavaScript porté de 21 à 24 Ko (.clinerules/04 et techContext.md) :
+  poids réel 23 761 o (~23,20 Ko), nav.js 6 690 o (le reste inchangé).
+- Vérification par rendu réel (Chrome headless) : thème automatique (système
+  sombre) et thème « clair » forcé (pièce claire malgré système sombre), bouton
+  de thème en bas du menu, icône copier sur la page Contact — aucun écart.
+- Recherche des noms interdits : aucune occurrence.
 
 Points ouverts
 

@@ -3,9 +3,10 @@
 Langages : HTML5, CSS3, JavaScript vanilla (accord explicite de la refonte).
 JavaScript autorisé UNIQUEMENT en amélioration progressive : le contenu reste
 lisible et navigable JavaScript désactivé.
-Contraintes JavaScript : point d'entrée unique en defer ; moins de 21 Ko non
-minifié ; aucun script bloquant le rendu ; tout désactiver si
-prefers-reduced-motion: reduce.
+Contraintes JavaScript : point d'entrée unique en defer ; moins de 24 Ko non
+minifié ; tout désactiver si prefers-reduced-motion: reduce. Exception unique et
+documentée : un mini-script inline en <head> (anti-flash du thème, sans requête
+réseau) est toléré ; tout le reste du JavaScript est chargé en defer.
 Aucun : framework, build, npm, CDN, police externe, analytics, cookie, script tiers.
 
 Fichiers de style : assets/css/style.css (global), assets/css/print.css (impression).

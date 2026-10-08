@@ -79,6 +79,11 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
       menu réductible en icônes seules (case à cocher, CSS pur) ; contenu présenté
       comme une feuille sur un plan de travail ; barre supérieure sur petits
       écrans ; impression adaptée ; aucun JavaScript modifié.
+- [x] Retour F — Refonte UI/UX (jalon C) : thème clair/sombre + icône copier
+      (2026-10-08) : bascule de thème (automatique / clair / sombre) mémorisée
+      (localStorage), bouton créé par JavaScript en bas du menu ; icône copier à
+      la place du texte, avec coche de confirmation ; mini-script inline en <head>
+      (anti-flash) ; budget JavaScript porté de 21 à 24 Ko (poids réel ~23,20 Ko).
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -378,6 +383,22 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   bureau clair + sombre, menu réduit, barre supérieure à 900 px et 420 px, page
   modèle 01 (onglet « Vues des feuilles » présent) — aucun écart. Recherche des
   noms interdits sans occurrence. Fusionné dans main, publié.
+
+- 2026-10-08 · Retour F · Refonte UI/UX — jalon C (thème + icône copier).
+  assets/css/style.css : thèmes clair / sombre / automatique (data-theme sur
+  <html> ; « automatique » = préférence système via prefers-color-scheme,
+  « clair »/« sombre » = choix explicite) ; icône partagée .ico ; bouton
+  .theme-toggle dans la barre latérale ; .copy-email transformé en bouton icône.
+  assets/js/nav.js : bouton de bascule de thème (cycle automatique → clair →
+  sombre, mémorisé en localStorage, préférence d'affichage non traçante) et
+  icône copier avec coche de confirmation (aria-label conservé). Mini-script
+  inline anti-flash dans le <head> des 17 pages (lit localStorage avant le
+  premier rendu ; exception documentée à « aucun script bloquant »). Budget
+  JavaScript porté de 21 à 24 Ko (.clinerules/04, techContext.md) ; poids réel
+  23 761 o (~23,20 Ko), nav.js 6 690 o. Vérification par rendu réel (Chrome
+  headless) : thème automatique (sombre, système) et thème « clair » forcé,
+  bouton de thème présent, icône copier sur la page Contact. Recherche des noms
+  interdits sans occurrence. Fusionné dans main, publié.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
