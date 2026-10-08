@@ -6,8 +6,8 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   formules, schémas de flux HTML/CSS, nettoyage des images). Fusionné et publié.
 - Retour B — Design « modernisation audacieuse » : TERMINÉ (design tokens,
   palette multi-accents, dégradés/ombres doux, micro-animations, impression
-  sobre conservée). À fusionner et publier.
-- Retour C — Marketing / storytelling : À VENIR.
+  sobre conservée). Fusionné et publié.
+- Retour C — Marketing / storytelling : TERMINÉ (accroche, chiffres clés, CTA).
 - Captures Excel : méthode hybride actée — automatisation Excel pour les
   formules et vues de feuilles, captures manuelles du propriétaire pour les
   fenêtres modales (gestionnaire de noms, validation, mise en forme
@@ -235,6 +235,25 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
 - Vérification par rendu réel (Chrome headless, --virtual-time-budget) : accueil,
   sommaire Excel, modèle 01, parcours et sommaire BP contrôlés en mode clair ET
   sombre, après l'animation d'apparition ; aucun écart.
+- Recherche des noms interdits : aucune occurrence.
+
+Étapes du jalon Retour C (faites) — marketing / storytelling
+- index.html : accroche sous le <h1> (ligne de positionnement déjà approuvée,
+  reprise telle quelle, aucun superlatif ni possessif) ; bande de 6 chiffres clés
+  factuels (600 couverts/jour, 10 collaborateurs, 40 dossiers clients, 20+ plans
+  mis à jour, 3 études de faisabilité, 4 études de marché) — uniquement des
+  données déjà publiées (règle de source unique) ; 3 appels à l'action (Parcours,
+  Excel, Contact) sous les cartes.
+- assets/css/style.css : composants .accroche, .stats/.stat/.stat-valeur/
+  .stat-libelle (chiffres en vert sauge) et .cta/.btn/.btn-secondaire, tous
+  fondés sur les design tokens existants (mode sombre hérité, transitions
+  coupées si prefers-reduced-motion).
+- assets/css/print.css : .cta masqué ; .stat neutralisé (aucun fond ni ombre,
+  bordure noire) ; accroche et chiffres clés forcés en noir sur blanc.
+- Date « Dernière mise à jour » de l'accueil portée au 8 octobre 2026.
+- JavaScript : aucun fichier modifié (poids total inchangé ~20,75 Ko).
+- Vérification par rendu réel (Chrome headless) : accueil contrôlé en mode clair
+  ET sombre, après l'animation d'apparition ; aucun écart.
 - Recherche des noms interdits : aucune occurrence.
 
 Points ouverts

@@ -62,7 +62,10 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
       pied de page en bande sombre), micro-animations coupées si
       prefers-reduced-motion ; impression laissée sobre ; .clinerules/04 révisée ;
       aucun JavaScript modifié (poids ~20,75 Ko).
-- [ ] Retour C — Marketing / storytelling (accroche, chiffres clés, CTA).
+- [x] Retour C — Marketing / storytelling (2026-10-08) : accroche sous le h1 de
+      l'accueil ; bande de 6 chiffres clés (données déjà publiées) ; 3 appels à
+      l'action (Parcours, Excel, Contact) ; composants .accroche/.stats/.stat/
+      .cta/.btn ; impression sobre conservée ; aucun JavaScript modifié.
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -321,6 +324,20 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   statistiques (feuilles, formules, règles de mise en forme conditionnelle).
   style.css : styles .flux. Aucun fichier JavaScript modifié. Recherche des noms
   interdits : aucune occurrence hors fichiers de règles (ignorés).
+
+- 2026-10-08 · Retour C · Marketing / storytelling. index.html : accroche sous le
+  <h1> (ligne de positionnement déjà approuvée, reprise telle quelle) ; bande de
+  6 chiffres clés factuels — 600 couverts/jour, 10 collaborateurs, 40 dossiers
+  clients, 20+ plans mis à jour, 3 études de faisabilité, 4 études de marché —
+  uniquement des chiffres déjà publiés (règle de source unique) ; 3 appels à
+  l'action (Parcours, Excel, Contact). assets/css/style.css : composants .accroche,
+  .stats/.stat/.stat-valeur/.stat-libelle (chiffres en vert sauge) et .cta/.btn/
+  .btn-secondaire, tous fondés sur les design tokens existants. assets/css/print.css :
+  .cta masqué, .stat neutralisé, accroche et chiffres clés en noir sur blanc. Date
+  « Dernière mise à jour » de l'accueil portée au 8 octobre 2026. Aucun fichier
+  JavaScript modifié (poids total ~20,75 Ko). Rendu réel en Chrome headless
+  contrôlé en mode clair ET sombre, après l'animation d'apparition ; recherche des
+  noms interdits sans occurrence.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne

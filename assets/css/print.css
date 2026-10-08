@@ -17,6 +17,7 @@
 .recherche,
 .sommaire,
 .skip-link,
+.cta,
 .form button { display: none !important; }
 
 /* Noir sur blanc */
@@ -60,6 +61,7 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .card,
 .dossier,
 .flux,
+.stat,
 .recherche,
 .sommaire,
 .table-wrap,
@@ -77,8 +79,14 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .card,
 .dossier,
 .flux,
+.stat,
 .recherche,
 .sommaire,
 .table-wrap {
   border: 1px solid #000000 !important;
 }
+
+/* Accroche et chiffres clés : noir sur blanc à l'impression */
+.accroche { color: #000000 !important; border-left-color: #000000 !important; }
+.stat-valeur,
+.stat-libelle { color: #000000 !important; }

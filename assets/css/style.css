@@ -212,6 +212,79 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-
   line-height: 1.5;
 }
 
+/* Accroche (page d'accueil) — ligne de positionnement mise en avant */
+.accroche {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--encre);
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+
+/* Chiffres clés (page d'accueil) — bande de repères factuels */
+.stats {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.75rem;
+}
+.stat {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--filet);
+  border-top: 3px solid var(--accent-2);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+}
+.stat-valeur {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--accent-2);
+}
+.stat-libelle {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--encre-douce);
+}
+
+/* Appels à l'action (page d'accueil) */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: var(--ombre-1);
+  transition: filter 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); color: #fff; }
+.btn:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
+.btn-secondaire {
+  background: var(--fond-champ);
+  color: var(--accent);
+}
+.btn-secondaire:hover {
+  filter: none;
+  background: var(--accent-fond);
+  color: var(--accent-fonce);
+}
+
 /* Pied de page — bande sombre pour marquer nettement la séparation */
 .site-footer {
   border-top: 3px solid var(--accent);
