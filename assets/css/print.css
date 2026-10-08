@@ -7,7 +7,9 @@
 @page { margin: 1.5cm; }
 
 /* Éléments d'interface exclus du papier */
-.site-header,
+.site-sidebar,
+.nav-reduit,
+.sidebar-bascule,
 .site-nav,
 .site-footer,
 .rg-overlay,
@@ -22,8 +24,18 @@
 
 /* Noir sur blanc */
 html,
-body { background: #ffffff; color: #000000; }
-.site-main { max-width: none; padding: 0; }
+body { display: block; background: #ffffff; color: #000000; }
+.site-main,
+.site-footer {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
 
 /* Liens : noir, sans soulignement, URL affichée */
 a { color: #000000; text-decoration: none; }

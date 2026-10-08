@@ -11,9 +11,12 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
 - Retour D — Refonte UI/UX (jalon A) : « vues des feuilles » Excel : TERMINÉ
   (7 captures publiées dans un onglet CSS pur des modèles 01 et 03). Fusionné
   et publié.
+- Retour E — Refonte UI/UX (jalon B) : menu latéral + « feuille » : TERMINÉ
+  (barre latérale à icônes sur les 17 pages, réductible en CSS pur ; contenu en
+  « feuille » sur un plan de travail). Fusionné et publié.
 - Refonte UI/UX : découpage retenu en 3 jalons — A (vues des feuilles Excel,
-  terminé), B (menu latéral + effet « feuille »), C (thème clair/sombre +
-  icône copier). Un jalon = une conversation = un commit.
+  terminé), B (menu latéral + effet « feuille », terminé), C (thème clair/sombre
+  + icône copier, à venir). Un jalon = une conversation = un commit.
 - Captures Excel : méthode hybride actée — automatisation Excel pour les
   formules et vues de feuilles, captures manuelles du propriétaire pour les
   fenêtres modales (gestionnaire de noms, validation, mise en forme
@@ -278,6 +281,36 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   au 8 octobre 2026.
 - JavaScript : aucun fichier modifié (poids total inchangé ~20,75 Ko).
 - Recherche des noms interdits : aucune occurrence.
+
+Étapes du jalon Retour E (faites) — refonte UI/UX · B : menu latéral + « feuille »
+- assets/css/style.css : nouvelle ossature « bureau + feuille ». body en grille
+  (barre latérale + contenu) sur fond « bureau » (--bureau) ; .site-sidebar
+  (colonne gauche, fond sombre --sidebar-fond, 17rem, sticky 100vh) avec marque,
+  navigation verticale à icônes et bascule de repli ; .site-main = « feuille »
+  (fond papier, ombre douce, coins arrondis) ; .site-footer prolonge la feuille.
+  Jetons ajoutés en clair ET sombre. Nouveaux styles .nav-ico, .nav-libelle,
+  .marque-nom, .marque-sigle, .sidebar-bascule.
+- Réduction en icônes seules : case à cocher masquée #nav-reduit (CSS pur, sans
+  JavaScript, sans persistance) ; repli à 4.5rem, monogramme « VC », icônes
+  centrées, bouton de recherche en loupe (masque SVG en data URI, sans requête
+  externe). Uniquement ≥ 60rem.
+- Petits écrans (≤ 60rem) : la barre latérale devient une barre supérieure
+  (marque + navigation en ligne + recherche) ; la feuille prend des marges.
+- Les 17 pages HTML : <header class="site-header"> remplacé par
+  <input type=checkbox id="nav-reduit"> + <aside class="site-sidebar"> ; les 6
+  entrées ont une icône SVG inline (aria-hidden) et un libellé ; aria-current
+  « page » conservé sur la page courante ; marque en aria-label complet.
+- assets/css/print.css : .site-sidebar / .nav-reduit / .sidebar-bascule exclus ;
+  body en display:block ; .site-main et .site-footer neutralisés (ni fond, ni
+  ombre, ni bord, ni rayon) pour une impression noire sur blanc.
+- Aucun fichier JavaScript modifié (poids total inchangé ~20,75 Ko) ; le sommaire
+  automatique, la barre d'impression et la recherche globale continuent de
+  fonctionner sans modification.
+- Vérification par rendu réel (Chrome headless) : accueil en mode bureau clair
+  ET sombre, menu réduit (icônes seules), barre supérieure à 900 px et 420 px,
+  page modèle 01 (onglet « Vues des feuilles » présent) — aucun écart. Encodage
+  UTF-8 sans BOM et CRLF conservés. Recherche des noms interdits : aucune
+  occurrence.
 
 Points ouverts
 

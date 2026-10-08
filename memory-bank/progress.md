@@ -73,6 +73,12 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
       feuilles » de chaque page de modèle ; 7 images copiées de /docs vers
       assets/img/ sous noms conformes (< 300 Ko) ; alts et légendes neutres ;
       aucun JavaScript ni CSS modifié.
+- [x] Retour E — Refonte UI/UX (jalon B) : menu latéral + « feuille »
+      (2026-10-08) : en-tête horizontal remplacé par une barre latérale (marque,
+      6 entrées avec icônes SVG inline, bouton « Rechercher ») sur les 17 pages ;
+      menu réductible en icônes seules (case à cocher, CSS pur) ; contenu présenté
+      comme une feuille sur un plan de travail ; barre supérieure sur petits
+      écrans ; impression adaptée ; aucun JavaScript modifié.
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -356,6 +362,22 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   modifié (poids JS inchangé ~20,75 Ko). Alts et légendes neutres ; dates portées
   au 8 octobre 2026 ; recherche des noms interdits sans occurrence. Fusionné dans
   main, publié.
+
+- 2026-10-08 · Retour E · Refonte UI/UX — jalon B (menu latéral + « feuille »).
+  En-tête horizontal remplacé par une barre latérale sur les 17 pages :
+  <aside class="site-sidebar"> (marque « Volpe Calogero — Mes réalisations
+  administratifs », resserrée en « VC » au repli, 6 entrées de navigation avec
+  icônes SVG inline, bouton « Rechercher ») ; aria-current conservé sur chaque
+  page. Menu réductible en icônes seules via une case à cocher masquée (CSS pur,
+  aucune persistance, rien en JavaScript). Contenu présenté comme une feuille
+  (fond papier, ombre douce, coins arrondis) posée sur un plan de travail
+  contrasté ; barre latérale sombre. Petits écrans (≤ 60rem) : la barre devient
+  une barre supérieure. Impression (print.css) : barre latérale exclue, feuille
+  neutralisée (aucun fond ni ombre). Aucun fichier JavaScript modifié (poids JS
+  inchangé ~20,75 Ko). Vérification par rendu réel (Chrome headless) : accueil
+  bureau clair + sombre, menu réduit, barre supérieure à 900 px et 420 px, page
+  modèle 01 (onglet « Vues des feuilles » présent) — aucun écart. Recherche des
+  noms interdits sans occurrence. Fusionné dans main, publié.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
