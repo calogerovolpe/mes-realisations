@@ -8,6 +8,12 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   palette multi-accents, dégradés/ombres doux, micro-animations, impression
   sobre conservée). Fusionné et publié.
 - Retour C — Marketing / storytelling : TERMINÉ (accroche, chiffres clés, CTA).
+- Retour D — Refonte UI/UX (jalon A) : « vues des feuilles » Excel : TERMINÉ
+  (7 captures publiées dans un onglet CSS pur des modèles 01 et 03). Fusionné
+  et publié.
+- Refonte UI/UX : découpage retenu en 3 jalons — A (vues des feuilles Excel,
+  terminé), B (menu latéral + effet « feuille »), C (thème clair/sombre +
+  icône copier). Un jalon = une conversation = un commit.
 - Captures Excel : méthode hybride actée — automatisation Excel pour les
   formules et vues de feuilles, captures manuelles du propriétaire pour les
   fenêtres modales (gestionnaire de noms, validation, mise en forme
@@ -256,8 +262,29 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   ET sombre, après l'animation d'apparition ; aucun écart.
 - Recherche des noms interdits : aucune occurrence.
 
+Étapes du jalon Retour D (faites) — refonte UI/UX · A : vues des feuilles Excel
+- excel-modele-01-rentabilite.html et excel-modele-03-investissement.html :
+  ajout d'un onglet CSS pur « Vues des feuilles » (radio #t3 + label + section
+  .tab-3) dans « Captures du modèle ». Le CSS des onglets gère déjà #t1..#t4
+  (aucune modification CSS nécessaire).
+- Modèle 01 : 4 captures — Paramètres, Ingrédients (sommes), Coût matière
+  (foodcost), Ventes. Modèle 03 : 3 captures — Horaires, Feuille de ventes,
+  Commandes.
+- 7 images copiées de /docs vers assets/img/ et renommées : excel-01-parametres,
+  excel-01-ingredients, excel-01-foodcost, excel-01-ventes, excel-03-horaire,
+  excel-03-feuille-ventes, excel-03-commande (.png, toutes < 300 Ko). /docs non
+  modifié, toujours dans .gitignore.
+- Alts et légendes neutres (aucun nom de personne). Dates des deux pages portées
+  au 8 octobre 2026.
+- JavaScript : aucun fichier modifié (poids total inchangé ~20,75 Ko).
+- Recherche des noms interdits : aucune occurrence.
+
 Points ouverts
 
+- Jalon A : la capture « excel-03-commande » (feuille de commandes) est publiée
+  à la demande du propriétaire — à vérifier visuellement qu'elle n'expose pas de
+  données fournisseurs, la page modèle 03 indiquant par ailleurs ne pas publier
+  la base d'articles et de commandes.
 - E-mail de contact unique publié sur les pages Contact et Parcours (adresse
   dédiée, la même que celle indiquée sur le CV). Aucune adresse inventée.
 - Pages contact.html et mentions-legales.html créées (J6) : la navigation et le

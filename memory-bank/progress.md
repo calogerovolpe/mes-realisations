@@ -66,6 +66,13 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
       l'accueil ; bande de 6 chiffres clés (données déjà publiées) ; 3 appels à
       l'action (Parcours, Excel, Contact) ; composants .accroche/.stats/.stat/
       .cta/.btn ; impression sobre conservée ; aucun JavaScript modifié.
+- [x] Retour D — Refonte UI/UX (jalon A) : « vues des feuilles » Excel
+      (2026-10-08) : publication des 4 vues du modèle 01 (Paramètres,
+      Ingrédients, Coût matière, Ventes) et des 3 vues du modèle 03 (Horaires,
+      Feuille de ventes, Commandes), dans un nouvel onglet CSS pur « Vues des
+      feuilles » de chaque page de modèle ; 7 images copiées de /docs vers
+      assets/img/ sous noms conformes (< 300 Ko) ; alts et légendes neutres ;
+      aucun JavaScript ni CSS modifié.
 
 ## Journal
 - 2026-10-05 · J0 · Dépôt public créé, GitHub Pages activé (branche main,
@@ -338,6 +345,17 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   JavaScript modifié (poids total ~20,75 Ko). Rendu réel en Chrome headless
   contrôlé en mode clair ET sombre, après l'animation d'apparition ; recherche des
   noms interdits sans occurrence.
+
+- 2026-10-08 · Retour D · Refonte UI/UX — jalon A (vues des feuilles Excel).
+  Nouvel onglet CSS pur « Vues des feuilles » sur excel-modele-01-rentabilite.html
+  (4 captures : Paramètres, Ingrédients, Coût matière, Ventes) et
+  excel-modele-03-investissement.html (3 captures : Horaires, Feuille de ventes,
+  Commandes). 7 images copiées de /docs vers assets/img/ et renommées excel-01-*
+  / excel-03-* (< 300 Ko ; /docs non modifié, toujours ignoré). Les onglets
+  réutilisent le CSS existant (.tabs #t1..#t4) : aucun fichier CSS ni JavaScript
+  modifié (poids JS inchangé ~20,75 Ko). Alts et légendes neutres ; dates portées
+  au 8 octobre 2026 ; recherche des noms interdits sans occurrence. Fusionné dans
+  main, publié.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
