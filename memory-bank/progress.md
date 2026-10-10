@@ -430,6 +430,33 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   écart. Dates portées au 10 octobre 2026. Recherche des noms interdits : aucune
   occurrence.
 
+- 2026-10-10 · Refonte UI/UX — parcours : ligne de temps en colonne unique.
+  parcours.html : la double colonne est remplacée par UNE colonne segmentée, lue du
+  plus récent (haut) au plus ancien (bas). Trois chapitres (ol.chrono-segment), chacun
+  avec sa propre colonne vertébrale, séparés par deux bandeaux de mobilité personnelle
+  pleine largeur (.chrono-demenagement, bordure pointillée, icône épingle, fond bleu)
+  qui coupent visiblement la ligne : 2025 retour en Belgique (au-dessus : 2020→2025)
+  et 2020 déménagement vers Paris (en dessous : 2001→2020). Chaque carte porte une
+  étiquette de catégorie : Emploi (accent principal), Formation (vert sauge), Activité
+  complémentaire (micro-entreprise 2021-2025 : carte en retrait, bordure pointillée,
+  fond sauge — lue comme une activité parallèle, pas comme un emploi). Légende à
+  4 puces sous le titre ; intro réécrite. Ordre : 2026 Conforama · 2025-2026 Elior ·
+  2025-2026 STUDI · [2025 Belgique] · 2025 Edith & Nous · 2022-2024 Montreuil ·
+  2021-2025 micro-entreprise · 2021-2022 AFPA 12 · 2020-2021 Val-de-Marne ·
+  [2020 Paris] · 2015-2016 Faculté de philosophie · 2014 CESS · 2007-2020 Cuisinier ·
+  2001-2007 Saint Luc. Bulles « Compétences acquises » (survol + :focus-within) et
+  12 fenêtres de détail (:target) conservées à l'identique. Aucun JavaScript ajouté.
+  assets/css/style.css : .chrono-segment / .chrono-meta / .chrono-cat /
+  .chrono-cat-emploi|formation|complement / .chrono-legende / .chrono-puce /
+  .chrono-demenagement-* ; responsive ≤ 48rem resserré. Règles obsolètes supprimées
+  (.chrono-col*, .chrono-liste, .chrono-entete, .chrono-micro). assets/css/print.css :
+  linéarisation CV mono-colonne (année + étiquette en ligne, bulles en texte visible,
+  caret de bulle et légende masqués, mobilités en bloc bordé à gauche). Vérification
+  par rendu réel (Chrome headless) : timeline complète en bureau, mobile en colonne
+  unique, aperçu impression (CV), fenêtre de détail ouverte par :target — aucun écart ;
+  aucun débordement horizontal (scrollWidth = clientWidth) ; poids JavaScript inchangé
+  (~23,20 Ko). Recherche des noms interdits : aucune occurrence.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

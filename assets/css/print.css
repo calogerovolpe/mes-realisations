@@ -103,34 +103,37 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .stat-valeur,
 .stat-libelle { color: #000000 !important; }
 
-/* Parcours — ligne de temps linéarisée en CV : une colonne, sans ornement.
-   Les bulles de compétences redeviennent du texte visible (l'impression ne
-   connaît pas le survol) ; les fenêtres de détail sont masquées. */
-.chrono { display: block; }
-.chrono::before { display: none; }
-.chrono-point::before { display: none; }
-.chrono-col { margin: 0 0 1rem; }
-.chrono-col-gauche .chrono-point,
-.chrono-col-droite .chrono-point { padding-right: 0; padding-left: 0; }
-.chrono-col-gauche .chrono-entete,
-.chrono-col-droite .chrono-entete { padding-right: 0; padding-left: 0; text-align: left; }
-.chrono-entete,
+/* Parcours — ligne de temps linéarisée en CV : une seule colonne, sans
+   ornement. Les bulles de compétences redeviennent du texte visible
+   (l'impression ne connaît pas le survol) ; les fenêtres de détail et la
+   légende sont masquées ; les mobilités restent lisibles. */
+.chrono-segment { padding: 0 !important; }
+.chrono-segment::before { display: none !important; }
+.chrono-point { margin: 0 0 0.6rem !important; }
+.chrono-point::before { display: none !important; }
+.chrono-legende { display: none !important; }
 .chrono-titre,
 .chrono-desc,
 .chrono-bulle { color: #000000 !important; }
 .chrono-action,
 .chrono-ico { display: none !important; }
 .chrono-carte,
-.chrono-demenagement .chrono-carte {
+.chrono-cat-complement .chrono-carte {
+  margin-left: 0 !important;
   background: none !important;
   box-shadow: none !important;
   border: none !important;
   border-bottom: 1px solid #cccccc !important;
   padding: 0 0 0.45rem !important;
 }
-.chrono-annee {
+.chrono-meta { margin: 0 0 0.2rem !important; }
+.chrono-annee,
+.chrono-cat,
+.chrono-demenagement-annee {
+  display: inline !important;
   background: none !important;
   color: #000000 !important;
+  border: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
   font-weight: bold;
@@ -147,6 +150,15 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
   box-shadow: none !important;
   font-size: 0.9rem;
 }
+.chrono-bulle::before { display: none !important; }
+.chrono-demenagement {
+  background: none !important;
+  border: none !important;
+  border-left: 3px solid #000000 !important;
+  padding: 0.2rem 0 0.2rem 0.6rem !important;
+  margin: 0.6rem 0 !important;
+}
+.chrono-demenagement-titre { color: #000000 !important; }
 .modale { display: none !important; }
 
 /* Accueil — sections de compétences à l'impression */

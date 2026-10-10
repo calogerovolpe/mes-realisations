@@ -17,6 +17,10 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
 - Retour F — Refonte UI/UX (jalon C) : thème + icône copier : TERMINÉ (bascule
   automatique/clair/sombre mémorisée ; icône copier avec coche). Fusionné et
   publié.
+- Retour G — Refonte UI/UX (jalon D) : parcours en ligne de temps unifiée :
+  TERMINÉ (colonne unique du plus récent au plus ancien, chapitres coupés par les
+  mobilités, étiquettes de catégorie, activité complémentaire en retrait). Fusionné
+  et publié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.
@@ -364,6 +368,35 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   total inchangé ~23,20 Ko). Vérification par rendu réel (Chrome headless) en clair
   et sombre, bureau et mobile (375 px), modale ouverte par :target, aperçu
   impression. Dates du pied de page portées au 10 octobre 2026.
+
+Étapes du jalon « ligne de temps unifiée » (faites) — remplace la double colonne
+- parcours.html : UNE seule colonne (plus de .chrono-col-gauche / -droite), lue du
+  plus récent (haut) au plus ancien (bas). Trois chapitres <ol class="chrono-segment">
+  (2025+ / 2020→2025 / 2001→2020), chacun avec sa propre colonne vertébrale, séparés
+  par deux bandeaux de mobilité pleine largeur (.chrono-demenagement) qui coupent la
+  ligne : 2025 retour en Belgique et 2020 déménagement vers Paris.
+- Chaque <li class="chrono-point chrono-cat-…"> porte une étiquette de catégorie :
+  Emploi (accent principal), Formation (vert sauge), Activité complémentaire
+  (micro-entreprise 2021-2025 : carte en retrait, bordure pointillée, fond sauge).
+  Légende à 4 puces (.chrono-legende) sous le titre ; intro réécrite (« du plus récent
+  au plus ancien »).
+- Ordre : 2026 Conforama · 2025-2026 Elior · 2025-2026 STUDI · [2025 Belgique] ·
+  2025 Edith & Nous · 2022-2024 Montreuil · 2021-2025 micro-entreprise · 2021-2022
+  AFPA 12 · 2020-2021 Val-de-Marne · [2020 Paris] · 2015-2016 Faculté de philosophie ·
+  2014 CESS · 2007-2020 Cuisinier · 2001-2007 Saint Luc. Cuisinier reste 2007-2020
+  (chevauchement assumé avec CESS 2014 et Faculté 2015-2016).
+- Bulles « Compétences acquises » (.chrono-bulle, survol + :focus-within) et 12
+  fenêtres de détail (:target) conservées à l'identique ; aucun JavaScript ajouté.
+- assets/css/style.css : .chrono-segment, .chrono-cat-*, .chrono-meta, .chrono-cat,
+  .chrono-legende/.chrono-puce, .chrono-demenagement-* ; responsive ≤ 48rem resserré.
+  Règles obsolètes supprimées (.chrono-col*, .chrono-liste, .chrono-entete,
+  .chrono-micro).
+- assets/css/print.css : CV mono-colonne ; années + étiquettes en ligne, bulles en
+  texte visible, caret de bulle et légende masqués, mobilités en bloc bordé à gauche.
+- Vérification par rendu réel (Chrome headless) : timeline complète en bureau, mobile
+  en colonne unique, aperçu impression (CV), fenêtre de détail ouverte par :target —
+  aucun écart ; aucun débordement horizontal (scrollWidth = clientWidth) ; poids
+  JavaScript inchangé (~23,20 Ko) ; noms interdits : aucune occurrence.
 
 Points ouverts
 
