@@ -474,6 +474,19 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   équilibrées ; recherche des noms interdits : aucune occurrence (hors .clinerules et
   montant financier légitime du modèle 01).
 
+- 2026-10-10 · Business plan « L'Appartement » — extraits du fichier Word à la
+  place des photos culinaires. bp-etude-02-cafe-restaurant.html : les deux photos
+  (bp-02-planche.jpg, bp-02-salade.jpg, supprimées) sont remplacées par deux
+  captures d'écran du document Word « Business plan l'appartement.docx » — pages
+  « Les segmentations » et « Les Heures Creuses » (bp-02-segmentations.jpg ~234 Ko,
+  bp-02-heures-creuses.jpg ~282 Ko, < 300 Ko). Méthode : /docs ouvert en lecture
+  seule via Word COM sur une copie temporaire débloquée, export PDF (SaveAs2 format
+  17), puis rendu page à page par Windows.Data.Pdf (1600 px), réduction à 1000 px et
+  JPEG qualité 80. Aucune modification de /docs ; aucun .docx publié. Alts et
+  légendes neutres (« Extrait du business plan ») ; date de la page portée au
+  10 octobre 2026. Aucun fichier CSS ni JavaScript modifié. Recherche des noms
+  interdits : aucune occurrence.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

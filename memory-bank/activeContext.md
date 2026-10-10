@@ -26,6 +26,16 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   AFPA / Val-de-Marne ; déménagement 2025 = Guignies, près de Tournai ; Elior
   ramené à 2025 et repositionné avant le retour en Belgique ; superlatifs et
   chiffres personnels retirés). Fusionné et publié.
+- Retour I — Business plan « L'Appartement » : extraits du fichier Word : TERMINÉ
+  (bp-etude-02-cafe-restaurant.html) — les deux photos culinaires
+  (bp-02-planche.jpg, bp-02-salade.jpg) remplacées par deux captures du document
+  Word « Business plan l'appartement.docx » : pages « Les segmentations » et
+  « Les Heures Creuses » (bp-02-segmentations.jpg ~234 Ko, bp-02-heures-creuses.jpg
+  ~282 Ko, toutes deux < 300 Ko). Méthode : /docs lu en lecture seule via Word COM
+  (SaveAs2 format 17) → PDF sur copie temporaire, puis rendu page à page par
+  Windows.Data.Pdf (1600 px), réduction à 1000 px et JPEG qualité 80. Date de mise
+  à jour de la page portée au 10 octobre 2026. Aucun fichier CSS ni JavaScript
+  modifié. Fusionné et publié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.
