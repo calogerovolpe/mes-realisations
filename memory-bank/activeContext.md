@@ -336,6 +336,35 @@ Le memory-bank est corrigé : plus aucune mention du nom du propriétaire.
   de thème en bas du menu, icône copier sur la page Contact — aucun écart.
 - Recherche des noms interdits : aucune occurrence.
 
+Étapes du jalon « accueil + parcours » (faites)
+- index.html : CTA « Découvrir le parcours » sous l'intro, chiffres clés conservés,
+  trois sections « Compétences démontrées » (Excel, Business plans, Identité
+  visuelle) avec résumé, mention de synthèse et lien « Voir → », CTA « Me contacter »
+  en fin de page. Un seul <h2> visible → pas de sommaire automatique (seuil = 3).
+- parcours.html : ligne de temps verticale à deux colonnes (gauche : formations,
+  micro-entreprise 2021-2025, deux déménagements ; droite : carrière), chronologique
+  du haut vers le bas. Compétences réparties dans chaque point : bulle « Compétences
+  acquises » (.chrono-bulle, survol + :focus-within, caret) et fenêtre de détail au
+  clic (.modale en CSS pur via :target). Déménagements sur fond bleu distinct
+  (.chrono-demenagement) : 2020 Paris (mariage) et 2025 retour en Belgique (ville
+  frontalière). Sections « Savoir-être », Langues, Centres d'intérêt, Travaux,
+  Contact conservées ; « Compétences administratives/techniques », Formation et
+  Expérience remplacées par la ligne de temps.
+- assets/css/style.css : .competences/.competence (accueil) + .chrono* (colonne
+  vertébrale centrale, points alignés, cartes, bulle, déménagement) + .modale* ;
+  responsive ≤ 48rem (une seule colonne, points et ligne masqués).
+- assets/css/print.css : .chrono en une colonne ; bulles rendues en texte visible
+  (les compétences s'impriment) ; « Voir le détail » et fenêtres de détail masquées ;
+  fonds et couleurs neutralisés ; .competence neutralisée.
+- Fenêtres de détail placées en fin de <body> : le transform de l'animation de
+  .site-main créait un bloc conteneur pour position:fixed (l'overlay ne couvrait pas
+  la barre latérale). Déplacées hors de <main>, l'overlay couvre désormais toute la
+  fenêtre.
+- Aucun JavaScript ajouté : bulles et fenêtres de détail sont en CSS pur (poids
+  total inchangé ~23,20 Ko). Vérification par rendu réel (Chrome headless) en clair
+  et sombre, bureau et mobile (375 px), modale ouverte par :target, aperçu
+  impression. Dates du pied de page portées au 10 octobre 2026.
+
 Points ouverts
 
 - Jalon A : la capture « excel-03-commande » (feuille de commandes) est publiée

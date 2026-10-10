@@ -1230,3 +1230,239 @@ figcaption {
   font-size: 0.9rem;
   color: var(--encre-douce);
 }
+
+/* ============================================================
+   Accueil — sections de compétences démontrées (résumés cliquables)
+   ============================================================ */
+.competences {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+}
+.competence {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.35rem 1.45rem;
+  border: 1px solid var(--filet);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.competence:hover {
+  border-color: var(--accent);
+  box-shadow: var(--ombre-2);
+  transform: translateY(-3px);
+}
+.competence-titre { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.competence-titre a { color: var(--accent); text-decoration: none; }
+.competence-titre a:hover { text-decoration: underline; }
+.competence-titre a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.competence-texte { margin: 0 0 0.75rem; color: var(--encre-douce); font-size: 0.95rem; line-height: 1.55; }
+.competence-meta {
+  margin: auto 0 0.85rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--filet);
+  font-size: 0.82rem;
+  color: var(--encre-douce);
+}
+.competence-action { margin: 0; }
+.competence-lien { font-weight: 600; text-decoration: none; }
+.competence-lien:hover { text-decoration: underline; }
+.competence-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ============================================================
+   Parcours — ligne de temps verticale (deux colonnes)
+   À gauche : formations, activité complémentaire, mobilités.
+   À droite : parcours de carrière. Chronologique du haut vers le bas.
+   ============================================================ */
+.chrono {
+  --chrono-gap: clamp(1.75rem, 4vw, 3rem);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--chrono-gap);
+  margin: 1.75rem 0 0;
+}
+.chrono::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--filet);
+}
+.chrono-col { position: relative; }
+.chrono-entete { margin: 0 0 1.2rem; font-size: 1.05rem; color: var(--accent-3); }
+.chrono-col-gauche .chrono-entete {
+  padding-right: calc(0.5 * var(--chrono-gap) + 0.6rem);
+  text-align: right;
+}
+.chrono-col-droite .chrono-entete { padding-left: calc(0.5 * var(--chrono-gap) + 0.6rem); }
+.chrono-liste { list-style: none; margin: 0; padding: 0; }
+.chrono-point { position: relative; margin: 0 0 1.15rem; }
+.chrono-col-gauche .chrono-point { padding-right: calc(0.5 * var(--chrono-gap) + 0.6rem); }
+.chrono-col-droite .chrono-point { padding-left: calc(0.5 * var(--chrono-gap) + 0.6rem); }
+.chrono-point::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--papier);
+  z-index: 1;
+}
+.chrono-col-gauche .chrono-point::before { right: calc(-0.5 * var(--chrono-gap) - 0.35rem); }
+.chrono-col-droite .chrono-point::before { left: calc(-0.5 * var(--chrono-gap) - 0.35rem); }
+.chrono-carte {
+  position: relative;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+}
+.chrono-col-gauche .chrono-carte { border-right: 3px solid var(--accent-2); }
+.chrono-col-droite .chrono-carte { border-left: 3px solid var(--accent); }
+.chrono-annee {
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-fond);
+  color: var(--accent-fonce);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.chrono-titre { margin: 0 0 0.35rem; font-size: 1rem; }
+.chrono-desc { margin: 0 0 0.55rem; font-size: 0.9rem; color: var(--encre-douce); line-height: 1.5; }
+.chrono-ico {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.16em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chrono-action { margin: 0; }
+.chrono-lien { font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--accent); }
+.chrono-lien:hover { text-decoration: underline; }
+.chrono-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Bulle de compétences (au survol et au focus clavier) */
+.chrono-bulle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 6;
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--papier);
+  box-shadow: var(--ombre-2);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--encre);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.chrono-carte:hover .chrono-bulle,
+.chrono-carte:focus-within .chrono-bulle { opacity: 1; visibility: visible; }
+.chrono-bulle::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-left: -0.35rem;
+  transform: rotate(45deg);
+  background: var(--papier);
+  border-left: 1px solid var(--accent);
+  border-top: 1px solid var(--accent);
+}
+/* Activité complémentaire (micro-entreprise) : marqueur discret */
+.chrono-micro .chrono-annee { background: var(--accent-2-fond); color: var(--accent-2); }
+/* Mobilités personnelles : fond coloré distinct, sobre */
+.chrono-demenagement .chrono-carte {
+  background: var(--accent-3-fond);
+  border-color: var(--accent-3);
+}
+.chrono-col-gauche .chrono-demenagement .chrono-carte { border-right-color: var(--accent-3); }
+.chrono-demenagement .chrono-annee { background: var(--accent-3); color: #fff; }
+.chrono-demenagement .chrono-titre { color: var(--accent-3); }
+.chrono-col-gauche .chrono-point.chrono-demenagement::before { background: var(--accent-3); }
+
+/* Fenêtres de détail (pop-up modale en CSS pur, ouverte via :target) */
+.chrono-modales { display: contents; }
+.modale {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  padding: 1.25rem;
+  overflow-y: auto;
+  background: rgba(30, 27, 22, 0.62);
+}
+.modale:target { display: flex; align-items: flex-start; justify-content: center; }
+.modale:focus { outline: none; }
+.modale-boite {
+  position: relative;
+  width: 100%;
+  max-width: 34rem;
+  margin: 5vh auto;
+  padding: 1.6rem 1.6rem 1.75rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--papier);
+  color: var(--encre);
+  box-shadow: var(--ombre-2);
+}
+.modale-titre { margin: 0 1.9rem 0.75rem 0; font-size: 1.25rem; }
+.modale-boite p { margin: 0 0 0.75rem; line-height: 1.6; }
+.modale-boite p:last-child { margin-bottom: 0; }
+.modale-fermer {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  color: var(--encre-douce);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.modale-fermer:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.modale-fermer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Petits écrans : ligne de temps en une seule colonne, sans colonne vertébrale */
+@media (max-width: 48rem) {
+  .chrono { grid-template-columns: 1fr; row-gap: 1.5rem; }
+  .chrono::before { display: none; }
+  .chrono-point::before { display: none; }
+  .chrono-col-gauche .chrono-point,
+  .chrono-col-droite .chrono-point { padding-right: 0; padding-left: 0; }
+  .chrono-col-gauche .chrono-entete,
+  .chrono-col-droite .chrono-entete { padding-right: 0; padding-left: 0; text-align: left; }
+}

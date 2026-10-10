@@ -400,6 +400,36 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   bouton de thème présent, icône copier sur la page Contact. Recherche des noms
   interdits sans occurrence. Fusionné dans main, publié.
 
+- 2026-10-10 · Refonte UI/UX — accueil (CTA + sections par compétence) et parcours
+  (ligne de temps verticale à deux colonnes). index.html : accroche resserrée ; CTA
+  « Découvrir le parcours » remonté sous l'intro ; chiffres clés conservés ; puis
+  trois sections « Compétences démontrées » (Excel, Business plans, Identité
+  visuelle) avec résumé factuel, mention de synthèse et lien « Voir → » ; enfin CTA
+  « Me contacter ». Le seul <h2> visible n'atteint pas le seuil du sommaire
+  automatique (aucun sommaire ajouté à l'accueil). parcours.html : les listes
+  Formation / Expérience et les blocs « Compétences administratives / techniques »
+  sont remplacés par une ligne de temps verticale chronologique (haut→bas) à deux
+  colonnes — à gauche formations, activité complémentaire (micro-entreprise le
+  week-end) et deux mobilités personnelles sur fond bleu distinct (2020 : Paris,
+  mariage ; 2025 : retour en Belgique, ville frontalière Bruxelles-Paris) ; à
+  droite le parcours de carrière. Les compétences sont réparties dans chaque point
+  (bulle « Compétences acquises » au survol et au :focus-within ; fenêtre de détail
+  au clic). « Savoir-être », Langues, Centres d'intérêt, Travaux et Contact sont
+  conservés. assets/css/style.css : styles .competences/.competence et .chrono*
+  (colonne vertébrale centrale, points, cartes, bulles avec caret, déménagements)
+  + .modale* ; responsive ≤ 48rem (une colonne, sans ornement). assets/css/print.css :
+  ligne de temps linéarisée en CV une colonne, bulles révélées en texte (les
+  « Compétences acquises » s'impriment), fenêtres de détail masquées, couleurs
+  neutralisées ; sections de compétences de l'accueil neutralisées. Fenêtres de
+  détail en CSS pur (:target, role=dialog, aria-modal, aria-labelledby, lien de
+  fermeture) placées en fin de <body> pour que le fond assombri couvre toute la
+  fenêtre (le transform de .site-main créait un bloc conteneur pour position:fixed).
+  Aucun JavaScript ajouté (poids total inchangé ~23,20 Ko). Vérification par rendu
+  réel (Chrome headless) : accueil, parcours bureau clair et sombre, parcours mobile
+  (375 px), bulle forcée, modale ouverte par :target, aperçu impression — aucun
+  écart. Dates portées au 10 octobre 2026. Recherche des noms interdits : aucune
+  occurrence.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.
