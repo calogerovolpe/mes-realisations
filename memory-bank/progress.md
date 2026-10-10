@@ -457,6 +457,23 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   aucun débordement horizontal (scrollWidth = clientWidth) ; poids JavaScript inchangé
   (~23,20 Ko). Recherche des noms interdits : aucune occurrence.
 
+- 2026-10-10 · Parcours — notes de transition (storytelling) et corrections.
+  parcours.html : ajout de notes en italique (.chrono-note) sur les cartes Conforama,
+  Elior, Montreuil, micro-entreprise, AFPA et Val-de-Marne pour expliquer les
+  changements de métier et de formation. Corrections factuelles : bandeau 2025 décrit
+  « Installation à Guignies, près de Tournai » (nom de commune/ville uniquement) ;
+  Elior ramené à 2025 (début 2025 → déménagement) et déplacé SOUS le bandeau de
+  mobilité 2025 (poste antérieur au retour en Belgique) ; Elior formulé « grand site
+  parisien » (aucun nom de client réel). Modales : date Elior (2025) ; micro-entreprise
+  enrichie (identité visuelle avec mascotte + architecture d'un site web d'association
+  loi 1901, développement confié à un développeur) ; Val-de-Marne précisé « contrat de
+  remplacement ». Respect des règles : aucun superlatif (« vendeur n°1 », « le plus de
+  CA » écartés), aucun chiffre personnel (SMIC, frais de trajet reformulés), pas de
+  « fictif », ton neutre. assets/css/style.css : .chrono-note (italique). assets/css/
+  print.css : .chrono-note ajouté à la liste noir-à-l'impression. Balises HTML
+  équilibrées ; recherche des noms interdits : aucune occurrence (hors .clinerules et
+  montant financier légitime du modèle 01).
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

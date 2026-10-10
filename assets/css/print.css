@@ -114,6 +114,7 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .chrono-legende { display: none !important; }
 .chrono-titre,
 .chrono-desc,
+.chrono-note,
 .chrono-bulle { color: #000000 !important; }
 .chrono-action,
 .chrono-ico { display: none !important; }

@@ -21,6 +21,11 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   TERMINÉ (colonne unique du plus récent au plus ancien, chapitres coupés par les
   mobilités, étiquettes de catégorie, activité complémentaire en retrait). Fusionné
   et publié.
+- Retour H — Parcours : storytelling des transitions : TERMINÉ (notes en italique
+  .chrono-note sur les cartes Conforama / Elior / Montreuil / micro-entreprise /
+  AFPA / Val-de-Marne ; déménagement 2025 = Guignies, près de Tournai ; Elior
+  ramené à 2025 et repositionné avant le retour en Belgique ; superlatifs et
+  chiffres personnels retirés). Fusionné et publié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.

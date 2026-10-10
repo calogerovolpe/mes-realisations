@@ -1375,6 +1375,7 @@ figcaption {
 }
 .chrono-titre { margin: 0 0 0.35rem; font-size: 1rem; }
 .chrono-desc { margin: 0 0 0.55rem; font-size: 0.9rem; color: var(--encre-douce); line-height: 1.5; }
+.chrono-note { margin: 0 0 0.55rem; font-size: 0.85rem; font-style: italic; color: var(--encre-douce); line-height: 1.5; }
 .chrono-ico {
   width: 1.05rem;
   height: 1.05rem;
