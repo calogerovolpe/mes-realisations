@@ -513,6 +513,15 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   conformes ; JavaScript validé (node --check) ; CSS équilibré ; aucune occurrence
   de l'accord fautif ni de nom interdit.
 
+- 2026-10-13 · Changement de l'adresse e-mail de contact : « bx.volpe@gmail.com »
+  remplacée par « contact@calogero-volpe.eu » dans le pied de page des 17 pages
+  (lien mailto: et texte affiché), dans la mention « Écrire par e-mail » de
+  contact.html et la section « Contact » de parcours.html, ainsi que dans
+  memory-bank/brief-refonte.md — 40 occurrences au total. Aucun fichier CSS ni
+  JavaScript modifié (l'adresse est lue depuis le DOM) ; formulaire Formspree
+  inchangé. Recherche de l'ancienne adresse : aucune occurrence restante hors
+  /docs. Le CV PDF sera régénéré par le propriétaire.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

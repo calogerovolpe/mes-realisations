@@ -44,6 +44,10 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   `main[data-impression]` ; page Parcours : bloc « CV » avec consultation et
   téléchargement du CV PDF expurgé, nouvel asset
   assets/fichiers/cv-volpe-calogero.pdf). Fusionné et publié.
+- Retour K — E-mail de contact : TERMINÉ (« bx.volpe@gmail.com » remplacée par
+  « contact@calogero-volpe.eu » dans les 17 pages et memory-bank/brief-refonte.md,
+  40 occurrences ; aucun CSS ni JavaScript modifié (l'adresse est lue depuis le
+  DOM). CV PDF régénéré par le propriétaire. Fusionné et publié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.
@@ -427,8 +431,9 @@ Points ouverts
   à la demande du propriétaire — à vérifier visuellement qu'elle n'expose pas de
   données fournisseurs, la page modèle 03 indiquant par ailleurs ne pas publier
   la base d'articles et de commandes.
-- E-mail de contact unique publié sur les pages Contact et Parcours (adresse
-  dédiée, la même que celle indiquée sur le CV). Aucune adresse inventée.
+- E-mail de contact unique publié sur les pages Contact et Parcours et sur le CV :
+  contact@calogero-volpe.eu. Le CV PDF doit être régénéré par le propriétaire
+  avec cette adresse.
 - Pages contact.html et mentions-legales.html créées (J6) : la navigation et le
   pied de page ne comportent plus de lien mort. La page 404.html est en place
   (statut 404 + contenu personnalisé) ; un marqueur .nojekyll est présent.
