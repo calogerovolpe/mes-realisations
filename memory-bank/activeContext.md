@@ -44,7 +44,7 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   `main[data-impression]` ; page Parcours : bloc « CV » avec consultation et
   téléchargement du CV PDF expurgé, nouvel asset
   assets/fichiers/cv-volpe-calogero.pdf). Fusionné et publié.
-- Retour K — E-mail de contact : TERMINÉ (« bx.volpe@gmail.com » remplacée par
+- Retour K — E-mail de contact : TERMINÉ (nouvelle adresse
   « contact@calogero-volpe.eu » dans les 17 pages et memory-bank/brief-refonte.md,
   40 occurrences ; aucun CSS ni JavaScript modifié (l'adresse est lue depuis le
   DOM). CV PDF régénéré par le propriétaire. Fusionné et publié.

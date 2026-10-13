@@ -513,8 +513,8 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   conformes ; JavaScript validé (node --check) ; CSS équilibré ; aucune occurrence
   de l'accord fautif ni de nom interdit.
 
-- 2026-10-13 · Changement de l'adresse e-mail de contact : « bx.volpe@gmail.com »
-  remplacée par « contact@calogero-volpe.eu » dans le pied de page des 17 pages
+- 2026-10-13 · Changement de l'adresse e-mail de contact : nouvelle adresse
+  « contact@calogero-volpe.eu » (l'ancienne adresse est retirée) dans le pied de page des 17 pages
   (lien mailto: et texte affiché), dans la mention « Écrire par e-mail » de
   contact.html et la section « Contact » de parcours.html, ainsi que dans
   memory-bank/brief-refonte.md — 40 occurrences au total. Aucun fichier CSS ni
