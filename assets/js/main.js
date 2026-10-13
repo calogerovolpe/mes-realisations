@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — point d'entrée JavaScript.
+/* Volpe Calogero — Mes réalisations administratives — point d'entrée JavaScript.
    Chargé en defer (aucun blocage du rendu). Amélioration progressive : le site
    reste entièrement lisible et navigable JavaScript désactivé.
    Des scripts classiques (et non des modules ES) sont utilisés afin de
@@ -12,6 +12,7 @@
     'assets/js/nav.js',
     'assets/js/search.js',
     'assets/js/sommaire.js',
+    'assets/js/viewer.js',
     'assets/js/global-search.js'
   ];
 

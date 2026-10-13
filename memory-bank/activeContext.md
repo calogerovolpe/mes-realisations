@@ -1,6 +1,6 @@
 # activeContext.md
 
-Refonte « Volpe Calogero — Mes réalisations administratifs » clôturée (R0 → R9).
+Refonte « Volpe Calogero — Mes réalisations administratives » clôturée (R0 → R9).
 Nouvelle phase : retours du propriétaire (2026), traités un par un.
 - Retour A — Captures Excel « architecture interne » : TERMINÉ (captures de
   formules, schémas de flux HTML/CSS, nettoyage des images). Fusionné et publié.
@@ -36,6 +36,14 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   Windows.Data.Pdf (1600 px), réduction à 1000 px et JPEG qualité 80. Date de mise
   à jour de la page portée au 10 octobre 2026. Aucun fichier CSS ni JavaScript
   modifié. Fusionné et publié.
+- Retour J — Alignement UI/UX sur le portfolio « plan technique » : TERMINÉ
+  (visionneuse d'images créée par JavaScript — aperçu agrandi, zoom, précédent /
+  suivant, clavier, molette ; navigation de fin de page `.nav-fin` ; pied de page
+  structuré `.footer-nav` ; bouton `.btn-vert` ; barre INFÉRIEURE sur petits
+  écrans ; barre d'impression limitée à la page Parcours via
+  `main[data-impression]` ; page Parcours : bloc « CV » avec consultation et
+  téléchargement du CV PDF expurgé, nouvel asset
+  assets/fichiers/cv-volpe-calogero.pdf). Fusionné et publié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.
@@ -48,7 +56,7 @@ jalons à la fois. Développement sur `refonte`, publication sur `main` après
 chaque jalon.
 
 Décisions verrouillées (brief de refonte)
-- Titre du site : « Volpe Calogero — Mes réalisations administratifs ».
+- Titre du site : « Volpe Calogero — Mes réalisations administratives ».
 - Nom du propriétaire « Volpe Calogero » autorisé PARTOUT (marque personnelle).
 - Ordre fixé : « Volpe Calogero » (prénom puis nom).
 - JavaScript vanilla autorisé en amélioration progressive ; .clinerules/04 révisée.

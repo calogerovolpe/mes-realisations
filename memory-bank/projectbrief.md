@@ -1,7 +1,7 @@
 # projectbrief.md
 
 Nom affiché : Volpe Calogero
-Titre du site : Volpe Calogero — Mes réalisations administratifs
+Titre du site : Volpe Calogero — Mes réalisations administratives
 Nature : portfolio statique, public, interactif et imprimable, sans base de données.
 Technique : HTML5, CSS, JavaScript vanilla en amélioration progressive ;
 aucun framework, aucun build, GitHub Pages.

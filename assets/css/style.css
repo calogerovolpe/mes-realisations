@@ -1,7 +1,10 @@
-/* Volpe Calogero — Mes réalisations administratifs — feuille de style unique.
+/* Volpe Calogero — Mes réalisations administratives — feuille de style unique.
    Design « papier moderne » : fond papier chaud, encre foncée, identité sobre
    mais affirmée — plusieurs accents, dégradés et ombres doux, micro-animations
-   (toutes coupées si prefers-reduced-motion: reduce). Impressions soignées. */
+   (toutes coupées si prefers-reduced-motion: reduce). Impressions soignées.
+   UI/UX alignée sur le portfolio « plan technique » : visionneuse d'images,
+   navigation de fin de page, pied de page structuré, barre inférieure sur
+   petits écrans. */
 
 :root {
   /* Fonds et encres — identité « papier » conservée */
@@ -34,6 +37,9 @@
   --rayon-petit: 6px;
 
   --largeur: 60rem;
+
+  /* Police à chasse fixe — repères et étiquettes (nav-fin, visionneuse) */
+  --police-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, "Courier New", monospace;
 
   /* Ossature « bureau + feuille » : plan de travail, barre latérale, feuille */
   --bureau: #e2d6bc;
@@ -318,38 +324,92 @@ body {
   overflow: hidden;
 }
 
-/* Petits écrans : la barre latérale devient une barre supérieure */
+/* Petits écrans : la barre latérale devient une barre inférieure, en icônes
+   seules. L'entrée « Accueil » occupe le centre ; le titre de la marque et la
+   recherche sont masqués (aucun raccourci Ctrl+K sur smartphone). La page
+   courante reste indiquée par aria-current="page". */
 @media (max-width: 60rem) {
-  body { display: block; }
-  html { scroll-padding-top: 5.5rem; }
+  body {
+    display: block;
+    /* réserve la hauteur de la barre fixe, plus la zone sûre iOS */
+    padding-bottom: calc(4.6rem + env(safe-area-inset-bottom, 0px));
+  }
+  html { scroll-padding-top: 1rem; scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+
   .site-sidebar {
     grid-column: auto;
     grid-row: auto;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
     width: auto;
     height: auto;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.4rem 0.8rem;
-    padding: 0.55rem 0.9rem;
-    border-right: none;
-    border-bottom: 1px solid var(--sidebar-filet);
-    z-index: 20;
+    justify-content: center;
+    gap: 0;
+    padding: 0.3rem 2.6rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+    border: none;
+    border-top: 1px solid var(--sidebar-filet);
+    overflow: visible;
+    z-index: 25;
   }
-  .sidebar-tete { flex: 1 1 auto; align-items: center; }
+  /* Le titre de la marque quitte la barre : le titre de la page (h1) reste en
+     tête de contenu. */
+  .sidebar-tete { display: none; }
   .sidebar-bascule { display: none; }
-  .site-sidebar .site-nav { flex: 1 1 100%; }
-  .site-sidebar .site-nav ul { flex-direction: row; flex-wrap: wrap; gap: 0.1rem 0.3rem; }
-  .site-sidebar .site-nav a { padding: 0.35rem 0.6rem; }
+
+  .site-sidebar .site-nav { flex: 1 1 auto; }
+  .site-sidebar .site-nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.1rem;
+  }
+  .site-sidebar .site-nav a {
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    min-width: 2.3rem;
+    padding: 0.45rem 0.3rem;
+  }
+  .site-sidebar .site-nav .nav-ico { width: 1.4rem; height: 1.4rem; }
+  /* Icônes seules : aucun libellé dans la barre */
+  .site-sidebar .nav-libelle { display: none; }
+  /* Accueil au centre de la barre : ordre imposé par la mise en page */
+  .site-sidebar .site-nav li:nth-child(1) { order: 3; }
+  .site-sidebar .site-nav li:nth-child(2) { order: 1; }
+  .site-sidebar .site-nav li:nth-child(3) { order: 2; }
+  .site-sidebar .site-nav li:nth-child(4) { order: 4; }
+  .site-sidebar .site-nav li:nth-child(5) { order: 5; }
+  .site-sidebar .site-nav li:nth-child(6) { order: 6; }
+  /* Recherche (Ctrl+K) : absente sur smartphone */
+  .site-sidebar .site-nav li.nav-recherche { display: none; }
+  /* Bascule de thème : icône isolée, à droite de la barre */
+  .site-sidebar .theme-toggle {
+    position: absolute;
+    right: 0.5rem;
+    bottom: calc(0.3rem + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    margin: 0;
+    padding: 0.45rem;
+    border-color: transparent;
+    background: transparent;
+  }
+  .site-sidebar .theme-toggle .ico { width: 1.3rem; height: 1.3rem; }
+
   .site-main {
     width: auto;
-    margin: 1rem;
+    margin: 0.75rem;
     border-bottom: 1px solid var(--filet);
     border-radius: var(--rayon);
   }
-  .site-footer { width: auto; margin: 0 1rem 1rem; }
+  .site-footer { width: auto; margin: 0 0.75rem 0.9rem; }
+
+  /* Retour en haut : maintenu au-dessus de la barre inférieure */
+  .back-to-top { bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Texte réservé aux lecteurs d'écran (structure accessible sans bruit visuel) */
@@ -430,7 +490,7 @@ body {
 /* Chiffres clés (page d'accueil) — bande de repères factuels */
 .stats {
   list-style: none;
-  margin: 1.75rem 0 0;
+  margin: 2.75rem 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
@@ -489,6 +549,57 @@ body {
   background: var(--accent-fond);
   color: var(--accent-fonce);
 }
+/* Variante « résultat » (vert sauge) — bouton affirmé sur un fond clair */
+.btn-vert {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: #fff;
+}
+.btn-vert:hover { filter: brightness(1.08); box-shadow: var(--ombre-2); color: #fff; }
+.btn-vert:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+
+/* Navigation de fin de page : section précédente / suivante.
+   Deux pastilles posées de part et d'autre (gauche / droite) ; elles passent
+   l'une sous l'autre sur écran étroit. */
+.nav-fin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin: 2.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--filet);
+}
+.nav-fin-lien {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 12rem;
+  max-width: 22rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.nav-fin-lien:hover { border-color: var(--accent); box-shadow: var(--ombre-2); background: var(--accent-fond); }
+.nav-fin-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nav-fin-precedent { align-items: flex-start; text-align: left; }
+.nav-fin-suivant { align-items: flex-end; text-align: right; margin-left: auto; }
+.nav-fin-direction {
+  font-family: var(--police-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.nav-fin-titre { font-weight: 600; color: var(--accent); }
+@media (max-width: 34rem) {
+  .nav-fin-lien { flex: 1 1 100%; min-width: 0; max-width: none; }
+  .nav-fin-suivant { align-items: flex-start; text-align: left; margin-left: 0; }
+}
 
 /* Pied de page — bande sombre pour marquer nettement la séparation */
 .site-footer {
@@ -506,6 +617,30 @@ body {
 .site-footer a { color: #f0b48f; }
 .site-footer a:hover { color: #ffffff; }
 .site-footer .maj { font-size: 0.85rem; color: #bdb3a1; }
+
+/* Navigation structurée du pied de page — colonnes de liens */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.5rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #3b352c;
+}
+.footer-nav-titre {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+.footer-nav ul { list-style: none; margin: 0; padding: 0; }
+.footer-nav li { margin: 0 0 0.3rem; }
+.footer-nav a { text-decoration: none; }
+.footer-nav a:hover { text-decoration: underline; }
+.footer-note-mono { font-family: var(--police-mono); font-size: 0.8rem; }
+/* Le pied de page affiche l'adresse en clair : pas de bouton « copier » ici */
+.site-footer .copy-email { display: none; }
 
 /* Fil d'Ariane */
 .fil-ariane {
@@ -1027,7 +1162,7 @@ figcaption {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.1rem; }
 }
@@ -1536,4 +1671,137 @@ figcaption {
   .chrono-point::before { left: -1.45rem; }
   .chrono-cat-complement .chrono-carte { margin-left: 0.6rem; }
   .chrono-demenagement { padding: 0.75rem 0.85rem; }
+}
+
+/* ============================================================
+   Visionneuse d'images — aperçu agrandi.
+   Les images restent lisibles dans la page ; la visionneuse (créée par
+   JavaScript, amélioration progressive) ajoute l'ouverture en grand sur fond
+   assombri, le zoom, la navigation précédent / suivant, le clavier et la
+   molette. Sans JavaScript, les images restent affichées normalement.
+   ============================================================ */
+/* Toute image de figure devient cliquable (classe posée par JavaScript) */
+.image-ouvrable { cursor: zoom-in; }
+.image-ouvrable:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.visionneuse { display: none; }
+.visionneuse.est-ouverte,
+.visionneuse:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  background: rgba(18, 14, 9, 0.9);
+}
+.visionneuse-fond {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-out;
+}
+.visionneuse-boite {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  max-height: 82vh;
+  margin: 0;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: #ffffff;
+  box-shadow: var(--ombre-2);
+  overflow: hidden;
+}
+.visionneuse-boite img {
+  display: block;
+  max-width: 90vw;
+  max-height: 74vh;
+  width: auto;
+  height: auto;
+  background: #ffffff;
+  cursor: zoom-in;
+}
+/* Zoom : l'image passe en taille réelle, la boîte devient défilable */
+.visionneuse-boite.est-zoom {
+  overflow: auto;
+  overscroll-behavior: contain;
+  cursor: zoom-out;
+}
+.visionneuse-boite.est-zoom img {
+  max-width: none;
+  max-height: none;
+  flex: none;
+  cursor: zoom-out;
+}
+.visionneuse-boite figcaption {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--filet);
+  font-family: var(--police-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--encre-douce);
+}
+.visionneuse-fermer {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b1a2b;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.visionneuse-fermer:hover { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.visionneuse-fermer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Boutons zoom / précédent / suivant (créés par JavaScript) */
+.visionneuse-nav { display: contents; }
+.visionneuse-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 2.6rem;
+  height: 3.4rem;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0b1a2b;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.visionneuse-btn[data-role="zoom"] {
+  top: 0.85rem;
+  left: 0.85rem;
+  transform: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
+}
+.visionneuse-btn[data-dir="-1"] { left: 1rem; }
+.visionneuse-btn[data-dir="1"] { right: 1rem; }
+.visionneuse-btn:hover { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.visionneuse-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 40rem) {
+  .visionneuse-btn { width: 2.2rem; height: 2.8rem; font-size: 1.2rem; }
+  .visionneuse-btn[data-role="zoom"] { left: 0.4rem; }
+  .visionneuse-btn[data-dir="-1"] { left: 0.4rem; }
+  .visionneuse-btn[data-dir="1"] { right: 0.4rem; }
 }

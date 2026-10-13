@@ -15,7 +15,7 @@
 
 *   Nom affiché en titre : **Volpe Calogero**
     
-*   Titre du site : **Volpe Calogero — Mes réalisations administratifs**
+*   Titre du site : **Volpe Calogero — Mes réalisations administratives**
     
 *   Positionnement affiché : Assistant administratif — gestion et suivi de dossiers, suivi budgétaire et reporting, modélisation Excel et rédaction
     

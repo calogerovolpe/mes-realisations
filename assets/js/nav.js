@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — navigation.
+/* Volpe Calogero — Mes réalisations administratives — navigation.
    Deux conforts ajoutés par JavaScript (amélioration progressive) : un bouton
    « retour en haut » et un bouton « copier » à côté de chaque adresse e-mail.
    Les boutons sont créés par JavaScript, donc aucun contrôle inopérant lorsque

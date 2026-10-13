@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — recherche globale (Ctrl+K, Cmd+K sur Mac).
+/* Volpe Calogero — Mes réalisations administratives — recherche globale (Ctrl+K, Cmd+K sur Mac).
    Interface créée par JavaScript : sans lui, le site reste navigable (amélioration progressive).
    Index « titre|url|section|résumé » séparé par « ; » — à tenir à jour avec les pages. */
 (function () {
@@ -76,6 +76,7 @@
     var nav = document.querySelector('.site-nav ul');
     if (nav) {
       var li = document.createElement('li');
+      li.className = 'nav-recherche';
       li.innerHTML = '<button type="button" class="rg-btn" aria-label="Rechercher dans le site (Ctrl+K)">Rechercher <kbd class="rg-kbd">Ctrl K</kbd></button>';
       li.querySelector('button').addEventListener('click', ouvrir);
       nav.appendChild(li);

@@ -1,4 +1,4 @@
-# Volpe Calogero — Mes réalisations administratifs
+# Volpe Calogero — Mes réalisations administratives
 
 Portfolio statique présentant des travaux personnels d'analyse et de
 modélisation : business plans, modèles financiers Excel, identité visuelle.
@@ -12,6 +12,8 @@ HTML5 + CSS, aucun framework, aucun build, aucune dépendance externe.
 - Pages HTML à plat à la racine
 - `assets/css/style.css` — feuille de style unique
 - `assets/img/` — captures d'écran et planches
+- `assets/js/` — JavaScript vanilla en amélioration progressive
+- `assets/fichiers/` — CV au format PDF (seul fichier téléchargeable)
 - `.clinerules/` — règles de travail
 - `memory-bank/` — état d'avancement du projet
 

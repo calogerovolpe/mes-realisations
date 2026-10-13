@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — sommaire de page.
+/* Volpe Calogero — Mes réalisations administratives — sommaire de page.
    Crée, à partir des <h2> visibles, un sommaire cliquable (défilement doux,
    section affichée surlignée). Amélioration progressive : sans JavaScript, le
    contenu reste intégralement lisible. prefers-reduced-motion : saut direct. */

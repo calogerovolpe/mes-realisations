@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — feuille d'impression.
+/* Volpe Calogero — Mes réalisations administratives — feuille d'impression.
    Chargée avec media="print" : ces règles ne s'appliquent qu'à l'impression.
    Objectif : un document propre et archivable — sans navigation, sans pied de
    page, sans boutons ; noir sur blanc ; aucune coupure au milieu d'un bloc ;
@@ -20,6 +20,8 @@
 .sommaire,
 .skip-link,
 .cta,
+.nav-fin,
+.visionneuse,
 .form button { display: none !important; }
 
 /* Noir sur blanc */

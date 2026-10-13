@@ -1,4 +1,4 @@
-/* Volpe Calogero — Mes réalisations administratifs — recherche dans l'index
+/* Volpe Calogero — Mes réalisations administratives — recherche dans l'index
    des fonctions (excel.html). Amélioration progressive : la barre de recherche
    est entièrement créée par JavaScript, donc aucun contrôle inopérant lorsque
    JavaScript est désactivé — l'index complet reste alors affiché et navigable.

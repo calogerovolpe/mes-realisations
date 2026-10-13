@@ -16,7 +16,7 @@
 - [x] J6 — Contact et finitions : contact.html, mentions-legales.html,
       test mobile, contrôle final des noms interdits
 
-## Refonte 2026 — « Volpe Calogero — Mes réalisations administratifs »
+## Refonte 2026 — « Volpe Calogero — Mes réalisations administratives »
 Développement sur la branche `refonte` ; publication sur `main` après CHAQUE jalon.
 Un jalon de refonte = une conversation = un commit. Ne jamais traiter deux jalons
 de refonte à la fois.
@@ -188,7 +188,7 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   .clinerules : aucune occurrence en dehors de parcours.html et contact.html.
   Vérifié en ligne (HTTP 200 : accueil, parcours, contact, mentions).
 - 2026-10-06 · R0 · Refonte engagée (« Volpe Calogero — Mes réalisations
-  administratifs »). Branche « refonte » créée. Révision des .clinerules : le nom
+  administratives »). Branche « refonte » créée. Révision des .clinerules : le nom
   « Volpe Calogero » est autorisé partout (02) ; le JavaScript vanilla en
   amélioration progressive est autorisé (04) ; workflow branche refonte et
   publication par jalon ajouté (03) ; titre, arborescence et jalons de refonte
@@ -198,7 +198,7 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   formation complète (CESS inclus), freelance + SuperProf 2023-2024, Montreuil
   AutoCAD + SketchUp, publication après chaque jalon.
 - 2026-10-06 · R1 · Contenu (aucun JavaScript). Titre « Volpe Calogero — Mes
-  réalisations administratifs » appliqué partout : balise title des 15 pages,
+  réalisations administratives » appliqué partout : balise title des 15 pages,
   en-tête (site-title), h1 de l'accueil, commentaire de style.css et README.
   Nom harmonisé en « Volpe Calogero » (parcours h1, contact). parcours.html :
   formation complète (STUDI 2025-2026, Edith & Nous 2025, AFPA 12 2021-2022,
@@ -371,7 +371,7 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
 - 2026-10-08 · Retour E · Refonte UI/UX — jalon B (menu latéral + « feuille »).
   En-tête horizontal remplacé par une barre latérale sur les 17 pages :
   <aside class="site-sidebar"> (marque « Volpe Calogero — Mes réalisations
-  administratifs », resserrée en « VC » au repli, 6 entrées de navigation avec
+  administratives », resserrée en « VC » au repli, 6 entrées de navigation avec
   icônes SVG inline, bouton « Rechercher ») ; aria-current conservé sur chaque
   page. Menu réductible en icônes seules via une case à cocher masquée (CSS pur,
   aucune persistance, rien en JavaScript). Contenu présenté comme une feuille
@@ -486,6 +486,32 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   légendes neutres (« Extrait du business plan ») ; date de la page portée au
   10 octobre 2026. Aucun fichier CSS ni JavaScript modifié. Recherche des noms
   interdits : aucune occurrence.
+
+- 2026-10-13 · Alignement UI/UX sur le portfolio « plan technique » (dépôt de
+  référence « Mes réalisations BAT »). Objectif : même UI/UX, sans toucher à
+  l'identité visuelle ni au contenu. assets/css/style.css : jeton `--police-mono` ;
+  barre latérale devenue barre INFÉRIEURE sur petits écrans (icônes seules,
+  Accueil au centre, titre de la marque et recherche masqués) ; bouton `.btn-vert` ;
+  navigation de fin de page `.nav-fin` ; pied de page structuré `.footer-nav`
+  (colonnes de liens) ; visionneuse d'images (`.visionneuse*`, `.image-ouvrable`) ;
+  `.stats` marge portée à 2,75 rem ; media query en rem. assets/css/print.css :
+  `.nav-fin` et `.visionneuse` exclus à l'impression. assets/js/viewer.js :
+  visionneuse d'images en amélioration progressive (aperçu agrandi sur fond
+  assombri, zoom, précédent / suivant, clavier, molette), enregistrée dans main.js.
+  assets/js/print.js : la barre d'impression n'est plus injectée que dans le
+  `main[data-impression]` (page Parcours). assets/js/global-search.js : entrée de
+  recherche marquée `nav-recherche` (masquée sur la barre inférieure). Les 17 pages :
+  pied de page structuré, navigation de fin de page (sauf 404 et mentions légales),
+  titre corrigé « Mes réalisations administratives ». parcours.html : bloc « CV »
+  avec deux options (Voir le CV PDF / Télécharger le CV PDF) et rappel de
+  l'impression de la page ; la page reçoit `data-impression="cv"`.
+  assets/fichiers/cv-volpe-calogero.pdf : CV publié, expurgé du numéro de téléphone,
+  du code postal et de l'ancienne adresse e-mail (e-mail unique du site conservé) ;
+  source /docs lue en lecture seule, jamais modifiée ni publiée. Vérification par
+  rendu réel (Chrome headless) : pied de page, navigation de fin de page,
+  visionneuse (4 figures, ouverture, zoom, précédent/suivant) et barre d'impression
+  conformes ; JavaScript validé (node --check) ; CSS équilibré ; aucune occurrence
+  de l'accord fautif ni de nom interdit.
 
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
