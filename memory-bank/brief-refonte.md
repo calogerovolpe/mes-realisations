@@ -19,7 +19,7 @@
     
 *   Positionnement affiché : Assistant administratif — gestion et suivi de dossiers, suivi budgétaire et reporting, modélisation Excel et rédaction
     
-*   E-mail de contact : [bx.volpe@gmail.com](mailto:bx.volpe@gmail.com)
+*   E-mail de contact : [contact@calogero-volpe.eu](mailto:contact@calogero-volpe.eu)
     
 
 ### Formation à afficher (cocher ce qui doit apparaître)
