@@ -98,6 +98,15 @@
   color: var(--encre-douce);
 }
 
+/* Chiffres clés : deux colonnes sur téléphone, une seule sur écran très étroit */
+@media (max-width: 30rem) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
+}
+@media (max-width: 22rem) {
+  .stats { grid-template-columns: 1fr; }
+}
+
+
 /* Appels à l'action (page d'accueil) */
 .cta {
   display: flex;
@@ -700,4 +709,10 @@ figcaption {
 /* Petits écrans : le retour en haut reste au-dessus de la barre inférieure */
 @media (max-width: 60rem) {
   .back-to-top { bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+  .cards { margin-top: 1.25rem; }
+  .cta { margin-top: 1.25rem; }
+  .realisations-bloc + .realisations-bloc {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
 }

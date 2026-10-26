@@ -145,10 +145,10 @@
   }
 }
 
-/* Petits écrans : la barre latérale devient une barre inférieure, en icônes
-   seules. L'entrée « Accueil » occupe le centre ; le titre de la marque et la
-   recherche sont masqués (aucun raccourci Ctrl+K sur smartphone). La page
-   courante reste indiquée par aria-current="page". */
+/* Petits écrans : la barre latérale devient une barre inférieure. Chaque entrée
+   affiche son icône et un libellé court pour rester identifiable ; la page
+   courante reste indiquée par aria-current="page". La recherche, faute de
+   clavier, prend la forme d'une loupe. */
 @media (max-width: 60rem) {
   .site-sidebar {
     grid-column: auto;
@@ -164,7 +164,7 @@
     align-items: center;
     justify-content: center;
     gap: 0;
-    padding: 0.3rem 2.6rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+    padding: 0.25rem 0.35rem calc(0.3rem + env(safe-area-inset-bottom, 0px));
     border: none;
     border-top: 1px solid var(--sidebar-filet);
     overflow: visible;
@@ -177,28 +177,72 @@
 
   .site-sidebar .site-nav { flex: 1 1 auto; }
   .site-sidebar .site-nav ul {
+    width: 100%;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-    gap: 0.1rem;
+    justify-content: space-between;
+    gap: 0;
+  }
+  /* Chaque entrée occupe la même largeur : cibles tactiles régulières */
+  .site-sidebar .site-nav li {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
   }
   .site-sidebar .site-nav a {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
     flex-direction: column;
-    gap: 0;
-    justify-content: center;
-    min-width: 2.3rem;
-    padding: 0.45rem 0.3rem;
+    gap: 0.1rem;
+    justify-content: flex-start;
+    padding: 0.45rem 0.1rem 0.4rem;
   }
-  .site-sidebar .site-nav .nav-ico { width: 1.4rem; height: 1.4rem; }
-  /* Icônes seules : aucun libellé dans la barre */
-  .site-sidebar .nav-libelle { display: none; }
-  /* Accueil au centre de la barre : ordre imposé par la mise en page */
-  .site-sidebar .site-nav li:nth-child(1) { order: 3; }
+  .site-sidebar .site-nav .nav-ico { width: 1.35rem; height: 1.35rem; }
+  /* Libellé court sous chaque icône : compréhension immédiate */
+  .site-sidebar .nav-libelle {
+    display: block;
+    width: 100%;
+    font-size: 0.6rem;
+    line-height: 1.05;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+  /* Accueil au centre (4e entrée sur 7 quand la recherche est présente) */
+  .site-sidebar .site-nav li:nth-child(1) { order: 4; }
   .site-sidebar .site-nav li:nth-child(2) { order: 1; }
   .site-sidebar .site-nav li:nth-child(3) { order: 2; }
-  .site-sidebar .site-nav li:nth-child(4) { order: 4; }
+  .site-sidebar .site-nav li:nth-child(4) { order: 3; }
   .site-sidebar .site-nav li:nth-child(5) { order: 5; }
   .site-sidebar .site-nav li:nth-child(6) { order: 6; }
-  /* Recherche (Ctrl+K) : absente sur smartphone */
-  .site-sidebar .site-nav li.nav-recherche { display: none; }
+  .site-sidebar .site-nav li.nav-recherche { order: 7; display: flex; }
+
+  /* Recherche : loupe seule ; le nom accessible reste porté par aria-label */
+  .site-sidebar .site-nav .rg-btn {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    padding: 0.45rem 0.1rem 0.4rem;
+    border: 0;
+    background: transparent;
+    color: var(--sidebar-encre-douce);
+    font-size: 0;
+  }
+  .site-sidebar .site-nav .rg-btn::before {
+    content: "";
+    width: 1.35rem;
+    height: 1.35rem;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .site-sidebar .site-nav .rg-btn .rg-kbd { display: none; }
+  .site-sidebar .site-nav .rg-btn:hover,
+  .site-sidebar .site-nav .rg-btn:focus-visible {
+    color: var(--sidebar-encre);
+    background: var(--sidebar-survol);
+  }
 }

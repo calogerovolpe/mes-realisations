@@ -502,6 +502,17 @@ Points ouverts
   Aucun chiffre ajouté, aucun nom interdit, aucun JavaScript modifié. À fusionner
   et publier.
 
+- 2026-10-26 · UX mobile : TERMINÉ (CSS uniquement). assets/css/navigation.css :
+  barre inférieure avec libellés courts sous les icônes, cibles tactiles ≥44 px en
+  pleine largeur, Accueil centré (4e sur 7), loupe de recherche visible (nom
+  accessible conservé par aria-label), suppression du padding latéral 2,6rem.
+  assets/css/base.css : marges h2/h3 resserrées à ≤60rem. assets/css/layout.css :
+  padding de .site-main resserré à ≤60rem. assets/css/components.css : chiffres
+  clés en 2 colonnes ≤30rem (1 seule ≤22rem), .cards/.cta/.realisations-bloc
+  resserrés. Aucun HTML ni JavaScript modifié. Vérifié par captures Chrome
+  headless (375 px et 1280 px), aucun débordement horizontal. À fusionner et
+  publier.
+
 Blocages
 
 - Aucun.

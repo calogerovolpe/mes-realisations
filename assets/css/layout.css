@@ -80,6 +80,8 @@
   .site-main {
     width: auto;
     margin: 0.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid var(--filet);
     border-radius: var(--rayon);
   }

@@ -583,6 +583,17 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   JavaScript modifié ; impression déjà couverte par print.css (.card neutralisée,
   .cta masquée).
 
+- 2026-10-26 · Retour O · UX mobile : navigation et densité. assets/css/navigation.css :
+  barre inférieure avec libellés courts sous les icônes (fin des « icônes seules »),
+  cibles tactiles régulières en pleine largeur, Accueil réellement centré (4e sur 7),
+  loupe de recherche visible (aria-label conservé), suppression du padding latéral
+  2,6rem. assets/css/base.css : marge haute des h2/h3 réduite à ≤60rem.
+  assets/css/layout.css : padding haut/bas de .site-main resserré à ≤60rem.
+  assets/css/components.css : chiffres clés en 2 colonnes ≤30rem (1 seule ≤22rem),
+  .cards/.cta/.realisations-bloc resserrés à ≤60rem. Aucun HTML ni JavaScript
+  modifié ; validation par captures Chrome headless (375 px via iframe, bureau
+  1280 px) — aucun débordement horizontal.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.
