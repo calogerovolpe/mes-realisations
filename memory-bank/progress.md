@@ -571,6 +571,18 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   Chrome headless (accueil, sommaire Excel, modèle 01, pied de page). Aucun HTML
   ni JavaScript modifié.
 
+- 2026-10-26 · Retour N · Accueil enrichi : sections de synthèse par réalisation.
+  index.html : après « Compétences démontrées » (conservée), ajout d'une section
+  « Toutes les réalisations » (trois sous-sections : Modèles Excel, Business plans,
+  Identité visuelle) listant les neuf réalisations en cartes cliquables, chacune
+  avec un lien d'action « Voir la réalisation » et un bouton vers le sommaire de
+  la section ; ajout d'une section « Parcours » résumée avec bouton vers
+  parcours.html. assets/css/components.css : règles .realisations-bloc
+  (espacement, filet séparateur) et .card-action (lien d'action des cartes).
+  Aucun chiffre ni nom nouveau ; textes repris des pages existantes. Aucun
+  JavaScript modifié ; impression déjà couverte par print.css (.card neutralisée,
+  .cta masquée).
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

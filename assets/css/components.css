@@ -515,6 +515,26 @@ figcaption {
   color: var(--encre-douce);
 }
 
+/* Sous-sections « Toutes les réalisations » (accueil) */
+.realisations-bloc { margin: 0; }
+.realisations-bloc .cards { margin-top: 1.25rem; }
+.realisations-bloc .cta { margin-top: 1.5rem; }
+.realisations-bloc + .realisations-bloc {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--filet);
+}
+
+/* Lien d'action au bas des cartes de réalisation */
+.card-action {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-weight: 600;
+  color: var(--encre);
+}
+.card:hover .card-action { text-decoration: underline; }
+
+
 /* Formulaire de contact */
 .form {
   margin: 1.5rem 0 0;

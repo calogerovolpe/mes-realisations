@@ -492,6 +492,16 @@ Points ouverts
   Aucune classe perdue (146/146) ; rendu réel validé en Chrome headless (8 CSS en
   200, 0 échec réseau). Pages HTML inchangées ; print.css inchangé.
 
+- 2026-10-26 · Accueil enrichi : TERMINÉ (index.html). Après « Compétences
+  démontrées », section « Toutes les réalisations » avec trois sous-sections
+  (Modèles Excel : 3 cartes ; Business plans : 4 cartes ; Identité visuelle :
+  2 cartes), chaque carte étant un lien vers la réalisation avec un lien d'action
+  « Voir la réalisation », plus un bouton vers le sommaire de la section ; section
+  « Parcours » résumée avec bouton vers parcours.html. assets/css/components.css :
+  .realisations-bloc (espacement, filet entre sous-sections) et .card-action.
+  Aucun chiffre ajouté, aucun nom interdit, aucun JavaScript modifié. À fusionner
+  et publier.
+
 Blocages
 
 - Aucun.
