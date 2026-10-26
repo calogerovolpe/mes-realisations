@@ -48,6 +48,29 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   « contact@calogero-volpe.eu » dans les 17 pages et memory-bank/brief-refonte.md,
   40 occurrences ; aucun CSS ni JavaScript modifié (l'adresse est lue depuis le
   DOM). CV PDF régénéré par le propriétaire. Fusionné et publié.
+- Retour L — Identité visuelle « blanc / noir + verts » : TERMINÉ (fond blanc,
+  texte noir, accents verts #E4FFC7 / #C4D6B0 / #85A365 ; suppression COMPLÈTE
+  du mode sombre et de la bascule de thème ; angles droits partout sauf pastilles
+  et tags). Fusionné et publié.
+- Étapes du Retour L (faites) — identité « blanc / noir + verts ».
+  assets/css/style.css : jetons remplacés (--papier/--papier-2/--fond-champ/
+  --bureau/--sidebar-fond en blanc ; --encre = #000000 ; --encre-douce = #333333 ;
+  --filet/--sidebar-filet = #c4d6b0 ; --accent = #85a365 ; --accent-fond =
+  #e4ffc7 ; --accent-2 = #c4d6b0 ; --accent-3 fusionné au vert ; --accent-fonce =
+  #5c7a47 pour le texte d'accent AA ; dégradé vert ; --rayon et --rayon-petit = 0).
+  Suppression du mode sombre : blocs [data-theme], @media (prefers-color-scheme:
+  dark), color-scheme: light dark → light, règles .theme-toggle (bureau et
+  mobile). Pied de page passé en blanc/noir (bordure haute verte) ; visionneuse
+  en noir (#0b1a2b → #000) ; textes sur fond vert passés en noir (boutons,
+  onglets actifs, sommaire actif, nav active, filtres, badges). Angles droits
+  partout, SAUF pastilles/tags en pilule 999px (.sommaire a, .chrono-annee,
+  .chrono-cat, .chrono-demenagement-annee, .fonctions-liste a, .filtre-btn,
+  .rg-kbd, .back-to-top) ; points et puces conservés (.chrono-point::before 50 %,
+  .chrono-puce 3px). assets/js/nav.js : suppression de construireTheme(), de
+  ICO_THEME et de l'appel dans init(). Les 17 pages HTML : suppression du script
+  inline anti-flash de thème. .clinerules/04 : design « blanc / noir + verts »,
+  angles droits sauf pastilles/tags, absence de mode sombre et de script inline.
+  memory-bank : techContext.md et brief-refonte.md alignés.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.

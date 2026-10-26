@@ -1,55 +1,55 @@
 /* Volpe Calogero — Mes réalisations administratives — feuille de style unique.
-   Design « papier moderne » : fond papier chaud, encre foncée, identité sobre
-   mais affirmée — plusieurs accents, dégradés et ombres doux, micro-animations
-   (toutes coupées si prefers-reduced-motion: reduce). Impressions soignées.
-   UI/UX alignée sur le portfolio « plan technique » : visionneuse d'images,
-   navigation de fin de page, pied de page structuré, barre inférieure sur
-   petits écrans. */
+   Identité « blanc / noir » : fond blanc, encre noire, échelle de verts
+   (#E4FFC7, #C4D6B0, #85A365) en accents sobres, angles droits partout sauf
+   les pastilles et les tags, ombres douces, micro-animations (toutes coupées
+   si prefers-reduced-motion: reduce). Impressions soignées. UI/UX alignée sur
+   le portfolio « plan technique » : visionneuse d'images, navigation de fin de
+   page, pied de page structuré, barre inférieure sur petits écrans. */
 
 :root {
-  /* Fonds et encres — identité « papier » conservée */
-  --papier: #f6f1e7;
-  --papier-2: #efe7d7;
-  --encre: #221d16;
-  --encre-douce: #5a5044;
-  --filet: #d9cdbb;
+  /* Fonds et encres — identité « blanc / noir » */
+  --papier: #ffffff;
+  --papier-2: #f6f8f2;
+  --encre: #000000;
+  --encre-douce: #333333;
+  --filet: #c4d6b0;
   --fond-champ: #ffffff;
 
-  /* Accents : primaire (action), vert sauge (résultat), bleu encre (méthode) */
-  --accent: #a44a22;
-  --accent-fonce: #853a18;
-  --accent-fond: #f7e7dd;
-  --accent-2: #46735a;
-  --accent-2-fond: #e6efe9;
-  --accent-3: #3d5a80;
-  --accent-3-fond: #e5eaf2;
+  /* Accents : échelle de verts #E4FFC7 → #C4D6B0 → #85A365 */
+  --accent: #85a365;
+  --accent-fonce: #5c7a47;
+  --accent-fond: #e4ffc7;
+  --accent-2: #c4d6b0;
+  --accent-2-fond: #e4ffc7;
+  --accent-3: #85a365;
+  --accent-3-fond: #e4ffc7;
 
   /* Dégradés doux */
-  --degrade-accent: linear-gradient(135deg, #bd5a2c, #a44a22);
-  --degrade-entete: linear-gradient(180deg, #faf6ee, #f1e9da);
+  --degrade-accent: linear-gradient(135deg, #85a365, #6f8c52);
+  --degrade-entete: linear-gradient(180deg, #ffffff, #f6f8f2);
 
   /* Ombres douces */
-  --ombre-1: 0 1px 2px rgba(34, 29, 22, 0.06), 0 1px 3px rgba(34, 29, 22, 0.08);
-  --ombre-2: 0 8px 22px rgba(34, 29, 22, 0.16);
+  --ombre-1: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --ombre-2: 0 8px 22px rgba(0, 0, 0, 0.14);
 
-  /* Rayons */
-  --rayon: 10px;
-  --rayon-petit: 6px;
+  /* Rayons — angles droits partout (les pastilles et tags posent leur propre rayon) */
+  --rayon: 0;
+  --rayon-petit: 0;
 
   --largeur: 60rem;
 
   /* Police à chasse fixe — repères et étiquettes (nav-fin, visionneuse) */
   --police-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, "Courier New", monospace;
 
-  /* Ossature « bureau + feuille » : plan de travail, barre latérale, feuille */
-  --bureau: #e2d6bc;
-  --sidebar-fond: #221d16;
-  --sidebar-encre: #ece6db;
-  --sidebar-encre-douce: #b3a893;
-  --sidebar-filet: #3b352c;
-  --sidebar-survol: rgba(255, 255, 255, 0.08);
+  /* Ossature « plan de travail blanc + barre latérale claire » */
+  --bureau: #ffffff;
+  --sidebar-fond: #ffffff;
+  --sidebar-encre: #000000;
+  --sidebar-encre-douce: #333333;
+  --sidebar-filet: #c4d6b0;
+  --sidebar-survol: rgba(133, 163, 101, 0.14);
   --largeur-sidebar: 17rem;
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -82,14 +82,15 @@ h3 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
 p { margin: 0 0 1rem; }
 
 a {
-  color: var(--accent);
+  color: var(--encre);
   text-decoration: underline;
+  text-decoration-color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 a:hover { color: var(--accent-fonce); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 0; }
 
 /* Ossature « bureau + feuille ».
    La page est un plan de travail ; une barre latérale occupe la gauche ; le
@@ -130,6 +131,7 @@ body {
   padding: 1.15rem 0.85rem 1.25rem;
   background: var(--sidebar-fond);
   color: var(--sidebar-encre);
+  border-right: 1px solid var(--sidebar-filet);
   overflow-y: auto;
   transition: width 0.18s ease;
 }
@@ -147,11 +149,11 @@ body {
   text-decoration: none;
   transition: color 0.15s ease;
 }
-.site-sidebar .site-title:hover { color: var(--accent); }
+.site-sidebar .site-title:hover { color: var(--accent-fonce); }
 .site-sidebar .site-title:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 0;
 }
 .marque-sigle { display: none; }
 .sidebar-bascule {
@@ -200,7 +202,7 @@ body {
   text-decoration: none;
 }
 .site-sidebar .site-nav a[aria-current="page"] {
-  color: #fff;
+  color: #000;
   background: var(--degrade-accent);
   box-shadow: var(--ombre-1);
 }
@@ -232,27 +234,6 @@ body {
 }
 .site-sidebar .rg-kbd { border-color: var(--sidebar-filet); color: var(--sidebar-encre-douce); }
 
-/* Bascule de thème (injectée par JavaScript) : placée en bas du menu */
-.site-sidebar .theme-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  width: 100%;
-  margin-top: 0.25rem;
-  padding: 0.5rem 0.6rem;
-  border: 1px solid var(--sidebar-filet);
-  border-radius: var(--rayon-petit);
-  background: transparent;
-  color: var(--sidebar-encre-douce);
-  font: inherit;
-  font-size: 0.95rem;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-}
-.site-sidebar .theme-toggle:hover { color: var(--sidebar-encre); border-color: var(--sidebar-encre-douce); }
-.site-sidebar .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
 /* Réduction du menu en icônes seules (bureau uniquement) */
 @media (min-width: 60rem) {
   .nav-reduit:checked ~ .site-sidebar { width: 4.5rem; }
@@ -273,7 +254,6 @@ body {
   .nav-reduit:checked ~ .site-sidebar .sidebar-bascule { transform: rotate(180deg); }
   .nav-reduit:checked ~ .site-sidebar .rg-btn { justify-content: center; font-size: 0; }
   .nav-reduit:checked ~ .site-sidebar .rg-btn > * { display: none; }
-  .nav-reduit:checked ~ .site-sidebar .theme-toggle { justify-content: center; }
   .nav-reduit:checked ~ .site-sidebar .rg-btn::before {
     content: "";
     width: 1.15rem;
@@ -292,9 +272,9 @@ body {
   z-index: 40;
   padding: 0.55rem 1rem;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  border-radius: 0 0 3px 0;
+  border-radius: 0;
 }
 .skip-link:focus {
   left: 0;
@@ -387,18 +367,6 @@ body {
   .site-sidebar .site-nav li:nth-child(6) { order: 6; }
   /* Recherche (Ctrl+K) : absente sur smartphone */
   .site-sidebar .site-nav li.nav-recherche { display: none; }
-  /* Bascule de thème : icône isolée, à droite de la barre */
-  .site-sidebar .theme-toggle {
-    position: absolute;
-    right: 0.5rem;
-    bottom: calc(0.3rem + env(safe-area-inset-bottom, 0px));
-    width: auto;
-    margin: 0;
-    padding: 0.45rem;
-    border-color: transparent;
-    background: transparent;
-  }
-  .site-sidebar .theme-toggle .ico { width: 1.3rem; height: 1.3rem; }
 
   .site-main {
     width: auto;
@@ -467,7 +435,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.15rem;
   line-height: 1.3;
-  color: var(--accent);
+  color: var(--accent-fonce);
   margin-bottom: 0.35rem;
 }
 .card-text {
@@ -509,7 +477,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
   line-height: 1.1;
-  color: var(--accent-2);
+  color: var(--accent-fonce);
 }
 .stat-libelle {
   display: block;
@@ -532,30 +500,30 @@ body {
   border: 1px solid var(--accent);
   border-radius: var(--rayon-petit);
   background: var(--degrade-accent);
-  color: #fff;
+  color: #000;
   font-size: 0.95rem;
   text-decoration: none;
   box-shadow: var(--ombre-1);
   transition: filter 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
-.btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); color: #fff; }
+.btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); color: #000; }
 .btn:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
 .btn-secondaire {
   background: var(--fond-champ);
-  color: var(--accent);
+  color: var(--accent-fonce);
 }
 .btn-secondaire:hover {
   filter: none;
   background: var(--accent-fond);
   color: var(--accent-fonce);
 }
-/* Variante « résultat » (vert sauge) — bouton affirmé sur un fond clair */
+/* Variante « résultat » (vert clair) — bouton affirmé sur un fond clair */
 .btn-vert {
   background: var(--accent-2);
   border-color: var(--accent-2);
-  color: #fff;
+  color: #000;
 }
-.btn-vert:hover { filter: brightness(1.08); box-shadow: var(--ombre-2); color: #fff; }
+.btn-vert:hover { filter: brightness(1.08); box-shadow: var(--ombre-2); color: #000; }
 .btn-vert:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 
 /* Navigation de fin de page : section précédente / suivante.
@@ -595,17 +563,17 @@ body {
   text-transform: uppercase;
   color: var(--encre-douce);
 }
-.nav-fin-titre { font-weight: 600; color: var(--accent); }
+.nav-fin-titre { font-weight: 600; color: var(--accent-fonce); }
 @media (max-width: 34rem) {
   .nav-fin-lien { flex: 1 1 100%; min-width: 0; max-width: none; }
   .nav-fin-suivant { align-items: flex-start; text-align: left; margin-left: 0; }
 }
 
-/* Pied de page — bande sombre pour marquer nettement la séparation */
+/* Pied de page — bande claire bordée de vert pour marquer la séparation */
 .site-footer {
   border-top: 3px solid var(--accent);
-  background: #221d16;
-  color: #e7dfd0;
+  background: #ffffff;
+  color: #000000;
   font-size: 0.9rem;
 }
 .site-footer-inner {
@@ -614,9 +582,9 @@ body {
   padding: 1.75rem 1.25rem 2.5rem;
 }
 .site-footer p { margin: 0 0 0.5rem; }
-.site-footer a { color: #f0b48f; }
-.site-footer a:hover { color: #ffffff; }
-.site-footer .maj { font-size: 0.85rem; color: #bdb3a1; }
+.site-footer a { color: var(--accent-fonce); }
+.site-footer a:hover { color: var(--encre); }
+.site-footer .maj { font-size: 0.85rem; color: var(--encre-douce); }
 
 /* Navigation structurée du pied de page — colonnes de liens */
 .footer-nav {
@@ -625,14 +593,14 @@ body {
   gap: 1.5rem;
   margin: 0 0 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #3b352c;
+  border-bottom: 1px solid var(--filet);
 }
 .footer-nav-titre {
   display: block;
   margin-bottom: 0.6rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.95rem;
-  color: #ffffff;
+  color: var(--encre);
 }
 .footer-nav ul { list-style: none; margin: 0; padding: 0; }
 .footer-nav li { margin: 0 0 0.3rem; }
@@ -648,7 +616,7 @@ body {
   color: var(--encre-douce);
   margin: 0 0 0.75rem;
 }
-.fil-ariane a { color: var(--accent); }
+.fil-ariane a { color: var(--accent-fonce); }
 
 /* Tableaux de synthèse */
 .table-wrap {
@@ -732,7 +700,7 @@ body {
 .tabs #t2:checked ~ .tab-nav label[for="t2"],
 .tabs #t3:checked ~ .tab-nav label[for="t3"],
 .tabs #t4:checked ~ .tab-nav label[for="t4"] {
-  color: #fff;
+  color: #000;
   background: var(--degrade-accent);
   border-color: transparent;
   box-shadow: var(--ombre-1);
@@ -815,7 +783,7 @@ figcaption {
   line-height: 1;
 }
 /* Le niveau « résultat » (dernier) est mis en évidence en vert sauge */
-.flux-niveau:last-child .flux-role { color: var(--accent-2); }
+.flux-niveau:last-child .flux-role { color: var(--accent-fonce); }
 .flux-niveau:last-child .flux-feuille { border-top-color: var(--accent-2); }
 
 /* Listes de fonctions */
@@ -831,7 +799,7 @@ figcaption {
 .formules-liste code {
   font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
   font-size: 0.95em;
-  color: var(--accent);
+  color: var(--accent-fonce);
 }
 
 /* Index des fonctions (sommaire Excel) */
@@ -851,7 +819,7 @@ figcaption {
   display: inline-block;
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--filet);
-  border-radius: var(--rayon-petit);
+  border-radius: 999px;
   background: var(--papier-2);
   color: var(--encre);
   text-decoration: none;
@@ -860,7 +828,7 @@ figcaption {
 }
 .fonctions-liste a:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-fonce);
   background: var(--accent-fond);
 }
 .fonctions-liste code {
@@ -904,14 +872,14 @@ figcaption {
   font-size: 0.85rem;
   padding: 0.25rem 0.7rem;
   border: 1px solid var(--accent);
-  border-radius: var(--rayon-petit);
+  border-radius: 999px;
   background: var(--papier-2);
-  color: var(--accent);
+  color: var(--accent-fonce);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
-.filtre-btn:hover { background: var(--accent); color: #fff; }
-.filtre-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.filtre-btn:hover { background: var(--accent); color: #000; }
+.filtre-btn[aria-pressed="true"] { background: var(--accent); color: #000; }
 .filtre-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .recherche-compteur {
   margin: 0.6rem 0 0;
@@ -950,13 +918,13 @@ figcaption {
   display: inline-block;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  color: var(--accent);
+  color: var(--accent-fonce);
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .sommaire a:hover { background: var(--accent-fond); }
 .sommaire a[aria-current] {
-  color: #fff;
+  color: #000;
   background: var(--degrade-accent);
   font-weight: bold;
 }
@@ -977,10 +945,10 @@ figcaption {
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent-3);
+  color: var(--accent-fonce);
   margin-bottom: 0.3rem;
 }
-.dossier-link { display: block; color: var(--accent-3); font-weight: 600; }
+.dossier-link { display: block; color: var(--accent-fonce); font-weight: 600; }
 .dossier-link + .dossier-link { margin-top: 0.35rem; }
 
 /* Mention discrète sur les cartes de sommaire */
@@ -1048,7 +1016,7 @@ figcaption {
   border: 1px solid var(--accent);
   border-radius: var(--rayon-petit);
   background: var(--degrade-accent);
-  color: #fff;
+  color: #000;
   cursor: pointer;
   box-shadow: var(--ombre-1);
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
@@ -1076,7 +1044,7 @@ figcaption {
   border: 1px solid var(--accent);
   border-radius: var(--rayon-petit);
   background: var(--degrade-accent);
-  color: #fff;
+  color: #000;
   cursor: pointer;
   box-shadow: var(--ombre-1);
   transition: filter 0.15s ease, box-shadow 0.15s ease;
@@ -1096,7 +1064,7 @@ figcaption {
   border: 1px solid var(--accent);
   border-radius: 999px;
   background: var(--degrade-accent);
-  color: #fff;
+  color: #000;
   cursor: pointer;
   box-shadow: var(--ombre-2);
   z-index: 30;
@@ -1106,7 +1074,7 @@ figcaption {
 .back-to-top:hover { filter: brightness(1.06); }
 .back-to-top:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
 
-/* Icônes SVG injectées par JavaScript (copie, thème) */
+/* Icônes SVG injectées par JavaScript (copie) */
 .ico {
   flex: 0 0 auto;
   width: 1.05rem;
@@ -1135,7 +1103,7 @@ figcaption {
   vertical-align: middle;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.copy-email:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.copy-email:hover { background: var(--accent); color: #000; border-color: var(--accent); }
 .copy-email:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Petits écrans */
@@ -1176,77 +1144,6 @@ figcaption {
   .site-main { animation: apparition 0.45s ease-out both; }
 }
 
-/* Thèmes clair / sombre.
-   Par défaut « automatique » : le thème suit la préférence système. Un bouton
-   (créé par JavaScript) pose data-theme sur <html> et mémorise le choix ;
-   « clair » force le thème clair même si le système est sombre. Palette
-   « papier sombre chaud », contraste AA conservé (texte, liens, filets). */
-[data-theme="clair"] { color-scheme: light; }
-[data-theme="sombre"] {
-  color-scheme: dark;
-
-  --papier: #1e1b16;
-  --papier-2: #27231d;
-  --encre: #ece6db;
-  --encre-douce: #b3aa9b;
-  --filet: #3b352c;
-  --fond-champ: #141210;
-
-  --bureau: #141210;
-  --sidebar-fond: #26221b;
-  --sidebar-encre: #ece6db;
-  --sidebar-encre-douce: #b3aa9b;
-  --sidebar-filet: #3b352c;
-  --sidebar-survol: rgba(255, 255, 255, 0.07);
-
-  --accent: #e0915f;
-  --accent-fonce: #f0a878;
-  --accent-fond: #3a2c20;
-  --accent-2: #8fbf9e;
-  --accent-2-fond: #223026;
-  --accent-3: #93b3dd;
-  --accent-3-fond: #223042;
-
-  --degrade-accent: linear-gradient(135deg, #d98a55, #b96a37);
-  --degrade-entete: linear-gradient(180deg, #26221c, #1e1b16);
-
-  --ombre-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --ombre-2: 0 8px 22px rgba(0, 0, 0, 0.5);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="clair"]) {
-    color-scheme: dark;
-
-    --papier: #1e1b16;
-    --papier-2: #27231d;
-    --encre: #ece6db;
-    --encre-douce: #b3aa9b;
-    --filet: #3b352c;
-    --fond-champ: #141210;
-
-    --bureau: #141210;
-    --sidebar-fond: #26221b;
-    --sidebar-encre: #ece6db;
-    --sidebar-encre-douce: #b3aa9b;
-    --sidebar-filet: #3b352c;
-    --sidebar-survol: rgba(255, 255, 255, 0.07);
-
-    --accent: #e0915f;
-    --accent-fonce: #f0a878;
-    --accent-fond: #3a2c20;
-    --accent-2: #8fbf9e;
-    --accent-2-fond: #223026;
-    --accent-3: #93b3dd;
-    --accent-3-fond: #223042;
-
-    --degrade-accent: linear-gradient(135deg, #d98a55, #b96a37);
-    --degrade-entete: linear-gradient(180deg, #26221c, #1e1b16);
-
-    --ombre-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --ombre-2: 0 8px 22px rgba(0, 0, 0, 0.5);
-  }
-}
-
 /* Mouvement réduit : aucune animation ni transition, défilement instantané. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1275,13 +1172,13 @@ figcaption {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 .rg-btn:hover {
-  color: var(--accent);
+  color: var(--accent-fonce);
   border-color: var(--accent);
 }
 .rg-btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  color: var(--accent);
+  color: var(--accent-fonce);
   border-color: var(--accent);
 }
 .rg-kbd {
@@ -1289,7 +1186,7 @@ figcaption {
   font-size: 0.72rem;
   padding: 0.05rem 0.35rem;
   border: 1px solid var(--filet);
-  border-radius: var(--rayon-petit);
+  border-radius: 999px;
 }
 
 .rg-overlay {
@@ -1353,7 +1250,7 @@ figcaption {
 .rg-resultat-titre {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  color: var(--accent);
+  color: var(--accent-fonce);
 }
 .rg-resultat-meta {
   display: block;
@@ -1392,7 +1289,7 @@ figcaption {
   transform: translateY(-3px);
 }
 .competence-titre { margin: 0 0 0.5rem; font-size: 1.15rem; }
-.competence-titre a { color: var(--accent); text-decoration: none; }
+.competence-titre a { color: var(--accent-fonce); text-decoration: none; }
 .competence-titre a:hover { text-decoration: underline; }
 .competence-titre a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .competence-texte { margin: 0 0 0.75rem; color: var(--encre-douce); font-size: 0.95rem; line-height: 1.55; }
@@ -1523,17 +1420,17 @@ figcaption {
   stroke-linejoin: round;
 }
 .chrono-action { margin: 0; }
-.chrono-lien { font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--accent); }
+.chrono-lien { font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--accent-fonce); }
 .chrono-lien:hover { text-decoration: underline; }
 .chrono-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Catégories : couleur de bordure, point et étiquette */
 .chrono-cat-emploi .chrono-carte { border-left-color: var(--accent); }
-.chrono-cat-emploi .chrono-cat { color: var(--accent); }
+.chrono-cat-emploi .chrono-cat { color: var(--accent-fonce); }
 .chrono-cat-emploi::before { background: var(--accent); }
 .chrono-cat-formation .chrono-carte { border-left-color: var(--accent-2); }
-.chrono-cat-formation .chrono-cat { color: var(--accent-2); }
-.chrono-cat-formation .chrono-annee { background: var(--accent-2-fond); color: var(--accent-2); }
+.chrono-cat-formation .chrono-cat { color: var(--accent-fonce); }
+.chrono-cat-formation .chrono-annee { background: var(--accent-2-fond); color: var(--accent-fonce); }
 .chrono-cat-formation::before { background: var(--accent-2); }
 
 /* Activité complémentaire : menée en parallèle — carte en retrait, bordure
@@ -1544,8 +1441,8 @@ figcaption {
   border-left: 4px solid var(--accent-2);
   background: var(--accent-2-fond);
 }
-.chrono-cat-complement .chrono-cat { color: var(--accent-2); }
-.chrono-cat-complement .chrono-annee { background: var(--fond-champ); color: var(--accent-2); }
+.chrono-cat-complement .chrono-cat { color: var(--accent-fonce); }
+.chrono-cat-complement .chrono-annee { background: var(--fond-champ); color: var(--accent-fonce); }
 .chrono-cat-complement::before { background: var(--accent-2); }
 
 /* Mobilités personnelles : bandeau pleine largeur qui coupe la ligne */
@@ -1562,7 +1459,7 @@ figcaption {
   padding: 0.1rem 0.55rem;
   border-radius: 999px;
   background: var(--accent-3);
-  color: #ffffff;
+  color: #000;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -1574,7 +1471,7 @@ figcaption {
   margin: 0 0 0.3rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.02rem;
-  color: var(--accent-3);
+  color: var(--accent-fonce);
 }
 .chrono-demenagement-desc { margin: 0; font-size: 0.88rem; color: var(--encre-douce); line-height: 1.5; }
 
@@ -1661,7 +1558,7 @@ figcaption {
   line-height: 1;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.modale-fermer:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.modale-fermer:hover { background: var(--accent); color: #000; border-color: var(--accent); }
 .modale-fermer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Petits écrans : on resserre la colonne vertébrale et les marges */
@@ -1759,15 +1656,15 @@ figcaption {
   width: 2.2rem;
   height: 2.2rem;
   border: 1px solid #ffffff;
-  border-radius: 999px;
+  border-radius: 0;
   background: #ffffff;
-  color: #0b1a2b;
+  color: #000;
   text-decoration: none;
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
 }
-.visionneuse-fermer:hover { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.visionneuse-fermer:hover { background: var(--accent); color: #000; border-color: var(--accent); }
 .visionneuse-fermer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* Boutons zoom / précédent / suivant (créés par JavaScript) */
 .visionneuse-nav { display: contents; }
@@ -1779,9 +1676,9 @@ figcaption {
   width: 2.6rem;
   height: 3.4rem;
   border: 1px solid #ffffff;
-  border-radius: 6px;
+  border-radius: 0;
   background: #ffffff;
-  color: #0b1a2b;
+  color: #000;
   font: inherit;
   font-size: 1.5rem;
   line-height: 1;
@@ -1797,7 +1694,7 @@ figcaption {
 }
 .visionneuse-btn[data-dir="-1"] { left: 1rem; }
 .visionneuse-btn[data-dir="1"] { right: 1rem; }
-.visionneuse-btn:hover { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.visionneuse-btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
 .visionneuse-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (max-width: 40rem) {
   .visionneuse-btn { width: 2.2rem; height: 2.8rem; font-size: 1.2rem; }

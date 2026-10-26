@@ -522,6 +522,20 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   inchangé. Recherche de l'ancienne adresse : aucune occurrence restante hors
   /docs. Le CV PDF sera régénéré par le propriétaire.
 
+- 2026-10-26 · Identité visuelle « blanc / noir + verts » (Retour L).
+  Fond blanc, texte noir, échelle de verts #E4FFC7 / #C4D6B0 / #85A365 ;
+  suppression complète du mode sombre (blocs [data-theme], @media
+  (prefers-color-scheme: dark), color-scheme: light, styles .theme-toggle,
+  construireTheme() dans nav.js, script inline anti-flash des 17 pages).
+  assets/css/style.css : jetons remplacés ; --accent-fonce #5c7a47 pour le texte
+  d'accent (contraste AA) ; pied de page blanc/noir ; visionneuse en noir ; textes
+  sur fond vert passés en noir ; --rayon et --rayon-petit = 0 (angles droits) ;
+  pastilles/tags conservés en pilule 999px (.sommaire a, .chrono-annee,
+  .chrono-cat, .chrono-demenagement-annee, .fonctions-liste a, .filtre-btn,
+  .rg-kbd, .back-to-top) ; points/puces conservés (.chrono-point::before,
+  .chrono-puce). .clinerules/04, techContext.md, brief-refonte.md et
+  activeContext.md alignés.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

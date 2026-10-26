@@ -181,7 +181,7 @@ Ces chiffres doivent être **identiques partout** dans le site :
     
 *   Transition en fondu simple à l'affichage des pages. Pas de routeur JS.
     
-*   Mode sombre uniquement via `prefers-color-scheme` (pas de bouton, pas de mémorisation).
+*   Thème clair unique : fond blanc, texte noir, accents verts (#E4FFC7, #C4D6B0, #85A365) ; aucun mode sombre.
     
 *   Aucune bibliothèque d'animation. Uniquement des transitions CSS.
     

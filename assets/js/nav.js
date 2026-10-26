@@ -15,11 +15,6 @@
   /* Icônes SVG intégrées aux boutons ajoutés par JavaScript. */
   var ICO_COPIE = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
   var ICO_COCHE = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12.5 5 5L20 7"/></svg>';
-  var ICO_THEME = {
-    auto: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path d="M12 4v16"/></svg>',
-    clair: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg>',
-    sombre: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>'
-  };
 
   /* Bouton « retour en haut » : apparaît après 400 px de défilement. */
   function construireRetourHaut() {
@@ -111,45 +106,9 @@
     });
   }
 
-  /* Bascule de thème : automatique (préférence système), clair ou sombre.
-     Le choix est mémorisé (localStorage — préférence d'affichage non traçante).
-     Sans JavaScript : thème automatique seul. */
-  function construireTheme() {
-    var barre = document.querySelector('.site-sidebar');
-    if (!barre) { return; }
-    var ordre = ['auto', 'clair', 'sombre'];
-    var libelle = { auto: 'Thème : automatique', clair: 'Thème : clair', sombre: 'Thème : sombre' };
-    var racine = document.documentElement;
-    var mode = racine.getAttribute('data-theme') || 'auto';
-    if (ordre.indexOf(mode) === -1) { mode = 'auto'; }
-    var bouton = document.createElement('button');
-    bouton.type = 'button';
-    bouton.className = 'theme-toggle';
-
-    function rendre() {
-      bouton.innerHTML = ICO_THEME[mode] + '<span class="nav-libelle">' + libelle[mode] + '</span>';
-      bouton.setAttribute('aria-label', libelle[mode] + ' — cliquer pour changer');
-    }
-
-    bouton.addEventListener('click', function () {
-      mode = ordre[(ordre.indexOf(mode) + 1) % ordre.length];
-      if (mode === 'auto') { racine.removeAttribute('data-theme'); }
-      else { racine.setAttribute('data-theme', mode); }
-      try {
-        if (mode === 'auto') { localStorage.removeItem('theme'); }
-        else { localStorage.setItem('theme', mode); }
-      } catch (e) { /* stockage indisponible : le thème reste appliqué pour la page */ }
-      rendre();
-    });
-
-    rendre();
-    barre.appendChild(bouton);
-  }
-
   function init() {
     construireRetourHaut();
     construireCopieEmail();
-    construireTheme();
   }
 
   if (document.readyState === 'loading') {
