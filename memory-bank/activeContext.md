@@ -513,6 +513,12 @@ Points ouverts
   headless (375 px et 1280 px), aucun débordement horizontal. À fusionner et
   publier.
 
+- 2026-10-26 · Documentation : charte graphique. charte-graphique.md créé à la
+  racine (13 sections, tableaux de jetons CSS : couleurs, typographie, angles,
+  grille, navigation, composants, iconographie, mouvement, accessibilité,
+  impression). Document de référence cohérent avec base.css et les modules CSS.
+  Committé et publié ; .gitignore et /docs inchangés. À fusionner et publier.
+
 Blocages
 
 - Aucun.

@@ -594,6 +594,13 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   modifié ; validation par captures Chrome headless (375 px via iframe, bureau
   1280 px) — aucun débordement horizontal.
 
+- 2026-10-26 · Retour P · Documentation : charte graphique du site.
+  charte-graphique.md créé à la racine (285 lignes, 13 sections) : principes
+  fondateurs, palette (jetons CSS en tableaux), typographie, angles et rayons,
+  grille et points de rupture, navigation, composants, iconographie, mouvement,
+  accessibilité, impression, fichiers de référence. Fichier committé et publié
+  (aucune modification de .gitignore ni de /docs). Aucun nom interdit.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.
