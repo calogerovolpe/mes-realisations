@@ -7,7 +7,8 @@ Site publié via GitHub Pages : https://<compte>.github.io/mes-realisations/
 
 ## Structure
 - Pages HTML à plat à la racine
-- assets/css/style.css — feuille de style unique
+- assets/css/style.css — point d'entrée CSS (@import des modules base, layout,
+  navigation, components, parcours, recherche, visionneuse)
 - assets/img/ — captures d'écran et planches
 - .clinerules/ — règles de travail
 - memory-bank/ — état d'avancement du projet

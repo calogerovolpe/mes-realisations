@@ -9,7 +9,9 @@ le thème n'est plus mémorisé (thème clair unique) ; tout le JavaScript est c
 en defer.
 Aucun : framework, build, npm, CDN, police externe, analytics, cookie, script tiers.
 
-Fichiers de style : assets/css/style.css (global), assets/css/print.css (impression).
+Fichiers de style : assets/css/style.css est un point d'entrée (@import) vers les
+modules base.css, layout.css, navigation.css, components.css, parcours.css,
+recherche.css et visionneuse.css ; assets/css/print.css pour l'impression.
 Fichiers de script : assets/js/main.js (entrée), nav.js, print.js, search.js,
 sommaire.js, global-search.js.
 

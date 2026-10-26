@@ -1,8 +1,9 @@
 # systemPatterns.md
 
 Structure
-Pages HTML à plat à la racine. CSS partagé (assets/css/style.css, plus
-assets/css/print.css pour l'impression). JavaScript vanilla en fichiers séparés
+Pages HTML à plat à la racine. CSS partagé : style.css (point d'entrée @import)
+importe base.css, layout.css, navigation.css, components.css, parcours.css,
+recherche.css et visionneuse.css ; print.css pour l'impression. JavaScript vanilla en fichiers séparés
 sous assets/js/ (main.js, nav.js, print.js, search.js, sommaire.js,
 global-search.js), chargés en defer depuis un point d'entrée unique.
 Aucun gabarit serveur, aucun include : la navigation, la carte de visite et le

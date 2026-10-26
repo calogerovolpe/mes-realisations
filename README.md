@@ -10,7 +10,8 @@ HTML5 + CSS, aucun framework, aucun build, aucune dépendance externe.
 
 ## Structure
 - Pages HTML à plat à la racine
-- `assets/css/style.css` — feuille de style unique
+- `assets/css/style.css` — feuille d'entrée CSS (les modules base, layout,
+  navigation, components, parcours, recherche et visionneuse sont importés via `@import`)
 - `assets/img/` — captures d'écran et planches
 - `assets/js/` — JavaScript vanilla en amélioration progressive
 - `assets/fichiers/` — CV au format PDF (seul fichier téléchargeable)

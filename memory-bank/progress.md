@@ -536,6 +536,24 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   .chrono-puce). .clinerules/04, techContext.md, brief-refonte.md et
   activeContext.md alignés.
 
+- 2026-10-26 · Découpage CSS en modules (nettoyage). assets/css/style.css devient
+  un point d'entrée qui importe 7 modules via @import : base.css (jetons :root,
+  remise à zéro, typographie, liens/focus, utilitaires d'accessibilité, mouvement),
+  layout.css (grille/feuille, pied de page, fil d'Ariane), navigation.css (barre
+  latérale et barre inférieure), components.css (cartes, boutons, tableaux,
+  onglets, figures, flux, index de fonctions, sommaire, formulaire, impression,
+  retour en haut, copie e-mail, portrait), parcours.css (compétences, ligne de
+  temps, modales), recherche.css (recherche globale Ctrl+K) et visionneuse.css.
+  Déduplication : blocs body et .site-footer fusionnés (un seul chacun ; double
+  background retiré) ; motif « masqué accessible » unifié (.visually-hidden,
+  .nav-reduit, .tabs > .tab-radio, .rg-label) ; icônes SVG factorisées
+  (.nav-ico/.ico/.chrono-ico, seules les tailles varient) ; polices unifiées via
+  --police-titre et --police-mono ; border-radius: 0 redondants retirés. Aucune
+  classe perdue (146/146 vérifiées) ; rendu réel validé (Chrome headless : 8 CSS
+  en 200, 0 échec, body en grid, sidebar 17rem, h1 Georgia). Pages HTML inchangées.
+  Documentation alignée (README, arboresence.md, .clinerules/01 et 04, memory-bank :
+  techContext, systemPatterns, README).
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

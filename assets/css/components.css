@@ -1,0 +1,682 @@
+/* Volpe Calogero — Mes réalisations administratives — composants.
+   Briques réutilisables : cartes, accroche, chiffres clés, boutons, navigation
+   de fin de page, tableaux, onglets CSS purs, figures, schéma de flux, index de
+   fonctions, sommaire, dossier, formulaires et outils d'interface. */
+
+/* Cartes de sections (accueil + sommaires) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 0;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding: 1.35rem 1.35rem 1.45rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+  color: var(--encre);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--degrade-accent);
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--ombre-2);
+  text-decoration: none;
+}
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.card-title {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--accent-fonce);
+  margin-bottom: 0.35rem;
+}
+.card-text {
+  display: block;
+  color: var(--encre-douce);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Accroche (page d'accueil) — ligne de positionnement mise en avant */
+.accroche {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--encre);
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+
+/* Chiffres clés (page d'accueil) — bande de repères factuels */
+.stats {
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.75rem;
+}
+.stat {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--filet);
+  border-top: 3px solid var(--accent-2);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+}
+.stat-valeur {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--accent-fonce);
+}
+.stat-libelle {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--encre-douce);
+}
+
+/* Appels à l'action (page d'accueil) */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
+  color: #000;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: var(--ombre-1);
+  transition: filter 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); color: #000; }
+.btn:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
+.btn-secondaire {
+  background: var(--fond-champ);
+  color: var(--accent-fonce);
+}
+.btn-secondaire:hover {
+  filter: none;
+  background: var(--accent-fond);
+  color: var(--accent-fonce);
+}
+/* Variante « résultat » (vert clair) — bouton affirmé sur un fond clair */
+.btn-vert {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: #000;
+}
+.btn-vert:hover { filter: brightness(1.08); box-shadow: var(--ombre-2); color: #000; }
+.btn-vert:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+
+/* Navigation de fin de page : section précédente / suivante.
+   Deux pastilles posées de part et d'autre (gauche / droite) ; elles passent
+   l'une sous l'autre sur écran étroit. */
+.nav-fin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin: 2.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--filet);
+}
+.nav-fin-lien {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 12rem;
+  max-width: 22rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.nav-fin-lien:hover { border-color: var(--accent); box-shadow: var(--ombre-2); background: var(--accent-fond); }
+.nav-fin-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nav-fin-precedent { align-items: flex-start; text-align: left; }
+.nav-fin-suivant { align-items: flex-end; text-align: right; margin-left: auto; }
+.nav-fin-direction {
+  font-family: var(--police-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.nav-fin-titre { font-weight: 600; color: var(--accent-fonce); }
+@media (max-width: 34rem) {
+  .nav-fin-lien { flex: 1 1 100%; min-width: 0; max-width: none; }
+  .nav-fin-suivant { align-items: flex-start; text-align: left; margin-left: 0; }
+}
+
+/* Tableaux de synthèse */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.75rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--fond-champ);
+  box-shadow: var(--ombre-1);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.table caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--police-titre);
+  font-size: 1.05rem;
+  color: var(--encre);
+  padding: 0.85rem 0.75rem 0.5rem;
+}
+.table th,
+.table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--filet);
+  text-align: right;
+}
+.table thead th {
+  background: var(--accent-fond);
+  color: var(--accent-fonce);
+  border-bottom: 2px solid var(--accent);
+}
+.table tbody tr { transition: background-color 0.12s ease; }
+.table tbody tr:hover { background: var(--papier-2); }
+.table th:first-child,
+.table td:first-child { text-align: left; }
+.table tbody tr:last-child {
+  font-weight: bold;
+  background: var(--accent-2-fond);
+}
+
+/* Onglets en CSS pur (pages de modèles) — les radios masqués sont définis
+   dans base.css (.tabs > .tab-radio) */
+.tabs { margin: 2rem 0 0; }
+.tabs .tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--filet);
+}
+.tabs .tab-nav label {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--rayon-petit) var(--rayon-petit) 0 0;
+  color: var(--encre-douce);
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.tabs .tab-nav label:hover {
+  color: var(--encre);
+  background: var(--accent-fond);
+}
+.tabs .tab-panel { display: none; }
+.tabs #t1:checked ~ .tab-nav label[for="t1"],
+.tabs #t2:checked ~ .tab-nav label[for="t2"],
+.tabs #t3:checked ~ .tab-nav label[for="t3"],
+.tabs #t4:checked ~ .tab-nav label[for="t4"] {
+  color: #000;
+  background: var(--degrade-accent);
+  border-color: transparent;
+  box-shadow: var(--ombre-1);
+}
+.tabs #t1:focus-visible ~ .tab-nav label[for="t1"],
+.tabs #t2:focus-visible ~ .tab-nav label[for="t2"],
+.tabs #t3:focus-visible ~ .tab-nav label[for="t3"],
+.tabs #t4:focus-visible ~ .tab-nav label[for="t4"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.tabs #t1:checked ~ .tab-panels > .tab-1,
+.tabs #t2:checked ~ .tab-panels > .tab-2,
+.tabs #t3:checked ~ .tab-panels > .tab-3,
+.tabs #t4:checked ~ .tab-panels > .tab-4 { display: block; }
+
+/* Captures d'écran */
+figure { margin: 1.5rem 0; }
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: #fff;
+  box-shadow: var(--ombre-1);
+}
+figcaption {
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+  margin-top: 0.5rem;
+}
+
+/* Schéma d'architecture du classeur (pages de modèles Excel) */
+.flux {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.25rem 1.35rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--papier-2);
+  box-shadow: var(--ombre-1);
+}
+.flux-stats {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--accent-fonce);
+}
+.flux-chaine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.flux-niveau {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.flux-role {
+  font-family: var(--police-titre);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.flux-feuille {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--filet);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  font-size: 0.9rem;
+  box-shadow: var(--ombre-1);
+}
+.flux-fleche {
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+/* Le niveau « résultat » (dernier) est mis en évidence en vert sauge */
+.flux-niveau:last-child .flux-role { color: var(--accent-fonce); }
+.flux-niveau:last-child .flux-feuille { border-top-color: var(--accent-2); }
+
+/* Listes de fonctions */
+.formules-liste {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.formules-liste li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--filet);
+}
+.formules-liste code {
+  font-family: var(--police-mono);
+  font-size: 0.95em;
+  color: var(--accent-fonce);
+}
+
+/* Index des fonctions (sommaire Excel) */
+.fonctions { margin: 1rem 0 0; }
+.fonctions-groupe { margin: 0 0 1.25rem; }
+.fonctions-groupe h3 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+.fonctions-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+}
+.fonctions-liste li { margin: 0; }
+.fonctions-liste a {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--filet);
+  border-radius: 999px;
+  background: var(--papier-2);
+  color: var(--encre);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.fonctions-liste a:hover {
+  border-color: var(--accent);
+  color: var(--accent-fonce);
+  background: var(--accent-fond);
+}
+.fonctions-liste code {
+  font-family: var(--police-mono);
+  font-size: 0.95em;
+}
+
+/* Recherche et filtres de l'index des fonctions (ajoutés par JavaScript —
+   amélioration progressive) */
+.recherche {
+  margin: 1rem 0 1.5rem;
+  padding: 0.85rem 1rem 1rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--papier-2);
+  box-shadow: var(--ombre-1);
+}
+.recherche-champ {
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  color: var(--encre);
+  font: inherit;
+  font-size: 1rem;
+}
+.recherche-champ:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.recherche-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.filtre-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--papier-2);
+  color: var(--accent-fonce);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.filtre-btn:hover { background: var(--accent); color: #000; }
+.filtre-btn[aria-pressed="true"] { background: var(--accent); color: #000; }
+.filtre-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.recherche-compteur {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+}
+
+/* Masquage des éléments filtrés (recherche des fonctions) */
+.fonctions-liste li.est-masque,
+.fonctions-groupe.est-masque { display: none; }
+
+/* Sommaire de page (ajouté par JavaScript — amélioration progressive) */
+.sommaire {
+  margin: 0 0 1.75rem;
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: var(--papier-2);
+  box-shadow: var(--ombre-1);
+}
+.sommaire-titre {
+  margin: 0 0 0.6rem;
+  font-family: var(--police-titre);
+  font-size: 1rem;
+  color: var(--encre);
+}
+.sommaire ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+}
+.sommaire a {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  color: var(--accent-fonce);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.sommaire a:hover { background: var(--accent-fond); }
+.sommaire a[aria-current] {
+  color: #000;
+  background: var(--degrade-accent);
+  font-weight: bold;
+}
+.sommaire a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Lien vers une réalisation liée (dossier) — panneau « info » */
+.dossier {
+  margin: 1.5rem 0 2rem;
+  padding: 0.85rem 1rem 0.95rem;
+  border: 1px solid var(--filet);
+  border-left: 4px solid var(--accent-3);
+  border-radius: var(--rayon-petit);
+  background: var(--accent-3-fond);
+}
+.dossier-label {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-fonce);
+  margin-bottom: 0.3rem;
+}
+.dossier-link { display: block; color: var(--accent-fonce); font-weight: 600; }
+.dossier-link + .dossier-link { margin-top: 0.35rem; }
+
+/* Mention discrète sur les cartes de sommaire */
+.card-meta {
+  display: block;
+  margin-top: 0.7rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--filet);
+  font-size: 0.82rem;
+  color: var(--encre-douce);
+}
+
+/* Formulaire de contact */
+.form {
+  margin: 1.5rem 0 0;
+  max-width: 34rem;
+}
+.form-champ { margin: 0 0 1.1rem; }
+.form-champ label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--encre);
+}
+.form-champ input[type="text"],
+.form-champ input[type="email"],
+.form-champ textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  color: var(--encre);
+  font: inherit;
+  font-size: 1rem;
+}
+.form-champ input:focus-visible,
+.form-champ textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.form-champ textarea { resize: vertical; }
+.form-consentement {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.form-consentement input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+.form-consentement label {
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.form button {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
+  color: #000;
+  cursor: pointer;
+  box-shadow: var(--ombre-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.form button:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); }
+.form button:active { transform: translateY(1px); }
+.form button:focus-visible {
+  outline: 2px solid var(--accent-fonce);
+  outline-offset: 2px;
+}
+
+/* Barre d'outils d'impression (ajoutée par JavaScript — amélioration progressive) */
+.print-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--filet);
+}
+.print-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--degrade-accent);
+  color: #000;
+  cursor: pointer;
+  box-shadow: var(--ombre-1);
+  transition: filter 0.15s ease, box-shadow 0.15s ease;
+}
+.print-btn:hover { filter: brightness(1.06); box-shadow: var(--ombre-2); }
+.print-btn:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
+
+/* Retour en haut (ajouté par JavaScript — amélioration progressive) */
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none; /* affiché via .is-visible (JavaScript) */
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--degrade-accent);
+  color: #000;
+  cursor: pointer;
+  box-shadow: var(--ombre-2);
+  z-index: 30;
+  transition: filter 0.15s ease;
+}
+.back-to-top.is-visible { display: inline-block; }
+.back-to-top:hover { filter: brightness(1.06); }
+.back-to-top:focus-visible { outline: 2px solid var(--accent-fonce); outline-offset: 2px; }
+
+/* Icône carrée injectée par JavaScript (les traits sont communs : base.css) */
+.ico {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+/* Copie de l'adresse e-mail (bouton icône, injecté par JavaScript) */
+.copy-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon-petit);
+  background: var(--fond-champ);
+  color: var(--encre-douce);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.copy-email:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+.copy-email:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Portrait de la page parcours */
+.photo-profil {
+  margin: 0.5rem auto 1.5rem;
+  max-width: 18rem;
+}
+.photo-profil img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--filet);
+  border-radius: var(--rayon);
+  background: #fff;
+  box-shadow: var(--ombre-2);
+}
+@media (min-width: 44rem) {
+  .photo-profil {
+    float: right;
+    max-width: none;
+    width: 16rem;
+    margin: 0.35rem 0 1.25rem 1.75rem;
+  }
+}
+
+/* Petits écrans : le retour en haut reste au-dessus de la barre inférieure */
+@media (max-width: 60rem) {
+  .back-to-top { bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+}

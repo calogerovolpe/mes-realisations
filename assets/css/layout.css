@@ -1,0 +1,87 @@
+/* Volpe Calogero — Mes réalisations administratives — ossature de page.
+   La feuille de contenu posée sur le plan de travail, le pied de page et le
+   fil d'Ariane. La grille racine (body) est dans base.css ; la barre latérale
+   est dans navigation.css. */
+
+/* Feuille de contenu : posée sur le plan de travail, à droite de la barre */
+.site-main {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: min(100% - 3rem, 62rem);
+  margin: 1.5rem 0 0;
+  padding: 2.5rem clamp(1.25rem, 4vw, 3rem) 3rem;
+  background: var(--papier);
+  border: 1px solid var(--filet);
+  border-bottom: none;
+  border-radius: var(--rayon) var(--rayon) 0 0;
+  box-shadow: var(--ombre-1);
+}
+
+/* Pied de page — bande claire bordée de vert pour marquer la séparation.
+   Bloc unique : position dans la grille et apparence réunies. */
+.site-footer {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  width: min(100% - 3rem, 62rem);
+  margin: 0 0 1.5rem;
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+.site-footer-inner {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 2.5rem;
+}
+.site-footer p { margin: 0 0 0.5rem; }
+.site-footer a { color: var(--accent-fonce); }
+.site-footer a:hover { color: var(--encre); }
+.site-footer .maj { font-size: 0.85rem; color: var(--encre-douce); }
+
+/* Navigation structurée du pied de page — colonnes de liens */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.5rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--filet);
+}
+.footer-nav-titre {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: var(--police-titre);
+  font-size: 0.95rem;
+  color: var(--encre);
+}
+.footer-nav ul { list-style: none; margin: 0; padding: 0; }
+.footer-nav li { margin: 0 0 0.3rem; }
+.footer-nav a { text-decoration: none; }
+.footer-nav a:hover { text-decoration: underline; }
+.footer-note-mono { font-family: var(--police-mono); font-size: 0.8rem; }
+/* Le pied de page affiche l'adresse en clair : pas de bouton « copier » ici */
+.site-footer .copy-email { display: none; }
+
+/* Fil d'Ariane */
+.fil-ariane {
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  margin: 0 0 0.75rem;
+}
+.fil-ariane a { color: var(--accent-fonce); }
+
+/* Petits écrans : la feuille et le pied de page se resserrent */
+@media (max-width: 60rem) {
+  .site-main {
+    width: auto;
+    margin: 0.75rem;
+    border-bottom: 1px solid var(--filet);
+    border-radius: var(--rayon);
+  }
+  .site-footer { width: auto; margin: 0 0.75rem 0.9rem; }
+}

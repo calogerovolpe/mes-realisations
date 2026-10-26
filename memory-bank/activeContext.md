@@ -474,6 +474,14 @@ Points ouverts
   (25,24 % pessimiste / 26,48 % moyen / 47,95 % optimiste).
 - Captures générées automatiquement : à vérifier visuellement par le propriétaire.
 
+- 2026-10-26 · Découpage CSS en modules (nettoyage). assets/css/style.css est
+  désormais un point d'entrée @import vers base.css, layout.css, navigation.css,
+  components.css, parcours.css, recherche.css et visionneuse.css. Doublons et
+  conflits supprimés (body et .site-footer fusionnés, motifs d'icônes et de
+  polices unifiés via --police-titre / --police-mono, contrôles masqués regroupés).
+  Aucune classe perdue (146/146) ; rendu réel validé en Chrome headless (8 CSS en
+  200, 0 échec réseau). Pages HTML inchangées ; print.css inchangé.
+
 Blocages
 
 - Aucun.
