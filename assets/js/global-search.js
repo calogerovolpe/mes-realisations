@@ -6,6 +6,7 @@
 
   var DONNEES =
     'Accueil|index.html|Accueil|Portfolio et présentations;' +
+    'Administration|administration.html|Administration|Gestion documentaire, archivage, suivi de dossiers, reporting, rédaction;' +
     'Modèles Excel|excel.html|Excel|Sommaire des modèles et des fonctions;' +
     'Mensana — modèle d\'exploitation|excel-modele-01-rentabilite.html|Excel|Rentabilité, coût matière, prévisionnel;' +
     'Coût matière — Casa Urpi|excel-modele-02-cout-matiere.html|Excel|Fiches techniques et coûts des recettes;' +

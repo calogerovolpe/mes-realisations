@@ -303,3 +303,7 @@
   .chrono-cat-complement .chrono-carte { margin-left: 0.6rem; }
   .chrono-demenagement { padding: 0.75rem 0.85rem; }
 }
+
+/* Liens de renvoi dans la bulle de compétences (page d'accueil Administration) */
+.chrono-bulle a { pointer-events: auto; }
+

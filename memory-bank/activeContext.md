@@ -519,6 +519,18 @@ Points ouverts
   impression). Document de référence cohérent avec base.css et les modules CSS.
   Committé et publié ; .gitignore et /docs inchangés. À fusionner et publier.
 
+- 2026-10-27 · Page « Gestion administrative » : TERMINÉ. administration.html
+  créé (7 blocs : classement et nommage, archivage, dématérialisation, suivi de
+  dossiers, reporting, rédaction administrative, gestion documentaire technique ;
+  encadrés, arborescences en `pre`, 8 tableaux). Menu et pied de page mis à jour
+  sur les 18 pages (« Administration » après Accueil ; pied de page « Excel »).
+  index.html : compétence + sous-section Administration (6 cartes) ; excel.html
+  et business-plan.html : renvois croisés ; parcours.html : liens depuis quatre
+  expériences ; global-search.js complété. CSS : `.note`, `.arbo`, `.table-plain`,
+  `.chrono-bulle a`, correctif mobile `justify-self: stretch`. Vérifié en 375 px
+  (iframe) et 1280 px ; liens/ancres OK ; 0 nom interdit ; BOM/CRLF conformes.
+  Aucune image ; assets/docs non liés (livrables en texte). À fusionner et publier.
+
 Blocages
 
 - Aucun.

@@ -716,3 +716,48 @@ figcaption {
     padding-top: 1.5rem;
   }
 }
+
+
+/* Encadrés génériques (page Administration) — filet de gauche et fond vert clair */
+.note {
+  margin: 1.5rem 0 2rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--filet);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--rayon-petit);
+  background: var(--surface-vert-clair);
+  box-shadow: var(--ombre-1);
+}
+.note-titre {
+  margin: 0 0 0.5rem;
+  font-family: var(--police-titre);
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--encre);
+}
+.note p:last-child,
+.note ul:last-child,
+.note ol:last-child { margin-bottom: 0; }
+.note ul,
+.note ol { margin: 0 0 0.5rem; padding-left: 1.2rem; }
+.note li { margin: 0 0 0.35rem; }
+.note-avertissement { border-left-color: var(--accent-fonce); background: var(--surface-vert-moyen); }
+
+/* Bloc de texte structuré (arborescence, extrait de document) — chasse fixe */
+.arbo {
+  margin: 1rem 0 1.75rem;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid var(--filet);
+  background: var(--papier-2);
+  font-family: var(--police-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+/* Tableaux de données : alignement à gauche, pas de ligne de total en gras */
+.table.table-plain th,
+.table.table-plain td { text-align: left; }
+.table.table-plain tbody tr:last-child { font-weight: normal; background: transparent; }
+

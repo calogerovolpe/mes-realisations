@@ -177,3 +177,15 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .competence-lien { color: #000000 !important; }
 .competence-meta { border-top-color: #000000 !important; color: #333333 !important; }
 
+
+
+/* Page Administration — encadrés et blocs de texte structuré */
+.note,
+.arbo {
+  background: none !important;
+  box-shadow: none !important;
+  border: 1px solid #000000 !important;
+}
+.note,
+.arbo { break-inside: avoid; page-break-inside: avoid; }
+

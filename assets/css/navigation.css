@@ -208,14 +208,16 @@
     text-align: center;
     overflow-wrap: break-word;
   }
-  /* Accueil au centre (4e entrée sur 7 quand la recherche est présente) */
+  /* Accueil au centre (4e entrée sur 7) ; la recherche, ajoutée par JavaScript,
+     occupe la 8e position. */
   .site-sidebar .site-nav li:nth-child(1) { order: 4; }
   .site-sidebar .site-nav li:nth-child(2) { order: 1; }
   .site-sidebar .site-nav li:nth-child(3) { order: 2; }
   .site-sidebar .site-nav li:nth-child(4) { order: 3; }
   .site-sidebar .site-nav li:nth-child(5) { order: 5; }
   .site-sidebar .site-nav li:nth-child(6) { order: 6; }
-  .site-sidebar .site-nav li.nav-recherche { order: 7; display: flex; }
+  .site-sidebar .site-nav li:nth-child(7) { order: 7; }
+  .site-sidebar .site-nav li.nav-recherche { order: 8; display: flex; }
 
   /* Recherche : loupe seule ; le nom accessible reste porté par aria-label */
   .site-sidebar .site-nav .rg-btn {

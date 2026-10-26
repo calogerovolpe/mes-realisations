@@ -601,6 +601,25 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   accessibilité, impression, fichiers de référence. Fichier committé et publié
   (aucune modification de .gitignore ni de /docs). Aucun nom interdit.
 
+- 2026-10-27 · Page « Gestion administrative » (administration.html) : sept blocs
+  de méthode (classement et nommage, cycle de vie et archivage, dématérialisation,
+  suivi de dossiers, reporting mensuel, rédaction administrative, gestion
+  documentaire technique) ; encadrés `.note`, arborescences et extraits en
+  `<pre class="arbo">`, 8 tableaux de synthèse (`caption` + `th scope`). Navigation
+  « Administration » en 2e position sur les 18 pages (menu + pied de page) ;
+  barre inférieure réordonnée (Accueil centré, recherche en 8e). index.html :
+  carte de compétence et sous-section « Administration » (6 cartes) en tête ;
+  chaînage Accueil → Administration → Excel. excel.html et business-plan.html :
+  renvois croisés vers les blocs 4-6 ; parcours.html : liens vers les blocs 2-7
+  depuis Conforama, Elior, Montreuil et Val-de-Marne (bulles + modales) ;
+  global-search.js : entrée Administration. CSS : composant `.note` (+ variante
+  avertissement), `.arbo`, `.table-plain`, `.chrono-bulle a` cliquable et
+  correctif mobile `justify-self: stretch` sur `.site-main`/`.site-footer`
+  (suppression d'un débordement horizontal dû aux lignes longues du bloc `pre`).
+  Vérifications : liens et ancres OK, 0 nom interdit, UTF-8 sans BOM, CRLF,
+  18/18 pages avec le menu, rendu 375 px contrôlé. Aucune image ajoutée ;
+  livrables décrits en texte (aucun lien mort vers assets/docs). Fusionné et publié.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.
