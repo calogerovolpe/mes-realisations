@@ -92,7 +92,7 @@
 .rg-resultat-titre {
   display: block;
   font-family: var(--police-titre);
-  color: var(--accent-fonce);
+  color: var(--encre);
 }
 .rg-resultat-meta {
   display: block;

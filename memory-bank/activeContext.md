@@ -71,6 +71,16 @@ Nouvelle phase : retours du propriétaire (2026), traités un par un.
   inline anti-flash de thème. .clinerules/04 : design « blanc / noir + verts »,
   angles droits sauf pastilles/tags, absence de mode sombre et de script inline.
   memory-bank : techContext.md et brief-refonte.md alignés.
+- Retour M — Surfaces vertes (2026-10-26) : TERMINÉ (l'arrière-plan reste blanc,
+  mais les blocs ne sont plus blancs). Trois jetons de surface
+  (--surface-vert-clair #E4FFC7, --surface-vert-moyen #C4D6B0, --surface-vert-fort
+  #85A365) ; --sidebar-fond = #E4FFC7. Cartes, accroche, chiffres clés,
+  navigation de fin, schéma de flux, recherche, sommaire, puces de fonctions et
+  filtres en vert ; pied de page en vert moyen ; barre latérale verte ; cartes
+  du parcours en vert clair. Texte des blocs verts en NOIR pour le contraste AA
+  (#5C7A47 : 4,49 sur #E4FFC7, 3,14 sur #C4D6B0) ; a:hover reste noir avec un
+  soulignement vert épaissi. Impression noir/blanc conservée (.btn et
+  .fonctions-liste a neutralisés). Aucun HTML ni JavaScript modifié.
 - Refonte UI/UX : découpage en 3 jalons — A (vues des feuilles Excel, terminé),
   B (menu latéral + « feuille », terminé), C (thème clair/sombre + icône copier,
   terminé). Un jalon = une conversation = un commit.

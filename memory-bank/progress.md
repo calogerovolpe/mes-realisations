@@ -554,6 +554,23 @@ Développement sur `refonte`, publication sur `main` après CHAQUE jalon ; un ja
   Documentation alignée (README, arboresence.md, .clinerules/01 et 04, memory-bank :
   techContext, systemPatterns, README).
 
+- 2026-10-26 · Retour M · Surfaces vertes (l'arrière-plan reste blanc, les blocs
+  passent en vert). assets/css/base.css : trois jetons de surface
+  (--surface-vert-clair #E4FFC7, --surface-vert-moyen #C4D6B0, --surface-vert-fort
+  #85A365) ; --sidebar-fond = #E4FFC7 ; a:hover reste noir avec un soulignement
+  vert épaissi. assets/css/components.css : cartes, accroche, chiffres clés (vert
+  moyen), navigation de fin de page, schéma de flux, recherche, sommaire, puces
+  de fonctions et filtres passés en vert ; les titres/labels des blocs verts
+  passent en noir, car #5C7A47 ne tient pas le contraste AA sur vert (4,49:1 sur
+  #E4FFC7, 3,14:1 sur #C4D6B0). assets/css/layout.css : pied de page vert moyen,
+  liens noirs, filet de séparation sombre. assets/css/navigation.css : barre
+  latérale verte ; titre survolé en noir souligné. assets/css/parcours.css :
+  cartes de compétences et de ligne de temps en vert clair ; activité
+  complémentaire en --papier-2 pour rester « en retrait ». assets/css/print.css :
+  .btn et .fonctions-liste a neutralisés en noir/blanc. Vérification par captures
+  Chrome headless (accueil, sommaire Excel, modèle 01, pied de page). Aucun HTML
+  ni JavaScript modifié.
+
 ## Rappel de fin de jalon
 git add . → git commit → git push → git status propre → page vérifiée en ligne
 → memory-bank mis à jour et poussé → recherche des noms interdits.

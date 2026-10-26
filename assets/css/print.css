@@ -73,6 +73,7 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 /* Aucun fond, aucune ombre, aucun dégradé : impression sobre, noir sur blanc */
 .site-main { animation: none !important; }
 .card,
+.btn,
 .dossier,
 .flux,
 .stat,
@@ -81,6 +82,7 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 .table-wrap,
 .table thead th,
 .tabs .tab-nav label,
+.fonctions-liste a,
 .print-btn,
 .back-to-top,
 .copy-email,
@@ -91,6 +93,7 @@ img { max-width: 100%; height: auto; page-break-inside: avoid; }
 }
 .card::before { display: none !important; }
 .card,
+.btn,
 .dossier,
 .flux,
 .stat,

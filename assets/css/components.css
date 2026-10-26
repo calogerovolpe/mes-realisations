@@ -17,7 +17,7 @@
   padding: 1.35rem 1.35rem 1.45rem;
   border: 1px solid var(--filet);
   border-radius: var(--rayon);
-  background: var(--fond-champ);
+  background: var(--surface-vert-clair);
   box-shadow: var(--ombre-1);
   color: var(--encre);
   text-decoration: none;
@@ -45,7 +45,7 @@
   font-family: var(--police-titre);
   font-size: 1.15rem;
   line-height: 1.3;
-  color: var(--accent-fonce);
+  color: var(--encre);
   margin-bottom: 0.35rem;
 }
 .card-text {
@@ -60,9 +60,10 @@
   font-size: 1.2rem;
   line-height: 1.5;
   color: var(--encre);
-  border-left: 3px solid var(--accent);
-  padding-left: 0.9rem;
+  border-left: 4px solid var(--accent);
+  padding: 0.85rem 1rem;
   margin: 0 0 1.25rem;
+  background: var(--surface-vert-clair);
 }
 
 /* Chiffres clés (page d'accueil) — bande de repères factuels */
@@ -76,10 +77,10 @@
 }
 .stat {
   padding: 1rem 1.1rem;
-  border: 1px solid var(--filet);
-  border-top: 3px solid var(--accent-2);
+  border: 1px solid var(--accent-2);
+  border-top: 3px solid var(--accent);
   border-radius: var(--rayon);
-  background: var(--fond-champ);
+  background: var(--surface-vert-moyen);
   box-shadow: var(--ombre-1);
 }
 .stat-valeur {
@@ -87,7 +88,7 @@
   font-family: var(--police-titre);
   font-size: 2rem;
   line-height: 1.1;
-  color: var(--accent-fonce);
+  color: var(--encre);
 }
 .stat-libelle {
   display: block;
@@ -125,7 +126,7 @@
 .btn-secondaire:hover {
   filter: none;
   background: var(--accent-fond);
-  color: var(--accent-fonce);
+  color: var(--encre);
 }
 /* Variante « résultat » (vert clair) — bouton affirmé sur un fond clair */
 .btn-vert {
@@ -157,12 +158,12 @@
   padding: 0.75rem 1rem;
   border: 1px solid var(--filet);
   border-radius: var(--rayon);
-  background: var(--fond-champ);
+  background: var(--surface-vert-clair);
   box-shadow: var(--ombre-1);
   text-decoration: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
-.nav-fin-lien:hover { border-color: var(--accent); box-shadow: var(--ombre-2); background: var(--accent-fond); }
+.nav-fin-lien:hover { border-color: var(--accent); box-shadow: var(--ombre-2); background: var(--surface-vert-moyen); }
 .nav-fin-lien:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .nav-fin-precedent { align-items: flex-start; text-align: left; }
 .nav-fin-suivant { align-items: flex-end; text-align: right; margin-left: auto; }
@@ -173,7 +174,7 @@
   text-transform: uppercase;
   color: var(--encre-douce);
 }
-.nav-fin-titre { font-weight: 600; color: var(--accent-fonce); }
+.nav-fin-titre { font-weight: 600; color: var(--encre); }
 @media (max-width: 34rem) {
   .nav-fin-lien { flex: 1 1 100%; min-width: 0; max-width: none; }
   .nav-fin-suivant { align-items: flex-start; text-align: left; margin-left: 0; }
@@ -210,7 +211,7 @@
 }
 .table thead th {
   background: var(--accent-fond);
-  color: var(--accent-fonce);
+  color: var(--encre);
   border-bottom: 2px solid var(--accent);
 }
 .table tbody tr { transition: background-color 0.12s ease; }
@@ -291,13 +292,13 @@ figcaption {
   padding: 1.25rem 1.25rem 1.35rem;
   border: 1px solid var(--filet);
   border-radius: var(--rayon);
-  background: var(--papier-2);
+  background: var(--surface-vert-clair);
   box-shadow: var(--ombre-1);
 }
 .flux-stats {
   margin: 0 0 1.25rem;
   font-size: 0.9rem;
-  color: var(--accent-fonce);
+  color: var(--encre);
 }
 .flux-chaine {
   display: flex;
@@ -335,7 +336,7 @@ figcaption {
   line-height: 1;
 }
 /* Le niveau « résultat » (dernier) est mis en évidence en vert sauge */
-.flux-niveau:last-child .flux-role { color: var(--accent-fonce); }
+.flux-niveau:last-child .flux-role { color: var(--encre); }
 .flux-niveau:last-child .flux-feuille { border-top-color: var(--accent-2); }
 
 /* Listes de fonctions */
@@ -372,7 +373,7 @@ figcaption {
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--filet);
   border-radius: 999px;
-  background: var(--papier-2);
+  background: var(--surface-vert-clair);
   color: var(--encre);
   text-decoration: none;
   font-size: 0.9rem;
@@ -380,8 +381,8 @@ figcaption {
 }
 .fonctions-liste a:hover {
   border-color: var(--accent);
-  color: var(--accent-fonce);
-  background: var(--accent-fond);
+  color: var(--encre);
+  background: var(--surface-vert-moyen);
 }
 .fonctions-liste code {
   font-family: var(--police-mono);
@@ -395,7 +396,7 @@ figcaption {
   padding: 0.85rem 1rem 1rem;
   border: 1px solid var(--filet);
   border-radius: var(--rayon);
-  background: var(--papier-2);
+  background: var(--surface-vert-clair);
   box-shadow: var(--ombre-1);
 }
 .recherche-champ {
@@ -426,8 +427,8 @@ figcaption {
   padding: 0.25rem 0.7rem;
   border: 1px solid var(--accent);
   border-radius: 999px;
-  background: var(--papier-2);
-  color: var(--accent-fonce);
+  background: var(--surface-vert-clair);
+  color: var(--encre);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -450,7 +451,7 @@ figcaption {
   padding: 0.95rem 1rem 1rem;
   border: 1px solid var(--filet);
   border-radius: var(--rayon);
-  background: var(--papier-2);
+  background: var(--surface-vert-clair);
   box-shadow: var(--ombre-1);
 }
 .sommaire-titre {
@@ -471,11 +472,11 @@ figcaption {
   display: inline-block;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  color: var(--accent-fonce);
+  color: var(--encre);
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
-.sommaire a:hover { background: var(--accent-fond); }
+.sommaire a:hover { background: var(--surface-vert-moyen); }
 .sommaire a[aria-current] {
   color: #000;
   background: var(--degrade-accent);
@@ -498,10 +499,10 @@ figcaption {
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent-fonce);
+  color: var(--encre);
   margin-bottom: 0.3rem;
 }
-.dossier-link { display: block; color: var(--accent-fonce); font-weight: 600; }
+.dossier-link { display: block; color: var(--encre); font-weight: 600; }
 .dossier-link + .dossier-link { margin-top: 0.35rem; }
 
 /* Mention discrète sur les cartes de sommaire */
